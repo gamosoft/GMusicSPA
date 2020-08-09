@@ -1,0 +1,71 @@
+{
+    "albums": [
+        {
+            "id": 1,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 2,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 3,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 4,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 5,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 6,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 7,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 8,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 9,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 10,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 11,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        },
+        {
+            "id": 12,
+            "title": "Alien Love Secrets",
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+        }
+    ],
+    "artists": [
+        {
+            "id": 1,
+            "title": "hello",
+            "coverUrl": ""
+        }
+    ]
+}
