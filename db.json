@@ -4,31 +4,33 @@
             "id": 1,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1",
+            "year": "xxxx",
+            "genre": "xxxx"
         },
         {
             "id": 2,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "Additional Creations",
+            "artist": "Joe Satriani",
+            "coverUrl": "https://lh3.googleusercontent.com/siz3J7UJN2r4wV8BNsPOq2-Sa8IsvGZpDkL70Nt9K9jOOEecnB6W6Ua8Cu4=w220-c-h220-e100-rwu-v1"
         },
         {
             "id": 3,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "American Idiot",
+            "artist": "Green Day",
+            "coverUrl": "https://lh3.googleusercontent.com/NUjRxuKknR7qibILzLp14xiPdZj5r0PWyhmkiz3XS3reeuE_SF1hxqsd9THE=w220-c-h220-e100-rwu-v1"
         },
         {
             "id": 4,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "Crystal Planet",
+            "artist": "Joe Satriani",
+            "coverUrl": "https://lh3.googleusercontent.com/Uw9uYGIPPgVgcb3g4Qyn_FDK_XcPC9P1MIzmBiR4k9CCtrwjK0Hq2_kFDhn4Fg=w220-c-h220-e100-rwu-v1"
         },
         {
             "id": 5,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "The Division Bell",
+            "artist": "Pink Floyd",
+            "coverUrl": "https://lh3.googleusercontent.com/8lcACkxl2SEpGlJhdT6ds8Fx8lJQ259qouu-Tvu1Fxqfgb90Io2vXGuTxbpi=w220-c-h220-e100-rwu-v1"
         },
         {
             "id": 6,

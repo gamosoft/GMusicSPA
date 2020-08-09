@@ -9,13 +9,13 @@
     <title>GMusic SPA</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="/css/index.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"><img src="/images/google-play-music-logo.png" width="20" height="20">&nbsp;GMusic SPA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,51 +24,42 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Albums <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Artists</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="#">Songs</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Genres</a>
                 </li>
             </ul>
-
-            <div id="AlbumsViewModel" data-bind="foreach: Albums">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top"  data-bind="attr: { src: coverUrl, alt: title }">
-                    <div class="card-body" data-bind="attr: { id: id }, value: id">
-                      <h5 class="card-title">Card title</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
-                    </div>
-                  </div>
-            </div>
-
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
 
     <main role="main" class="container">
-
-        <div class="starter-template">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text
-                and a mostly barebones HTML document.</p>
+        <div class="card-deck" id="AlbumsViewModel" data-bind="foreach: Albums">
+            <div class="card mb-4" style="width: 18rem">
+                <img class="card-img-top rounded-circle z-depth-0" data-bind="attr: { src: coverUrl, alt: title }"
+                    width="25" heigh="25">
+                <div class="card-body" data-bind="attr: { id: id }, value: id">
+                    <h5 class="card-title" data-bind="text: trim(title(), 20)">Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted" data-bind="text: trim(artist(), 20)">Artist</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <a href="#" class="card-link">Play Album</a>
+                    <a href="#" class="card-link">Shuffle Album</a>
+                </div>
+            </div>
         </div>
 
     </main><!-- /.container -->
