@@ -3,30 +3,6 @@ const albumsUrl = `${baseUrl}/albums`;
 const artistsUrl = `${baseUrl}/artists`;
 const songsUrl = `${baseUrl}/songs`;
 
-let app = $.sammy(function() {
-    this.get('#/albums', function () {
-        $('#ArtistsViewModel').hide();
-        $('#AlbumsViewModel').show();
-        $('#SongsViewModel').hide();
-        $('.nav-item').removeClass('active');
-        $('#albumsLink').addClass('active');
-    });
-    this.get('#/artists', function () {
-        $('#ArtistsViewModel').show();
-        $('#AlbumsViewModel').hide();
-        $('#SongsViewModel').hide();
-        $('.nav-item').removeClass('active');
-        $('#artistsLink').addClass('active');
-    });
-    this.get('#/songs', function () {
-        $('#ArtistsViewModel').hide();
-        $('#AlbumsViewModel').hide();
-        $('#SongsViewModel').show();
-        $('.nav-item').removeClass('active');
-        $('#songsLink').addClass('active');
-    });
-});
-
 // Filter like this
 // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
 
