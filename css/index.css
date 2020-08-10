@@ -8,5 +8,13 @@ body {
 .card-deck .card {
     min-width: 150px;
     max-width: 150px;
-    background: rgba(68, 177, 250, 0.2); /* Blue background with 20% opacity */
+    /* background: rgba(68, 177, 250, 0.2); /* Blue background with 20% opacity */
+}
+.media-artist {
+    width: 150px;
+    height: 150px;
+}
+.media-album {
+    width: 150px;
+    height: 150px;
 }

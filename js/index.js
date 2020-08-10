@@ -19,6 +19,13 @@ async function loadAlbums() {
     AlbumsViewModel.LoadAlbums(data);
 }
 
+async function loadArtists() {
+    // Fetch artist information
+    const response = await fetch(`${artistsUrl}`);
+    const data = await response.json();
+    ArtistsViewModel.LoadArtists(data);
+}
+
 async function loadSongs() {
     // Fetch song information
     const response = await fetch(`${songsUrl}`);
@@ -28,5 +35,6 @@ async function loadSongs() {
 
 $(() => {
     loadAlbums().then(ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel')));
+    loadArtists().then(ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel')));
     loadSongs().then(ko.applyBindings(SongsViewModel, document.getElementById('SongsViewModel')));
 });

@@ -80,7 +80,17 @@
             "id": 1,
             "name": "Steve Vai",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Steve_Vai_2011.jpg/330px-Steve_Vai_2011.jpg"
-        }
+        },
+        {
+            "id": 2,
+            "name": "Joe Satriani",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Satriani_2010_13_12_1112.jpg/220px-Satriani_2010_13_12_1112.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Pink Floyd",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Pink_Floyd_-_all_members.jpg/250px-Pink_Floyd_-_all_members.jpg"
+        }        
     ],
     "songs": [
         {
