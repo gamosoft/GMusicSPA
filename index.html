@@ -80,20 +80,25 @@
         </div>
         <div id="ArtistsViewModel" class="card-deck" data-bind="foreach: Artists">
             <div class="card mb-4">
-                <img class="card-img-top rounded-circle z-depth-0 media-artist" data-bind="attr: { src: image, title: name }">
+                <a href="#"><img class="card-img-top rounded-circle z-depth-0 media-artist" data-bind="attr: { src: image, title: name }"></a>
                 <div class="card-footer">
-                    <div class="text-center"><strong class="text-muted" data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></div>
+                    <div class="text-center">
+                        <a href="#"><strong class="text-muted" data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="AlbumsViewModel" class="card-deck" data-bind="foreach: Albums">
             <!-- AlbumsFiltered -->
             <div class="card mb-4">
-                <!-- rounded-circle -->
-                <img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }">
+                <a href=""><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>
                 <div class="card-body" data-bind="attr: { id: id }, value: id">
-                    <div><strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></div>
-                    <div><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></div>
+                    <div>
+                        <a href=""><strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
+                    </div>
+                    <div>
+                        <a href=""><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <small><a href="#" class="card-link">Play Album</a></small>
