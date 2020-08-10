@@ -63,7 +63,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">NAME</th>
                         <th scope="col"><i class="far fa-clock"></i></th>
                         <th scope="col"><i class="fas fa-music"></i></th>
                     </tr>
@@ -80,10 +80,10 @@
         </div>
         <div id="ArtistsViewModel" class="card-deck" data-bind="foreach: Artists">
             <div class="card mb-4">
-                <a href="#"><img class="card-img-top rounded-circle z-depth-0 media-artist" data-bind="attr: { src: image, title: name }"></a>
+                <a data-bind="attr: { href: 'artists/'+id() }"><img class="card-img-top rounded-circle z-depth-0 media-artist" data-bind="attr: { src: image, title: name }"></a>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a href="#"><strong class="text-muted" data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
+                        <a data-bind="attr: { href: 'artists/'+id() }"><strong class="text-muted" data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
                     </div>
                 </div>
             </div>
@@ -91,13 +91,13 @@
         <div id="AlbumsViewModel" class="card-deck" data-bind="foreach: Albums">
             <!-- AlbumsFiltered -->
             <div class="card mb-4">
-                <a href=""><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>
+                <a data-bind="attr: { href: 'albums/'+id() }"><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>
                 <div class="card-body" data-bind="attr: { id: id }, value: id">
                     <div>
-                        <a href=""><strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
+                        <a data-bind="attr: { href: 'albums/'+id() }"><strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
                     </div>
                     <div>
-                        <a href=""><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                        <a data-bind="attr: { href: 'artists/'+artist() }"><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
                     </div>
                 </div>
                 <div class="card-footer">
