@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
-        integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />        
+        integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
     <link href="./css/index.css" rel="stylesheet">
 </head>
 
-<body id="AlbumsViewModel">
+<body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#"><img src="./images/google-play-music-logo.png" width="20" height="20">&nbsp;GMusic SPA</a>
+        <a class="navbar-brand" href="#"><img src="./images/google-play-music-logo.png" width="20"
+                height="20">&nbsp;GMusic SPA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,48 +40,39 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" data-bind="value: AlbumFilterText, valueUpdate: 'keyup'">
+                <!-- data-bind="value: AlbumFilterText, valueUpdate: 'keyup'" -->
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
 
     <main role="main" class="container-fluid">
-        <!-- <div>
+        <div id="SongsViewModel">
             <table class="table table-sm table-hover table-dark">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col"><i class="far fa-clock"></i></th>
-                    <th scope="col"><i class="fas fa-music"></i></th>
-                  </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col"><i class="far fa-clock"></i></th>
+                        <th scope="col"><i class="fas fa-music"></i></th>
+                    </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Tender Surrender</td>
-                    <td>10:03</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td></td>
-                  </tr>
+                <tbody data-bind="foreach: Songs">
+                    <tr>
+                        <th scope="row" data-bind="attr: { id: id }, value: id, text: id">@</th>
+                        <td data-bind="text: trim(title(), 20)">Title</td>
+                        <td data-bind="text: duration">00:00</td>
+                        <td data-bind="text: playcount">&nbsp;</td>
+                    </tr>
                 </tbody>
-              </table>
-        </div> -->
-        <div class="card-deck" data-bind="foreach: AlbumsFiltered">
-            <div class="card mb-4"> <!-- rounded-circle -->
-                <img class="card-img-top z-depth-0" data-bind="attr: { src: image, alt: title }"
-                    width="25" heigh="25">
+            </table>
+        </div>
+        <div id="AlbumsViewModel" class="card-deck" data-bind="foreach: Albums">
+            <!-- AlbumsFiltered -->
+            <div class="card mb-4">
+                <!-- rounded-circle -->
+                <img class="card-img-top z-depth-0" data-bind="attr: { src: image, alt: title }" width="25" heigh="25">
                 <div class="card-body" data-bind="attr: { id: id }, value: id">
                     <div><strong class="text-muted" data-bind="text: trim(title(), 20)">Title</strong></div>
                     <div><small class="text-muted" data-bind="text: trim(artist(), 20)">Artist</small></div>
@@ -111,6 +103,8 @@
     <script src="https://cdn.jsdelivr.net/npm/knockout.mapping@2.4.3/knockout.mapping.min.js"></script>
 
     <script src="./js/albums.js"></script>
+    <script src="./js/artists.js"></script>
+    <script src="./js/songs.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

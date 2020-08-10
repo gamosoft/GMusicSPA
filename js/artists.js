@@ -15,7 +15,7 @@ ArtistsViewModel = (function () {
             return _artists();
         else
             return ko.utils.arrayFilter(_artists(), function (artist) {
-                return artist.artistName().toLowerCase().indexOf(_artistFilterText().toLowerCase()) > -1;
+                return artist.name().toLowerCase().indexOf(_artistFilterText().toLowerCase()) > -1;
             });
     });
 
