@@ -1,4 +1,4 @@
-const albumUrl = 'http://my-json-server.typicode.com/gamosoft/GMusicSPA/albums';
+const albumUrl = 'https://my-json-server.typicode.com/gamosoft/GMusicSPA/albums';
 
 function trim(value, length) {
     return value.length > length

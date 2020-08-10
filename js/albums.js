@@ -15,7 +15,7 @@ AlbumsViewModel = (function () {
             return _albums();
         else
             return ko.utils.arrayFilter(_albums(), function (album) {
-                return album.albumName().toLowerCase().indexOf(_albumFilterText().toLowerCase()) > -1;
+                return album.title().toLowerCase().indexOf(_albumFilterText().toLowerCase()) > -1;
             });
     });
 
