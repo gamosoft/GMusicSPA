@@ -10,6 +10,8 @@
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />        
     <link href="./css/index.css" rel="stylesheet">
 </head>
 
@@ -44,6 +46,37 @@
     </nav>
 
     <main role="main" class="container-fluid">
+        <!-- <div>
+            <table class="table table-sm table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col"><i class="far fa-clock"></i></th>
+                    <th scope="col"><i class="fas fa-music"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Tender Surrender</td>
+                    <td>10:03</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div> -->
         <div class="card-deck" id="AlbumsViewModel" data-bind="foreach: Albums">
             <div class="card mb-4"> <!-- rounded-circle -->
                 <img class="card-img-top z-depth-0" data-bind="attr: { src: image, alt: title }"

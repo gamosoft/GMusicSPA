@@ -52,27 +52,27 @@
         },
         {
             "id": 9,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "Extra Virgin",
+            "artist": "Olive",
+            "image": "https://upload.wikimedia.org/wikipedia/en/a/a0/Olive-extravirgin.jpg"
         },
         {
             "id": 10,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "Gran Turismo",
+            "artist": "The Cardigans",
+            "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/CardigansGranTurismo.jpg"
         },
         {
             "id": 11,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "Joyride",
+            "artist": "Roxette",
+            "image": "https://upload.wikimedia.org/wikipedia/en/d/dd/Roxette_-_Joyride.png"
         },
         {
             "id": 12,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "Pop Art",
+            "artist": "Transvision Vamp",
+            "image": "https://upload.wikimedia.org/wikipedia/en/f/f8/TransvisionVamp-PopArt.jpg"
         }
     ],
     "artists": [
@@ -88,6 +88,8 @@
             "album": 1,
             "artist": 1,
             "title": "Bad Horsie",
+            "duration": "7:25",
+            "playcount": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -95,6 +97,8 @@
             "album": 1,
             "artist": 1,
             "title": "Juice",
+            "duration": "7:25",
+            "playcount": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -102,6 +106,8 @@
             "album": 1,
             "artist": 1,
             "title": "Die to Live",
+            "duration": "7:25",
+            "playcount": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -109,6 +115,8 @@
             "album": 1,
             "artist": 1,
             "title": "The Boy from Seattle",
+            "duration": "7:25",
+            "playcount": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -116,6 +124,8 @@
             "album": 1,
             "artist": 1,
             "title": "Ya-Yo Gakk",
+            "duration": "7:25",
+            "playcount": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -123,6 +133,8 @@
             "album": 1,
             "artist": 1,
             "title": "Kill the Guy with the Ball",
+            "duration": "7:25",
+            "playcount": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -130,6 +142,8 @@
             "album": 1,
             "artist": 1,
             "title": "Tender Surrender",
+            "duration": "7:25",
+            "playcount": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         }
     ]
