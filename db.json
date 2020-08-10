@@ -4,7 +4,7 @@
             "id": 1,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
-            "coverUrl": "https://upload.wikimedia.org/wikipedia/en/6/6d/SteveVaiAlienLoveSecrets.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/SteveVaiAlienLoveSecrets.jpg",
             "year": "xxxx",
             "genre": "xxxx"
         },
@@ -12,74 +12,125 @@
             "id": 2,
             "title": "Engines of Creation",
             "artist": "Joe Satriani",
-            "coverUrl": "https://upload.wikimedia.org/wikipedia/en/d/d0/Engines_of_Creation_%28Joe_Satriani_album_-_cover_art%29.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/en/d/d0/Engines_of_Creation_%28Joe_Satriani_album_-_cover_art%29.jpg"
         },
         {
             "id": 3,
             "title": "American Idiot",
             "artist": "Green Day",
-            "coverUrl": "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png"
+            "image": "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png"
         },
         {
             "id": 4,
             "title": "Crystal Planet",
             "artist": "Joe Satriani",
-            "coverUrl": "https://upload.wikimedia.org/wikipedia/en/7/7a/Joe_Satriani_-_Crystal_Planet.jpeg"
+            "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Joe_Satriani_-_Crystal_Planet.jpeg"
         },
         {
             "id": 5,
             "title": "The Division Bell",
             "artist": "Pink Floyd",
-            "coverUrl": "https://upload.wikimedia.org/wikipedia/en/6/6e/Pink_Floyd_-_Division_Bell.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/en/6/6e/Pink_Floyd_-_Division_Bell.jpg"
         },
         {
             "id": 6,
             "title": "Electro Glide in Blue",
             "artist": "Apollo 440",
-            "coverUrl": "https://upload.wikimedia.org/wikipedia/en/b/b0/Electroglideinblue.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/en/b/b0/Electroglideinblue.jpg"
         },
         {
             "id": 7,
             "title": "Ex-Maniac",
             "artist": "Babybird",
-            "coverUrl": "https://upload.wikimedia.org/wikipedia/en/9/90/Ex-maniac_%28Babybird_album_-_cover_art%29.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/en/9/90/Ex-maniac_%28Babybird_album_-_cover_art%29.jpg"
         },
         {
             "id": 8,
-            "title": "Alien Love Secrets",
-            "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "title": "Eye in the Sky",
+            "artist": "Alan Parsons Project",
+            "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/TheAlanParsonsProject-EyeintheSky.jpg"
         },
         {
             "id": 9,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
         },
         {
             "id": 10,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
         },
         {
             "id": 11,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
         },
         {
             "id": 12,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
-            "coverUrl": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
+            "image": "https://lh3.googleusercontent.com/A6U3O14lnII4Qi_SiW0QQyePG1eUbIhnF2SJNQQO_6zkmYeA920sgAR81MANVg=w220-c-h220-e100-rwu-v1"
         }
     ],
     "artists": [
         {
             "id": 1,
-            "title": "hello",
-            "coverUrl": ""
+            "name": "Steve Vai",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Steve_Vai_2011.jpg/330px-Steve_Vai_2011.jpg"
+        }
+    ],
+    "songs": [
+        {
+            "id": 1,
+            "album": 1,
+            "artist": 1,
+            "title": "Bad Horsie",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 2,
+            "album": 1,
+            "artist": 1,
+            "title": "Juice",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 3,
+            "album": 1,
+            "artist": 1,
+            "title": "Die to Live",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 4,
+            "album": 1,
+            "artist": 1,
+            "title": "The Boy from Seattle",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 5,
+            "album": 1,
+            "artist": 1,
+            "title": "Ya-Yo Gakk",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 6,
+            "album": 1,
+            "artist": 1,
+            "title": "Kill the Guy with the Ball",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 7,
+            "album": 1,
+            "artist": 1,
+            "title": "Tender Surrender",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         }
     ]
 }

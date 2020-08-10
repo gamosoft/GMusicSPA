@@ -43,20 +43,18 @@
         </div>
     </nav>
 
-    <main role="main" class="container">
+    <main role="main" class="container-fluid">
         <div class="card-deck" id="AlbumsViewModel" data-bind="foreach: Albums">
-            <div class="card mb-4" style="width: 5rem">
-                <img class="card-img-top rounded-circle z-depth-0" data-bind="attr: { src: coverUrl, alt: title }"
+            <div class="card mb-4"> <!-- rounded-circle -->
+                <img class="card-img-top z-depth-0" data-bind="attr: { src: image, alt: title }"
                     width="25" heigh="25">
                 <div class="card-body" data-bind="attr: { id: id }, value: id">
-                    <h5 class="card-title" data-bind="text: trim(title(), 20)">Title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted" data-bind="text: trim(artist(), 20)">Artist</h6>
-                    <p class="card-text">Bla.</p>
+                    <div><strong class="text-muted" data-bind="text: trim(title(), 20)">Title</strong></div>
+                    <div><small class="text-muted" data-bind="text: trim(artist(), 20)">Artist</small></div>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                    <a href="#" class="card-link">Play Album</a>
-                    <a href="#" class="card-link">Shuffle Album</a>
+                    <small><a href="#" class="card-link">Play Album</a></small>
+                    <small><a href="#" class="card-link">Shuffle Album</a></small>
                 </div>
             </div>
         </div>
