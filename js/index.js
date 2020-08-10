@@ -31,7 +31,7 @@ async function loadSongs() {
     const response = await fetch(`${songsUrl}`);
     const data = await response.json();
     SongsViewModel.LoadSongs(data);
-    $('.song').click(songClicked);
+    $('.song').click(MediaPlayer.PlaySong);
 }
 
 $(() => {
