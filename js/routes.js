@@ -1,51 +1,51 @@
 let app = $.sammy(function () {
     this.get('#/albums', function () {
-        $('#ArtistsViewModel').hide();
-        $('#AlbumsViewModel').show();
-        $('#SongsViewModel').hide();
+        $('#artistsList').hide();
+        $('#albumsList').show();
+        $('#albumDetail').hide();
+        $('#songsList').hide();
         $('.nav-item').removeClass('active');
         $('#albumsLink').addClass('active');
         loadAlbums();
-        // loadAlbums().then(ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel')));
     });
     this.get('#/albums/:albumId', function(context) {
         const albumId = this.params['albumId'];
-        $('#ArtistsViewModel').hide();
-        $('#AlbumsViewModel').show();
-        $('#SongsViewModel').show();
+        $('#artistsList').hide();
+        $('#albumsList').hide();
+        $('#albumDetail').show();
+        $('#songsList').show();
         $('.nav-item').removeClass('active');
         $('#albumsLink').addClass('active');
         loadAlbums(null, albumId);
         loadSongs(albumId);
-        // loadSongs(albumId).then(ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel')));
       });
     this.get('#/artists', function () {
-        $('#ArtistsViewModel').show();
-        $('#AlbumsViewModel').hide();
-        $('#SongsViewModel').hide();
+        $('#artistsList').show();
+        $('#albumsList').hide();
+        $('#albumDetail').hide();
+        $('#songsList').hide();
         $('.nav-item').removeClass('active');
         $('#artistsLink').addClass('active');
         loadArtists();
-        // loadArtists().then(ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel')));
     });
     this.get('#/artists/:artistId', function () {
         const artistId = this.params['artistId'];
-        $('#ArtistsViewModel').hide();
-        $('#AlbumsViewModel').show();
-        $('#SongsViewModel').hide();
+        $('#artistsList').hide();
+        $('#albumsList').show();
+        $('#albumDetail').hide();
+        $('#songsList').hide();
         $('.nav-item').removeClass('active');
         $('#artistsLink').addClass('active');
         loadAlbums(artistId, null);
-        // loadArtists().then(ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel')));
     });
     this.get('#/songs', function () {
-        $('#ArtistsViewModel').hide();
-        $('#AlbumsViewModel').hide();
-        $('#SongsViewModel').show();
+        $('#artistsList').hide();
+        $('#albumsList').hide();
+        $('#albumDetail').hide();
+        $('#songsList').show();
         $('.nav-item').removeClass('active');
         $('#songsLink').addClass('active');
         loadSongs();
-        // loadSongs().then(ko.applyBindings(SongsViewModel, document.getElementById('SongsViewModel')));
     });
     this.notFound = function () {
         // TODO: Handle this with a default page

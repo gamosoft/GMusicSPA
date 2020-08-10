@@ -50,7 +50,7 @@ async function loadSongs(albumId) {
 $(() => {
     app.run('#/albums');
     $('#nowPlaying').hide();
-    ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel'));
-    ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel'));
-    ko.applyBindings(SongsViewModel, document.getElementById('SongsViewModel'));
+    ko.applyBindings(AlbumsViewModel, document.getElementById('albumsList'));
+    ko.applyBindings(ArtistsViewModel, document.getElementById('artistsList'));
+    ko.applyBindings(SongsViewModel, document.getElementById('songsList'));
 });
