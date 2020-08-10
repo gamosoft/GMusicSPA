@@ -114,16 +114,6 @@
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
-            "id": 3,
-            "album": 1,
-            "artist": 1,
-            "title": "Die to Live",
-            "duration": "7:25",
-            "playcount": "3",
-            "trackno": "3",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        },
-        {
             "id": 4,
             "album": 1,
             "artist": 1,
@@ -131,26 +121,6 @@
             "duration": "7:25",
             "playcount": "3",
             "trackno": "4",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        },
-        {
-            "id": 5,
-            "album": 1,
-            "artist": 1,
-            "title": "Ya-Yo Gakk",
-            "duration": "7:25",
-            "playcount": "3",
-            "trackno": "5",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        },
-        {
-            "id": 6,
-            "album": 1,
-            "artist": 1,
-            "title": "Kill the Guy with the Ball",
-            "duration": "7:25",
-            "playcount": "3",
-            "trackno": "6",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -181,16 +151,6 @@
             "duration": "5:32",
             "playcount": "2",
             "trackno": "2",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        },
-        {
-            "id": 9,
-            "album": 2,
-            "artist": 2,
-            "title": "Borg Sex",
-            "duration": "5:32",
-            "playcount": "2",
-            "trackno": "3",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {

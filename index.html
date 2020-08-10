@@ -39,15 +39,16 @@
                     <a class="nav-link disabled" href="#">Genres</a>
                 </li>
                 <li>
-                    <audio id="musicPlayer" controls="controls">
-                        Your browser does not support the HTML5 Audio element.
-                    </audio>
+                    <a href=""><i class="fa fa-play"></i></a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <!-- data-bind="value: AlbumFilterText, valueUpdate: 'keyup'" -->
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                <audio id="musicPlayer" controls="controls" style="display: none;">
+                    Your browser does not support the HTML5 Audio element.
+                </audio>
             </form>
         </div>
     </nav>
