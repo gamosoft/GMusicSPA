@@ -9,6 +9,10 @@ MediaPlayer = (function () {
     function _play(url) {
         if (url)
             $('#musicPlayer').attr('src', url);
+        
+        if (!$('#musicPlayer').attr('src'))
+            return;
+            
         $('#musicPlayer')[0].play();
         $('#nowPlaying').show();
     }
