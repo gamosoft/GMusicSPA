@@ -4,6 +4,7 @@
             "id": 1,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
+            "artistid": 1,
             "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/SteveVaiAlienLoveSecrets.jpg",
             "year": "xxxx",
             "genre": "xxxx"
@@ -12,24 +13,28 @@
             "id": 2,
             "title": "Engines of Creation",
             "artist": "Joe Satriani",
+            "artistid": 2,
             "image": "https://upload.wikimedia.org/wikipedia/en/d/d0/Engines_of_Creation_%28Joe_Satriani_album_-_cover_art%29.jpg"
         },
         {
             "id": 3,
             "title": "American Idiot",
             "artist": "Green Day",
+            "artistid": 4,
             "image": "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png"
         },
         {
             "id": 4,
             "title": "Crystal Planet",
             "artist": "Joe Satriani",
+            "artistid": 2,
             "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Joe_Satriani_-_Crystal_Planet.jpeg"
         },
         {
             "id": 5,
             "title": "The Division Bell",
             "artist": "Pink Floyd",
+            "artistid": 3,
             "image": "https://upload.wikimedia.org/wikipedia/en/6/6e/Pink_Floyd_-_Division_Bell.jpg"
         },
         {
@@ -90,13 +95,18 @@
             "id": 3,
             "name": "Pink Floyd",
             "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Pink_Floyd_-_all_members.jpg/250px-Pink_Floyd_-_all_members.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Green Day",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/RiP2013_GreenDay_Billie_Joe_Armstrong_0021.jpg/330px-RiP2013_GreenDay_Billie_Joe_Armstrong_0021.jpg"
         }
     ],
     "songs": [
         {
             "id": 1,
-            "album": 1,
-            "artist": 1,
+            "albumid": 1,
+            "artistid": 1,
             "title": "Bad Horsie",
             "duration": "7:25",
             "playcount": "3",
@@ -105,8 +115,8 @@
         },
         {
             "id": 2,
-            "album": 1,
-            "artist": 1,
+            "albumid": 1,
+            "artistid": 1,
             "title": "Juice",
             "duration": "7:25",
             "playcount": "3",
@@ -115,8 +125,8 @@
         },
         {
             "id": 4,
-            "album": 1,
-            "artist": 1,
+            "albumid": 1,
+            "artistid": 1,
             "title": "The Boy from Seattle",
             "duration": "7:25",
             "playcount": "3",
@@ -125,8 +135,8 @@
         },
         {
             "id": 7,
-            "album": 1,
-            "artist": 1,
+            "albumid": 1,
+            "artistid": 1,
             "title": "Tender Surrender",
             "duration": "7:25",
             "playcount": "3",
@@ -135,8 +145,8 @@
         },
         {
             "id": 8,
-            "album": 2,
-            "artist": 2,
+            "albumid": 2,
+            "artistid": 2,
             "title": "Devil's Slide",
             "duration": "5:32",
             "playcount": "2",
@@ -145,8 +155,8 @@
         },
         {
             "id": 9,
-            "album": 2,
-            "artist": 2,
+            "albumid": 2,
+            "artistid": 2,
             "title": "Flavor Crystal 7",
             "duration": "5:32",
             "playcount": "2",
@@ -155,8 +165,8 @@
         },
         {
             "id": 10,
-            "album": 2,
-            "artist": 2,
+            "albumid": 2,
+            "artistid": 2,
             "title": "Until We Say Goodbye",
             "duration": "5:32",
             "playcount": "2",
@@ -165,8 +175,8 @@
         },
         {
             "id": 11,
-            "album": 2,
-            "artist": 2,
+            "albumid": 2,
+            "artistid": 2,
             "title": "Attack",
             "duration": "5:32",
             "playcount": "2",
@@ -175,8 +185,8 @@
         },
         {
             "id": 12,
-            "album": 2,
-            "artist": 2,
+            "albumid": 2,
+            "artistid": 2,
             "title": "Champagne?",
             "duration": "5:32",
             "playcount": "2",
@@ -185,8 +195,8 @@
         },
         {
             "id": 14,
-            "album": 5,
-            "artist": 3,
+            "albumid": 5,
+            "artistid": 3,
             "title": "What Do You Want From Me",
             "duration": "6:42",
             "playcount": "4",
@@ -195,8 +205,8 @@
         },
         {
             "id": 15,
-            "album": 5,
-            "artist": 3,
+            "albumid": 5,
+            "artistid": 3,
             "title": "Poles Apart",
             "duration": "6:42",
             "playcount": "4",
@@ -205,8 +215,8 @@
         },
         {
             "id": 16,
-            "album": 5,
-            "artist": 3,
+            "albumid": 5,
+            "artistid": 3,
             "title": "Marooned",
             "duration": "6:42",
             "playcount": "4",
@@ -215,8 +225,8 @@
         },
         {
             "id": 17,
-            "album": 5,
-            "artist": 3,
+            "albumid": 5,
+            "artistid": 3,
             "title": "A Great Day for Freedom",
             "duration": "6:42",
             "playcount": "4",
@@ -225,8 +235,8 @@
         },
         {
             "id": 19,
-            "album": 5,
-            "artist": 3,
+            "albumid": 5,
+            "artistid": 3,
             "title": "Take it Back",
             "duration": "6:42",
             "playcount": "4",
@@ -235,8 +245,8 @@
         },
         {
             "id": 20,
-            "album": 5,
-            "artist": 3,
+            "albumid": 5,
+            "artistid": 3,
             "title": "Coming Back to Life",
             "duration": "6:42",
             "playcount": "4",
