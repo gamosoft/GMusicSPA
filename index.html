@@ -26,16 +26,16 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Albums <span class="sr-only">(current)</span></a>
+                <li id="albumsLink" class="nav-item">
+                    <a class="nav-link" href="#/albums">Albums</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Artists</a>
+                <li id="artistsLink" class="nav-item">
+                    <a class="nav-link" href="#/artists">Artists</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Songs</a>
+                <li id="songsLink" class="nav-item">
+                    <a class="nav-link" href="#/songs">Songs</a>
                 </li>
-                <li class="nav-item">
+                <li id="genresLink" class="nav-item">
                     <a class="nav-link disabled" href="#">Genres</a>
                 </li>
                 <li>
@@ -125,6 +125,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"
         integrity="sha256-Tjl7WVgF1hgGMgUKZZfzmxOrtoSf8qltZ9wMujjGNQk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/knockout.mapping@2.4.3/knockout.mapping.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.6/sammy.min.js"
+        integrity="sha512-P0qL6322HXDfrw8EsI8yQVGGc1+SSAZm5AWOYjPTrlZDQLX229heMa1XTOloWwynwxwWh2ElN3/GNoG1wT5r8Q==" crossorigin="anonymous"></script>
 
     <script src="./js/albums.js"></script>
     <script src="./js/artists.js"></script>
