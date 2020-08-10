@@ -6,20 +6,24 @@ function songClicked(evt) {
 
 function play() {
     $('#musicPlayer')[0].play();
+    $('#nowPlaying').show();
 }
 
 function play(url) {
     $('#musicPlayer').attr('src', url);
     $('#musicPlayer')[0].play();
+    $('#nowPlaying').show();
 }
 
 function pause() {
     $('#musicPlayer')[0].pause();
+    $('#nowPlaying').hide();
 }
 
 function stop() {
     $('#musicPlayer')[0].pause();
     $('#musicPlayer')[0].currentTime = 0;
+    $('#nowPlaying').hide();
 }
 
 function previous() {

@@ -35,6 +35,7 @@ async function loadSongs() {
 }
 
 $(() => {
+    $('#nowPlaying').hide();
     loadAlbums().then(ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel')));
     loadArtists().then(ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel')));
     loadSongs().then(ko.applyBindings(SongsViewModel, document.getElementById('SongsViewModel')));
