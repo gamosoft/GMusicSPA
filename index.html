@@ -38,6 +38,11 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Genres</a>
                 </li>
+                <li>
+                    <audio id="musicPlayer" controls="controls">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <!-- data-bind="value: AlbumFilterText, valueUpdate: 'keyup'" -->
@@ -60,8 +65,13 @@
                 </thead>
                 <tbody data-bind="foreach: Songs">
                     <tr>
-                        <th scope="row" data-bind="attr: { id: id }, value: id, text: id">@</th>
-                        <td data-bind="text: trim(title(), 20)">Title</td>
+                        <th scope="row" data-bind="attr: { id: id }, value: id, text: id">1</th>
+                        <td data-bind="text: trim(title(), 20), attr: { title: title }"></td>
+                        <td> <!-- Only one player in the screen, use JS to play, pause, etc... -->
+                            <audio width="10px" controls="controls" data-bind="attr: { src: url }">
+                                Your browser does not support the HTML5 Audio element.
+                            </audio>
+                        </td>
                         <td data-bind="text: duration">00:00</td>
                         <td data-bind="text: playcount">&nbsp;</td>
                     </tr>
@@ -72,10 +82,10 @@
             <!-- AlbumsFiltered -->
             <div class="card mb-4">
                 <!-- rounded-circle -->
-                <img class="card-img-top z-depth-0" data-bind="attr: { src: image, alt: title }" width="25" heigh="25">
+                <img class="card-img-top z-depth-0" data-bind="attr: { src: image, title: title }" width="25" heigh="25">
                 <div class="card-body" data-bind="attr: { id: id }, value: id">
-                    <div><strong class="text-muted" data-bind="text: trim(title(), 20)">Title</strong></div>
-                    <div><small class="text-muted" data-bind="text: trim(artist(), 20)">Artist</small></div>
+                    <div><strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></div>
+                    <div><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></div>
                 </div>
                 <div class="card-footer">
                     <small><a href="#" class="card-link">Play Album</a></small>
