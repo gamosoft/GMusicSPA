@@ -1,5 +1,7 @@
 MediaPlayer = (function () {
 
+    let _mediaPlayer = $('#musicPlayer')[0];
+
     function _playSong(evt) {
         const id = parseInt($(evt.currentTarget).attr('id')); // target gives the clicked element, currentTarget gives the element the event is attached to
         const url = $(evt.currentTarget).attr('url');
@@ -8,23 +10,27 @@ MediaPlayer = (function () {
 
     function _play(url) {
         if (url)
-            $('#musicPlayer').attr('src', url);
+            $(_mediaPlayer).attr('src', url);
         
-        if (!$('#musicPlayer').attr('src'))
+        if (!$(_mediaPlayer).attr('src'))
             return;
-            
-        $('#musicPlayer')[0].play();
+
+        _mediaPlayer.play();
         $('#nowPlaying').show();
     }
 
     function _pause() {
-        $('#musicPlayer')[0].pause();
-        $('#nowPlaying').hide();
+        if (_mediaPlayer.paused && _mediaPlayer.currentTime != 0)
+            _play()
+        else {
+            _mediaPlayer.pause();
+            $('#nowPlaying').hide();
+        }
     }
 
     function _stop() {
-        $('#musicPlayer')[0].pause();
-        $('#musicPlayer')[0].currentTime = 0;
+        _mediaPlayer.pause();
+        _mediaPlayer.currentTime = 0;
         $('#nowPlaying').hide();
     }
 
