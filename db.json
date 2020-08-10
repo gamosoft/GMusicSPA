@@ -101,7 +101,7 @@
             "duration": "7:25",
             "playcount": "3",
             "trackno": "1",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 2,
@@ -111,7 +111,7 @@
             "duration": "7:25",
             "playcount": "3",
             "trackno": "2",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 4,
@@ -121,7 +121,7 @@
             "duration": "7:25",
             "playcount": "3",
             "trackno": "4",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 7,
@@ -131,7 +131,7 @@
             "duration": "7:25",
             "playcount": "3",
             "trackno": "7",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 8,
@@ -141,7 +141,7 @@
             "duration": "5:32",
             "playcount": "2",
             "trackno": "1",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 9,
@@ -151,7 +151,7 @@
             "duration": "5:32",
             "playcount": "2",
             "trackno": "2",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 10,
@@ -161,7 +161,7 @@
             "duration": "5:32",
             "playcount": "2",
             "trackno": "4",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 11,
@@ -171,7 +171,7 @@
             "duration": "5:32",
             "playcount": "2",
             "trackno": "5",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 12,
@@ -181,7 +181,7 @@
             "duration": "5:32",
             "playcount": "2",
             "trackno": "6",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 14,
@@ -191,7 +191,7 @@
             "duration": "6:42",
             "playcount": "4",
             "trackno": "2",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 15,
@@ -201,7 +201,7 @@
             "duration": "6:42",
             "playcount": "4",
             "trackno": "3",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 16,
@@ -211,7 +211,7 @@
             "duration": "6:42",
             "playcount": "4",
             "trackno": "4",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 17,
@@ -221,7 +221,7 @@
             "duration": "6:42",
             "playcount": "4",
             "trackno": "5",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 19,
@@ -231,7 +231,7 @@
             "duration": "6:42",
             "playcount": "4",
             "trackno": "7",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
             "id": 20,
@@ -241,7 +241,7 @@
             "duration": "6:42",
             "playcount": "4",
             "trackno": "8",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+            "url": "./mp3/bensound-adventure.mp3"
         }
     ]
 }
