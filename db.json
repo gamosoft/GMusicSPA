@@ -184,16 +184,6 @@
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
-            "id": 13,
-            "album": 5,
-            "artist": 3,
-            "title": "Cluster One",
-            "duration": "6:42",
-            "playcount": "4",
-            "trackno": "1",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        },
-        {
             "id": 14,
             "album": 5,
             "artist": 3,
@@ -231,16 +221,6 @@
             "duration": "6:42",
             "playcount": "4",
             "trackno": "5",
-            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        },
-        {
-            "id": 18,
-            "album": 5,
-            "artist": 3,
-            "title": "Wearing the Inside Out",
-            "duration": "6:42",
-            "playcount": "4",
-            "trackno": "6",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
