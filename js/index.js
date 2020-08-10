@@ -20,7 +20,7 @@ async function loadAlbums(artistId, albumId) {
             : albumsUrl;
 
     url = albumId
-            ? `${url}&id=${albumId}`
+            ? `${url}?id=${albumId}`
             : url;
 
     const response = await fetch(url);
