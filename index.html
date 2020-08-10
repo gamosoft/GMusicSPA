@@ -39,7 +39,11 @@
                     <a class="nav-link disabled" href="#">Genres</a>
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-play"></i></a>
+                    <a href="#"><i class="fa fa-step-backward"></i></a>
+                    <a href="#"><i class="fa fa-play"></i></a>
+                    <a href="#" onclick="pause()"><i class="fa fa-pause"></i></a>
+                    <a href="#" onclick="stop()"><i class="fa fa-stop"></i></a>
+                    <a href="#"><i class="fa fa-step-forward"></i></a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -67,14 +71,9 @@
                 <tbody data-bind="foreach: Songs">
                     <tr>
                         <th scope="row" data-bind="attr: { id: id, src: url }, text: trackno">1</th>
-                        <td data-bind="text: trim(title(), 20), attr: { title: title }"></td>
+                        <td class="song" data-bind="text: trim(title(), 20), attr: { id: id, url: url, title: title }">Title</td>
                         <td data-bind="text: duration">00:00</td>
                         <td data-bind="text: playcount">&nbsp;</td>
-                        <td> <!-- Only one player in the screen, use JS to play, pause, etc... -->
-                            <audio width="10px" controls="controls" data-bind="attr: { src: url }">
-                                Your browser does not support the HTML5 Audio element.
-                            </audio>
-                        </td>
                     </tr>
                 </tbody>
             </table>
