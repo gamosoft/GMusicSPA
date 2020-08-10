@@ -12,9 +12,13 @@ function trim(value, length) {
         : value;
 }
 
-async function loadAlbums() {
+async function loadAlbums(artistId) {
     // Fetch album information
-    const response = await fetch(`${albumsUrl}`);
+    let url = artistId
+            ? `${albumsUrl}?artistid=${artistId}`
+            : albumsUrl;
+
+    const response = await fetch(url);
     const data = await response.json();
     AlbumsViewModel.LoadAlbums(data);
 }
@@ -26,9 +30,13 @@ async function loadArtists() {
     ArtistsViewModel.LoadArtists(data);
 }
 
-async function loadSongs() {
+async function loadSongs(albumId) {
     // Fetch song information
-    const response = await fetch(`${songsUrl}`);
+    let url = albumId
+            ? `${songsUrl}?albumid=${albumId}`
+            : songsUrl;
+
+    const response = await fetch(url);
     const data = await response.json();
     SongsViewModel.LoadSongs(data);
     $('.song').click(MediaPlayer.PlaySong);
@@ -37,7 +45,7 @@ async function loadSongs() {
 $(() => {
     app.run('#/albums');
     $('#nowPlaying').hide();
-    loadAlbums().then(ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel')));
-    loadArtists().then(ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel')));
-    loadSongs().then(ko.applyBindings(SongsViewModel, document.getElementById('SongsViewModel')));
+    ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel'));
+    ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel'));
+    ko.applyBindings(SongsViewModel, document.getElementById('SongsViewModel'));
 });
