@@ -15,7 +15,7 @@
     <link href="./css/index.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="AlbumsViewModel">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#"><img src="./images/google-play-music-logo.png" width="20" height="20">&nbsp;GMusic SPA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -39,7 +39,7 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" data-bind="value: AlbumFilterText, valueUpdate: 'keyup'">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -77,7 +77,7 @@
                 </tbody>
               </table>
         </div> -->
-        <div class="card-deck" id="AlbumsViewModel" data-bind="foreach: Albums">
+        <div class="card-deck" data-bind="foreach: AlbumsFiltered">
             <div class="card mb-4"> <!-- rounded-circle -->
                 <img class="card-img-top z-depth-0" data-bind="attr: { src: image, alt: title }"
                     width="25" heigh="25">
