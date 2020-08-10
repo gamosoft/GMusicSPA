@@ -15,6 +15,7 @@ let app = $.sammy(function () {
         $('#SongsViewModel').show();
         $('.nav-item').removeClass('active');
         $('#albumsLink').addClass('active');
+        loadAlbums(null, albumId);
         loadSongs(albumId);
         // loadSongs(albumId).then(ko.applyBindings(AlbumsViewModel, document.getElementById('AlbumsViewModel')));
       });
@@ -34,7 +35,7 @@ let app = $.sammy(function () {
         $('#SongsViewModel').hide();
         $('.nav-item').removeClass('active');
         $('#artistsLink').addClass('active');
-        loadAlbums(artistId);
+        loadAlbums(artistId, null);
         // loadArtists().then(ko.applyBindings(ArtistsViewModel, document.getElementById('ArtistsViewModel')));
     });
     this.get('#/songs', function () {

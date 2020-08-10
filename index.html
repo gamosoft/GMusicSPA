@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div id="AlbumsViewModel" class="card-deck" data-bind="foreach: Albums">
+        <div id="AlbumsViewModel" class="card-deck" data-bind="foreach: Albums, visible: Albums().length > 0">
             <!-- AlbumsFiltered -->
             <div class="card mb-4">
                 <a data-bind="attr: { href: '#/albums/'+id() }"><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>

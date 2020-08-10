@@ -5,6 +5,7 @@ const songsUrl = `${baseUrl}/songs`;
 
 // Filter like this
 // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
+// TODO: Cache of requests
 
 function trim(value, length) {
     return value.length > length
@@ -12,11 +13,15 @@ function trim(value, length) {
         : value;
 }
 
-async function loadAlbums(artistId) {
+async function loadAlbums(artistId, albumId) {
     // Fetch album information
     let url = artistId
             ? `${albumsUrl}?artistid=${artistId}`
             : albumsUrl;
+
+    url = albumId
+            ? `${url}&id=${albumId}`
+            : url;
 
     const response = await fetch(url);
     const data = await response.json();
