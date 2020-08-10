@@ -38,24 +38,11 @@
                 <li id="genresLink" class="nav-item">
                     <a class="nav-link disabled" href="#">Genres</a>
                 </li>
-                <li>
-                    <span class="align-middle">
-                        <a href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward"></i></a>
-                        <a href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play"></i></a>
-                        <a href="#" onclick="MediaPlayer.Pause()"><i class="fa fa-pause"></i></a>
-                        <a href="#" onclick="MediaPlayer.Stop()"><i class="fa fa-stop"></i></a>
-                        <a href="#" onclick="MediaPlayer.Next()"><i class="fa fa-step-forward"></i></a>
-                        <a href="#"><i id="nowPlaying" class="fa fa-spinner fa-spin"></i></a>
-                    </span>
-                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <!-- data-bind="value: AlbumFilterText, valueUpdate: 'keyup'" -->
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                <audio id="musicPlayer" controls="controls" style="display: none;">
-                    Your browser does not support the HTML5 Audio element.
-                </audio>
             </form>
         </div>
     </nav>
@@ -79,6 +66,7 @@
                         <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Alien Love Secrets</strong>
                         <a href="#" onclick="MediaPlayer.Play()"><i class="far fa-play-circle"></i></a>
                         <a href=""><i class="fas fa-random"></i></a>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                     </div>
                     <div>
                         <small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Steve Vai</small>
@@ -135,6 +123,44 @@
             </table>
         </div>
     </main><!-- /.container -->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Pause()"><i class="fa fa-pause"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Stop()"><i class="fa fa-stop"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Next()"><i class="fa fa-step-forward"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i id="nowPlaying" class="fa fa-spinner fa-spin"></i></a>
+                </li>
+            </ul>
+            <audio id="musicPlayer" controls="controls" style="display: none;">
+                Your browser does not support the HTML5 Audio element.
+            </audio>
+        </div>
+        <div class="float-right">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-volume-up"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-stream"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
