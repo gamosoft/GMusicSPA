@@ -81,13 +81,8 @@
         <div id="ArtistsViewModel" class="card-deck" data-bind="foreach: Artists">
             <div class="card mb-4">
                 <img class="card-img-top rounded-circle z-depth-0 media-artist" data-bind="attr: { src: image, title: name }">
-                <div class="card-body" data-bind="attr: { id: id }, value: id">
-                    <div><strong class="text-muted" data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></div>
-                    <div><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></div>
-                </div>
                 <div class="card-footer">
-                    <small><a href="#" class="card-link">Play Album</a></small>
-                    <small><a href="#" class="card-link">Shuffle Album</a></small>
+                    <div class="text-center"><strong class="text-muted" data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></div>
                 </div>
             </div>
         </div>
