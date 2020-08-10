@@ -40,6 +40,10 @@ function songClicked(evt) {
     play(url);
 }
 
+function play() {
+    $('#musicPlayer')[0].play();
+}
+
 function play(url) {
     $('#musicPlayer').attr('src', url);
     $('#musicPlayer')[0].play();
@@ -50,7 +54,8 @@ function pause() {
 }
 
 function stop() {
-    $('#musicPlayer')[0].pause(); // TODO: Stop?
+    $('#musicPlayer')[0].pause();
+    $('#musicPlayer')[0].currentTime = 0;
 }
 
 $(() => {
