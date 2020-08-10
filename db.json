@@ -90,7 +90,7 @@
             "id": 3,
             "name": "Pink Floyd",
             "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Pink_Floyd_-_all_members.jpg/250px-Pink_Floyd_-_all_members.jpg"
-        }        
+        }
     ],
     "songs": [
         {
@@ -100,6 +100,7 @@
             "title": "Bad Horsie",
             "duration": "7:25",
             "playcount": "3",
+            "trackno": "1",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -109,6 +110,7 @@
             "title": "Juice",
             "duration": "7:25",
             "playcount": "3",
+            "trackno": "1",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -118,6 +120,7 @@
             "title": "Die to Live",
             "duration": "7:25",
             "playcount": "3",
+            "trackno": "1",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -127,6 +130,7 @@
             "title": "The Boy from Seattle",
             "duration": "7:25",
             "playcount": "3",
+            "trackno": "1",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -136,6 +140,7 @@
             "title": "Ya-Yo Gakk",
             "duration": "7:25",
             "playcount": "3",
+            "trackno": "1",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -145,6 +150,7 @@
             "title": "Kill the Guy with the Ball",
             "duration": "7:25",
             "playcount": "3",
+            "trackno": "1",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         },
         {
@@ -154,6 +160,67 @@
             "title": "Tender Surrender",
             "duration": "7:25",
             "playcount": "3",
+            "trackno": "1",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 8,
+            "album": 2,
+            "artist": 2,
+            "title": "Devil's Slide",
+            "duration": "5:32",
+            "playcount": "2",
+            "trackno": "1",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 9,
+            "album": 2,
+            "artist": 2,
+            "title": "Flavor Crystal 7",
+            "duration": "5:32",
+            "playcount": "2",
+            "trackno": "1",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 9,
+            "album": 2,
+            "artist": 2,
+            "title": "Borg Sex",
+            "duration": "5:32",
+            "playcount": "2",
+            "trackno": "1",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 10,
+            "album": 2,
+            "artist": 2,
+            "title": "Until We Say Goodbye",
+            "duration": "5:32",
+            "playcount": "2",
+            "trackno": "1",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 11,
+            "album": 2,
+            "artist": 2,
+            "title": "Attack",
+            "duration": "5:32",
+            "playcount": "2",
+            "trackno": "1",
+            "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
+        },
+        {
+            "id": 12,
+            "album": 2,
+            "artist": 2,
+            "title": "Champagne?",
+            "duration": "5:32",
+            "playcount": "2",
+            "trackno": "1",
             "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
         }
     ]

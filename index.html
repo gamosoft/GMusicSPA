@@ -65,7 +65,7 @@
                 </thead>
                 <tbody data-bind="foreach: Songs">
                     <tr>
-                        <th scope="row" data-bind="attr: { id: id, src: url }, value: id, text: id">1</th>
+                        <th scope="row" data-bind="attr: { id: id, src: url }, text: trackno">1</th>
                         <td data-bind="text: trim(title(), 20), attr: { title: title }"></td>
                         <td data-bind="text: duration">00:00</td>
                         <td data-bind="text: playcount">&nbsp;</td>
