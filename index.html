@@ -36,7 +36,7 @@
                     <a class="nav-link" href="#/songs">Songs</a>
                 </li>
                 <li id="genresLink" class="nav-item">
-                    <a class="nav-link" href="#/genres">Genres</a>
+                    <a class="nav-link disabled" href="#/genres">Genres</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -124,29 +124,29 @@
         </div>
     </main><!-- /.container -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom mb-2">
         <div class="howtocenterthis">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward"></i></a>
+                <li class="nav-item fa-stack fa-1x">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward fa-stack-1x"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play-circle fa-2x"></i></a>
+                <li class="nav-item fa-stack fa-1x">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play-circle fa-stack-2x"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Pause()"><i class="fa fa-pause"></i></a>
+                <li class="nav-item fa-stack fa-1x">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Pause()"><i class="fa fa-pause-circle fa-stack-1x"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Stop()"><i class="fa fa-stop"></i></a>
+                <li class="nav-item fa-stack fa-1x">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Next()"><i class="fa fa-step-forward"></i></a>
+                <li class="nav-item fa-stack fa-1x">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Next()"><i class="fa fa-step-forward fa-stack-1x"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Shuffle()"><i class="fa fa-random"></i></a>
+                <li class="nav-item fa-stack fa-1x">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Shuffle()"><i class="fa fa-random fa-stack-1x"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i id="nowPlaying" class="fa fa-spinner fa-spin"></i></a>
+                <li class="nav-item fa-stack fa-1x">
+                    <a class="nav-link" href="#"><i id="nowPlaying" class="fa fa-spinner fa-spin fa-stack-1x"></i></a>
                 </li>
             </ul>
             <audio id="musicPlayer" controls="controls" style="display: none;">
