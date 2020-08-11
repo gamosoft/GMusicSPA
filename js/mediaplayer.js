@@ -1,7 +1,7 @@
 MediaPlayer = (function () {
 
+    const _playButtonClass = '.play-button';
     let _mediaPlayer = $('#musicPlayer')[0];
-    let _playButtons = $('.play-button'); // All play buttons in the page
 
     function _playSong(evt) {
         const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
@@ -16,18 +16,20 @@ MediaPlayer = (function () {
         if (!$(_mediaPlayer).attr('src'))
             return;
 
+        let _playButtons = $(_playButtonClass); // All play buttons in the page, need to do it here since it must be reevaluated due to possible new elements
         if (_mediaPlayer.paused) {
-            _mediaPlayer.play();
             $('#nowPlaying').show();
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
+            _mediaPlayer.play();
         } else {
-            _mediaPlayer.pause();
             $('#nowPlaying').hide();
             $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
+            _mediaPlayer.pause();
         }
     }
 
     function _stop() {
+        let _playButtons = $(_playButtonClass); // All play buttons in the page
         _mediaPlayer.pause();
         _mediaPlayer.currentTime = 0;
         $('#nowPlaying').hide();
