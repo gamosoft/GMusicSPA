@@ -58,27 +58,34 @@
                 </div>
             </div>
         </div>
-        <div id="albumDetail" class="row" data-bind="foreach: Albums">
+        <div id="albumDetail" class="row mb-2" data-bind="foreach: Albums">
             <div class="col">
-                <a data-bind="attr: { href: '#/albums/'+albumid() }"><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>
                 <div data-bind="attr: { id: albumid }">
-                    <div>
-                        <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Alien Love Secrets</strong>
-                        <a href="#" onclick="MediaPlayer.Play()"><i class="far fa-play-circle"></i></a>
-                        <a href=""><i class="fas fa-random"></i></a>
-                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                    <div style="display: inline-block">
+                        <img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }">
                     </div>
-                    <div>
-                        <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
-                    </div>
-                    <div>
-                        <small class="text-muted" data-bind="text: year">xxxx</small>
-                        •
-                        <small class="text-muted" data-bind="text: year">7 songs</small>
-                        •
-                        <small class="text-muted">50:09</small>
-                        •
-                        <small class="text-muted" data-bind="text: genre">xxxx</small>
+                    <div style="display: inline-block" class="align-middle">
+                        <div>
+                            <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Alien Love Secrets</strong>
+                            <a href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play-circle fa-2x"></i></a>
+                        </div>
+                        <div>
+                            <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                        </div>
+                        <div class="mb-2">
+                            <small class="text-muted" data-bind="text: year">xxxx</small>
+                            <small class="text-muted">•</small>
+                            <small class="text-muted" data-bind="text: year">7 songs</small>
+                            <small class="text-muted">•</small>
+                            <small class="text-muted">50:09</small>
+                            <small class="text-muted">•</small>
+                            <small class="text-muted" data-bind="text: genre">xxxx</small>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-primary"><i class="fa fa-compact-disc"></i>&nbsp;INSTANT MIX</button>
+                            <button class="btn btn-sm btn-primary"><i class="fa fa-random"></i>&nbsp;SHUFFLE</button>
+                            <button class="btn btn-sm btn-primary"><i class="fa fa-ellipsis-v"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,7 +104,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="card-link" onclick="MediaPlayer.PlayAlbum(1)"><i class="far fa-play-circle"></i></a>
+                    <a href="#" class="card-link" onclick="MediaPlayer.PlayAlbum(1)"><i class="fa fa-play-circle"></i></a>
                     <a href="#" class="card-link" onclick="MediaPlayer.Shuffle()"><i class="fas fa-random"></i></a>
                 </div>
             </div>
@@ -117,7 +124,7 @@
                         <!-- TODO: allow selecting more than one row to queue up the songs -->
                         <th scope="row" class="tracknumber">
                             <span class="song-number" data-bind="attr: { id: songid, src: url }, text: trackno">X</span>
-                            <div class="play-song-button"><a href="#" class="song" data-bind="attr: { id: songid, url: url }"><i class="fa fa-play-circle"></i></a></div>
+                            <div class="play-song-button"><a href="#" class="song" data-bind="attr: { id: songid, url: url }"><i class="fa fa-play"></i></a></div>
                         </th>
                         <td data-bind="text: trim(title(), 20), attr: { title: title }">Title</td>
                         <td data-bind="text: duration">00:00</td>
@@ -160,10 +167,10 @@
         <div class="float-right">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-volume-up"></i></a>
+                    <a class="nav-link" href="#"><i class="fa fa-volume-up"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-stream"></i></a>
+                    <a class="nav-link" href="#"><i class="fa fa-stream"></i></a>
                 </li>
             </ul>
         </div>
