@@ -19,6 +19,9 @@ body {
     height: 150px;
 }
 
+.album-detail-cover:hover {
+    cursor: zoom-in;
+}
 
 .tracknumber {
     max-width: 1px; /* TODO: Figure this better */
