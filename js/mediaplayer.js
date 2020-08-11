@@ -3,7 +3,7 @@ MediaPlayer = (function () {
     let _mediaPlayer = $('#musicPlayer')[0];
 
     function _playSong(evt) {
-        const id = parseInt($(evt.currentTarget).attr('id')); // target gives the clicked element, currentTarget gives the element the event is attached to
+        const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
         const url = $(evt.currentTarget).attr('url');
         _play(url);
     }
@@ -42,6 +42,10 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
+    function _shuffle() {
+        alert('not implemented');
+    }
+
     return {
         PlaySong: _playSong,
         Play: _play,
@@ -49,5 +53,6 @@ MediaPlayer = (function () {
         Stop: _stop,
         Previous: _previous,
         Next: _next,
+        Shuffle: _shuffle
     };
 })();
