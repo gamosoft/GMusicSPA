@@ -34,6 +34,10 @@ MediaPlayer = (function () {
         $('#nowPlaying').hide();
     }
 
+    function _playAlbum(albumId) {
+        alert('not implemented');
+    }
+
     function _previous() {
         alert('not implemented');
     }
@@ -46,13 +50,19 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
+    function _repeat() {
+        alert('not implemented');
+    }
+
     return {
         PlaySong: _playSong,
+        PlayAlbum: _playAlbum,
         Play: _play,
         Pause: _pause,
         Stop: _stop,
         Previous: _previous,
         Next: _next,
-        Shuffle: _shuffle
+        Shuffle: _shuffle,
+        Repeat: _repeat
     };
 })();

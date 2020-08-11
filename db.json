@@ -7,7 +7,7 @@
             "artistid": 1,
             "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/SteveVaiAlienLoveSecrets.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         },
         {
             "albumid": 2,
@@ -16,7 +16,7 @@
             "artistid": 2,
             "image": "https://upload.wikimedia.org/wikipedia/en/d/d0/Engines_of_Creation_%28Joe_Satriani_album_-_cover_art%29.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         },
         {
             "albumid": 3,
@@ -25,7 +25,7 @@
             "artistid": 4,
             "image": "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         },
         {
             "albumid": 4,
@@ -34,7 +34,7 @@
             "artistid": 2,
             "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Joe_Satriani_-_Crystal_Planet.jpeg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         },
         {
             "albumid": 5,
@@ -43,7 +43,7 @@
             "artistid": 3,
             "image": "https://upload.wikimedia.org/wikipedia/en/6/6e/Pink_Floyd_-_Division_Bell.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         },
         {
             "albumid": 6,
@@ -52,7 +52,7 @@
             "artistid": 5,
             "image": "https://upload.wikimedia.org/wikipedia/en/b/b0/Electroglideinblue.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         },
         {
             "albumid": 7,
@@ -61,7 +61,7 @@
             "artistid": 6,
             "image": "https://upload.wikimedia.org/wikipedia/en/9/90/Ex-maniac_%28Babybird_album_-_cover_art%29.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Pop-Rock"
         },
         {
             "albumid": 8,
@@ -70,7 +70,7 @@
             "artistid": 7,
             "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/TheAlanParsonsProject-EyeintheSky.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         },
         {
             "albumid": 9,
@@ -79,7 +79,7 @@
             "artistid": 8,
             "image": "https://upload.wikimedia.org/wikipedia/en/a/a0/Olive-extravirgin.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Pop-Rock"
         },
         {
             "albumid": 10,
@@ -88,7 +88,7 @@
             "artistid": 9,
             "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/CardigansGranTurismo.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Pop-Rock"
         },
         {
             "albumid": 11,
@@ -97,7 +97,7 @@
             "artistid": 10,
             "image": "https://upload.wikimedia.org/wikipedia/en/d/dd/Roxette_-_Joyride.png",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Pop-Rock"
         },
         {
             "albumid": 12,
@@ -106,7 +106,7 @@
             "artistid": 11,
             "image": "https://upload.wikimedia.org/wikipedia/en/f/f8/TransvisionVamp-PopArt.jpg",
             "year": "1995",
-            "genre": "xxxx"
+            "genre": "Rock"
         }
     ],
     "artists": [

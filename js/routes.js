@@ -16,7 +16,7 @@ let app = $.sammy(function () {
         $('#songsList').show();
         $('.nav-item').removeClass('active');
         $('#albumsLink').addClass('active');
-        API.LoadAlbums(null, albumId);
+        API.LoadAlbum(albumId);
         API.LoadSongs(albumId);
       });
     this.get('#/artists', function () {

@@ -11,7 +11,7 @@ API = (function () {
     
     async function _loadAlbum(albumId) {
         // Fetch album information
-        const response = await fetch(`${url}?albumid=${albumId}`);
+        const response = await fetch(`${albumsUrl}?albumid=${albumId}`);
         const data = await response.json();
         AlbumsViewModel.LoadAlbums(data);
     }
