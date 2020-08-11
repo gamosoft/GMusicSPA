@@ -113,9 +113,12 @@
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: Songs">
-                    <tr>
-                        <!-- allow selecting more than one row to queue up the songs -->
-                        <th scope="row" data-bind="attr: { id: songid, src: url }, text: trackno">1</th>
+                    <tr class="play-song-tr">
+                        <!-- TODO: allow selecting more than one row to queue up the songs -->
+                        <th scope="row" class="tracknumber">
+                            <span class="song-number" data-bind="attr: { id: songid, src: url }, text: trackno">X</span>
+                            <a class="play-song-button" width="10px" href="#" onclick="alert('not implemented yet')"><i class="fa fa-play-circle"></i></a>
+                        </th>
                         <td class="song" data-bind="text: trim(title(), 20), attr: { id: songid, url: url, title: title }">Title</td>
                         <td data-bind="text: duration">00:00</td>
                         <td data-bind="text: playcount">&nbsp;</td>

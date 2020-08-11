@@ -18,3 +18,20 @@ body {
     width: 150px;
     height: 150px;
 }
+
+
+.tracknumber {
+    max-width: 1px; /* TODO: Figure this better */
+}
+.play-song-button {
+    display: none;
+}
+.song-number {
+    display: block;
+}
+.play-song-tr:hover * .play-song-button {
+    display: block;
+}
+.play-song-tr:hover * .song-number {
+    display: none;
+}
