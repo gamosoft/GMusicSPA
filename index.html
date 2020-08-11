@@ -68,7 +68,7 @@
                     <div style="display: inline-block" class="align-middle">
                         <div>
                             <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Alien Love Secrets</strong>
-                            <a href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play-circle fa-2x"></i></a>
+                            <a href="#" onclick="MediaPlayer.Play()"><i class="play-button fa fa-play-circle fa-2x"></i></a>
                         </div>
                         <div>
                             <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
@@ -143,10 +143,8 @@
                     <a class="nav-link" href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward fa-stack-1x"></i></a>
                 </li>
                 <li class="nav-item fa-stack fa-1x">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play-circle fa-stack-2x"></i></a>
-                </li>
-                <li class="nav-item fa-stack fa-1x">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Pause()"><i class="fa fa-pause-circle fa-stack-1x"></i></a>
+                    <!-- TODO: when queue is empty, make this button disabled -->
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Play()"><i class="play-button fa fa-play-circle fa-stack-2x"></i></a>
                 </li>
                 <li class="nav-item fa-stack fa-1x">
                     <a class="nav-link" href="#" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>

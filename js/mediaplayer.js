@@ -1,6 +1,7 @@
 MediaPlayer = (function () {
 
     let _mediaPlayer = $('#musicPlayer')[0];
+    let _playButtons = $('.play-button'); // All play buttons in the page
 
     function _playSong(evt) {
         const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
@@ -15,16 +16,14 @@ MediaPlayer = (function () {
         if (!$(_mediaPlayer).attr('src'))
             return;
 
-        _mediaPlayer.play();
-        $('#nowPlaying').show();
-    }
-
-    function _pause() {
-        if (_mediaPlayer.paused && _mediaPlayer.currentTime != 0)
-            _play()
-        else {
+        if (_mediaPlayer.paused) {
+            _mediaPlayer.play();
+            $('#nowPlaying').show();
+            $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
+        } else {
             _mediaPlayer.pause();
             $('#nowPlaying').hide();
+            $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
         }
     }
 
@@ -32,6 +31,8 @@ MediaPlayer = (function () {
         _mediaPlayer.pause();
         _mediaPlayer.currentTime = 0;
         $('#nowPlaying').hide();
+        $(_playButtons).removeClass('fa-pause-circle');
+        $(_playButtons).addClass('fa-play-circle');        
     }
 
     function _playAlbum(albumId) {
@@ -58,7 +59,6 @@ MediaPlayer = (function () {
         PlaySong: _playSong,
         PlayAlbum: _playAlbum,
         Play: _play,
-        Pause: _pause,
         Stop: _stop,
         Previous: _previous,
         Next: _next,
