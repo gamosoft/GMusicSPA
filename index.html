@@ -15,7 +15,7 @@
     <link href="./css/index.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-dark">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#/albums"><img src="./images/google-play-music-logo.png" width="20"
                 height="20">&nbsp;GMusic SPA</a>
@@ -36,7 +36,7 @@
                     <a class="nav-link" href="#/songs">Songs</a>
                 </li>
                 <li id="genresLink" class="nav-item">
-                    <a class="nav-link disabled" href="#">Genres</a>
+                    <a class="nav-link" href="#/genres">Genres</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -131,7 +131,7 @@
                     <a class="nav-link" href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play"></i></a>
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Play()"><i class="fa fa-play-circle fa-2x"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="MediaPlayer.Pause()"><i class="fa fa-pause"></i></a>
@@ -141,6 +141,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="MediaPlayer.Next()"><i class="fa fa-step-forward"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="MediaPlayer.Shuffle()"><i class="fa fa-random"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i id="nowPlaying" class="fa fa-spinner fa-spin"></i></a>
