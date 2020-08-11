@@ -23,6 +23,14 @@ body {
     cursor: zoom-in;
 }
 
+.shadow-album:hover {
+    box-shadow: 4px 4px 4px rgb(98, 98, 98);
+}
+
+.shadow-artist:hover {
+    box-shadow: 4px 4px 4px rgb(98, 98, 98);
+}
+
 .tracknumber {
     max-width: 1px; /* TODO: Figure this better */
 }
