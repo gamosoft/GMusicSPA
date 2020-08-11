@@ -115,7 +115,7 @@
                 <tbody data-bind="foreach: Songs">
                     <tr>
                         <th scope="row" data-bind="attr: { id: songid, src: url }, text: trackno">1</th>
-                        <td class="song" data-bind="text: trim(title(), 20), attr: { id: id, url: url, title: title }">Title</td>
+                        <td class="song" data-bind="text: trim(title(), 20), attr: { id: songid, url: url, title: title }">Title</td>
                         <td data-bind="text: duration">00:00</td>
                         <td data-bind="text: playcount">&nbsp;</td>
                     </tr>

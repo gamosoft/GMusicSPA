@@ -6,7 +6,7 @@ let app = $.sammy(function () {
         $('#songsList').hide();
         $('.nav-item').removeClass('active');
         $('#albumsLink').addClass('active');
-        loadAlbums();
+        API.LoadAlbums();
     });
     this.get('#/albums/:albumId', function(context) {
         const albumId = this.params['albumId'];
@@ -16,8 +16,8 @@ let app = $.sammy(function () {
         $('#songsList').show();
         $('.nav-item').removeClass('active');
         $('#albumsLink').addClass('active');
-        loadAlbums(null, albumId);
-        loadSongs(albumId);
+        API.LoadAlbums(null, albumId);
+        API.LoadSongs(albumId);
       });
     this.get('#/artists', function () {
         $('#artistsList').show();
@@ -26,7 +26,7 @@ let app = $.sammy(function () {
         $('#songsList').hide();
         $('.nav-item').removeClass('active');
         $('#artistsLink').addClass('active');
-        loadArtists();
+        API.LoadArtists();
     });
     this.get('#/artists/:artistId', function () {
         const artistId = this.params['artistId'];
@@ -36,7 +36,7 @@ let app = $.sammy(function () {
         $('#songsList').hide();
         $('.nav-item').removeClass('active');
         $('#artistsLink').addClass('active');
-        loadAlbums(artistId, null);
+        API.LoadAlbums(artistId, null);
     });
     this.get('#/songs', function () {
         $('#artistsList').hide();
@@ -45,7 +45,7 @@ let app = $.sammy(function () {
         $('#songsList').show();
         $('.nav-item').removeClass('active');
         $('#songsLink').addClass('active');
-        loadSongs();
+        API.LoadSongs();
     });
     this.notFound = function () {
         // TODO: Handle this with a default page
