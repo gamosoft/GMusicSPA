@@ -135,9 +135,11 @@
             </table>
         </div>
     </main><!-- /.container -->
-
+    <div class="progress fixed-bottom"> <!-- TODO: Put this somewhere else -->
+        <div id="songProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+    </div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom mb-2">
-        <div class="howtocenterthis">
+        <div class="container">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item fa-stack fa-1x">
                     <a class="nav-link" href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward fa-stack-1x"></i></a>

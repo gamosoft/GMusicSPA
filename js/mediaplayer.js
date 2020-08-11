@@ -2,6 +2,7 @@ MediaPlayer = (function () {
 
     const _playButtonClass = '.play-button';
     let _mediaPlayer = $('#musicPlayer')[0];
+    let _updateTimer = null;
 
     function _playSong(evt) {
         const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
@@ -21,20 +22,36 @@ MediaPlayer = (function () {
             $('#nowPlaying').show();
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
+            _updateTimer = setInterval(_updateSongProgress, 1000); // Refresh time in milliseconds
         } else {
             $('#nowPlaying').hide();
             $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
             _mediaPlayer.pause();
+            clearInterval(_updateTimer);
+            _updateTimer = null;
         }
     }
 
     function _stop() {
         let _playButtons = $(_playButtonClass); // All play buttons in the page
+        $('#nowPlaying').hide();
+        $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
         _mediaPlayer.pause();
         _mediaPlayer.currentTime = 0;
-        $('#nowPlaying').hide();
-        $(_playButtons).removeClass('fa-pause-circle');
-        $(_playButtons).addClass('fa-play-circle');        
+        clearInterval(_updateTimer);
+        _updateTimer = null;
+        _updateSongProgress(true);
+    }
+
+    function _updateSongProgress(forceUpdate) {
+        if (!forceUpdate && !_updateTimer)
+            return;
+
+        let totalTime = _mediaPlayer.duration;
+        let currentTime = _mediaPlayer.currentTime;
+        let percentage = Math.floor((currentTime / totalTime) * 100);
+
+        $('#songProgress').css('width', `${percentage}%`);
     }
 
     function _playAlbum(albumId) {
@@ -65,6 +82,7 @@ MediaPlayer = (function () {
         Previous: _previous,
         Next: _next,
         Shuffle: _shuffle,
-        Repeat: _repeat
+        Repeat: _repeat,
+        UpdateSongProgress: _updateSongProgress
     };
 })();
