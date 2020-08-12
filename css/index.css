@@ -6,17 +6,17 @@ body {
     text-align: center;
 }
 .card-deck .card {
-    min-width: 150px;
-    max-width: 150px;
+    min-width: 175px;
+    max-width: 175px;
     /* background: rgba(68, 177, 250, 0.2); /* Blue background with 20% opacity */
 }
 .media-artist {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
 }
 .media-album {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
 }
 
 .progress:hover {
@@ -51,8 +51,22 @@ body {
     display: none;
 }
 
-.play-album-button {
+.shadow-album * .play-album-button {
+    display: none;
     position: absolute;
     right: 4px;
-    top: 110px;
+    top: 130px; /* TODO: Make this better */
+}
+.shadow-album:hover * .play-album-button {
+    display: block;
+}
+
+.shadow-album * .ellipsis-album-button {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 200px; /* TODO: Make this better */
+}
+.shadow-album:hover * .ellipsis-album-button {
+    display: block;
 }
