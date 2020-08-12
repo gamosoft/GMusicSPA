@@ -1,8 +1,15 @@
 MediaPlayer = (function () {
 
+    const _playerRefreshRate = 1000; // Refresh rate of media player in ms
     const _playButtonClass = '.play-button';
     let _mediaPlayer = $('#musicPlayer')[0];
     let _updateTimer = null;
+
+    let _songQueue = [];
+
+    function _addSong(song) {
+        _songQueue.push(song);
+    }
 
     function _playSong(evt) {
         const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
@@ -22,7 +29,7 @@ MediaPlayer = (function () {
             $('#nowPlaying').show();
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
-            _updateTimer = setInterval(_updateSongProgress, 1000); // Refresh time in milliseconds
+            _updateTimer = setInterval(_updateSongProgress, _playerRefreshRate);
         } else {
             $('#nowPlaying').hide();
             $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
@@ -89,7 +96,22 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
+    // _addSong('https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3');
+    // _addSong('https://filesamples.com/samples/audio/mp3/sample1.mp3');
+    // _addSong('https://filesamples.com/samples/audio/mp3/sample2.mp3');
+    // _addSong('https://filesamples.com/samples/audio/mp3/sample3.mp3');
+
+    // // When the music stops, attempt to play the next song from the queue
+    // $(_mediaPlayer).on('ended', (e) => {
+    //     var next = _songQueue.pop();
+    //     if (!next)
+    //         return;
+    //     _stop();
+    //     _play(next);
+    // });
+
     return {
+        AddSong: _addSong,
         PlaySong: _playSong,
         PlayAlbum: _playAlbum,
         Play: _play,
