@@ -70,3 +70,10 @@ body {
 .shadow-album:hover * .ellipsis-album-button {
     display: block;
 }
+
+.play-song-tr * .ellipsis-song-button {
+    display: none;
+}
+.play-song-tr:hover * .ellipsis-song-button {
+    display: inline; /* TODO: fix flickr on long titles */
+}

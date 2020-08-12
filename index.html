@@ -108,7 +108,7 @@
                     </div>
                     <div>
                         <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
-                        <div class="ellipsis-album-button"><a href="#" class="text-secondary" onclick="MediaPlayer.Shuffle()"><i class="fa fa-ellipsis-v float-right"></i></a></div>
+                        <div class="ellipsis-album-button"><a href="#" class="text-secondary"><i class="fa fa-ellipsis-v float-right"></i></a></div>
                     </div>
                 </div>
                 <!-- <div class="card-footer">
@@ -133,7 +133,10 @@
                             <span class="song-number" data-bind="attr: { id: songid, src: url }, text: trackno">X</span>
                             <div class="play-song-button"><a href="#" class="song text-secondary" data-bind="attr: { id: songid, url: url }"><i class="fa fa-play"></i></a></div>
                         </th>
-                        <td data-bind="text: trim(title(), 30), attr: { title: title }">Title</td>
+                        <td>
+                            <span data-bind="text: trim(title(), 30), attr: { title: title }">Title</span>
+                            <span class="ellipsis-song-button"><a href="#" class="text-secondary"><i class="fa fa-ellipsis-v float-right"></i></a></span>
+                        </td>
                         <td data-bind="text: duration">00:00</td>
                         <td data-bind="text: playcount">&nbsp;</td>
                     </tr>
