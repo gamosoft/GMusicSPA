@@ -4,8 +4,10 @@ MediaPlayer = (function () {
     const _playButtonClass = '.play-button';
     let _mediaPlayer = $('#musicPlayer')[0];
     let _updateTimer = null;
+    let _shuffleEnabled = false;
 
     let _songQueue = [];
+    let _currentSong = 0;
 
     function _addSong(song) {
         _songQueue.push(song);
@@ -81,34 +83,46 @@ MediaPlayer = (function () {
     }
 
     function _previous() {
-        alert('not implemented');
+        _stop();
+        // const next = _songQueue.pop();
+        const previous = _shuffleEnabled ? 1 : _currentSong--;
+        if (previous <= 0) {
+            _currentSong = 0;
+            return;
+        }
+
+        _play(_songQueue[previous]);
     }
 
     function _next() {
-        alert('not implemented');
+        _stop();
+        // const next = _songQueue.pop();
+        const next = _shuffleEnabled ? 1 : _currentSong++;
+        if (next >= _songQueue.length) {
+            _currentSong = _songQueue.length - 1;
+            return;
+        }
+
+        _play(_songQueue[next]);
     }
 
     function _shuffle() {
-        alert('not implemented');
+        _shuffleEnabled = !_shuffleEnabled;
     }
 
     function _repeat() {
         alert('not implemented');
     }
 
-    // _addSong('https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3');
-    // _addSong('https://filesamples.com/samples/audio/mp3/sample1.mp3');
-    // _addSong('https://filesamples.com/samples/audio/mp3/sample2.mp3');
-    // _addSong('https://filesamples.com/samples/audio/mp3/sample3.mp3');
+    _addSong('./mp3/sample1.mp3');
+    _addSong('./mp3/sample2.mp3');
+    _addSong('./mp3/sample3.mp3');
+    _addSong('./mp3/sample4.mp3');
 
-    // // When the music stops, attempt to play the next song from the queue
-    // $(_mediaPlayer).on('ended', (e) => {
-    //     var next = _songQueue.pop();
-    //     if (!next)
-    //         return;
-    //     _stop();
-    //     _play(next);
-    // });
+    // When the music stops, attempt to play the next song from the queue
+    $(_mediaPlayer).on('ended', (e) => {
+        _next();
+    });
 
     return {
         AddSong: _addSong,
