@@ -95,7 +95,10 @@
             <!-- data-bind="foreach: Albums, visible: Albums().length > 0" -->
             <!-- TODO: AlbumsFiltered -->
             <div class="card mb-4 shadow-album">
-                <a data-bind="attr: { href: '#/albums/'+albumid() }"><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>
+                <div>
+                    <a data-bind="attr: { href: '#/albums/'+albumid() }"><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>
+                    <a href="#" class="card-link play-album-button" onclick="MediaPlayer.PlayAlbum(1)"><i class="fa fa-play-circle fa-2x"></i></a>
+                </div>
                 <div class="card-body" data-bind="attr: { id: albumid }">
                     <div>
                         <a data-bind="attr: { href: '#/albums/'+albumid() }"><strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
@@ -105,7 +108,6 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="card-link" onclick="MediaPlayer.PlayAlbum(1)"><i class="fa fa-play-circle"></i></a>
                     <a href="#" class="card-link" onclick="MediaPlayer.Shuffle()"><i class="fas fa-random"></i></a>
                 </div>
             </div>

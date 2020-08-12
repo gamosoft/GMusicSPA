@@ -50,3 +50,9 @@ body {
 .play-song-tr:hover * .song-number {
     display: none;
 }
+
+.play-album-button {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+}
