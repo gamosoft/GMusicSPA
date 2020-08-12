@@ -33,4 +33,17 @@ $(() => {
     ko.applyBindings(AlbumsViewModel, document.getElementById('albumDetail'));
     ko.applyBindings(ArtistsViewModel, document.getElementById('artistsList'));
     ko.applyBindings(SongsViewModel, document.getElementById('songsList'));
+
+    $('#progressBar').click(function(e) { 
+        // element that has been clicked. 
+        var elm = $(this); 
+
+        // getting the respective 
+        x = e.pageX - elm.offset().left; 
+
+        // coordinates of location. 
+        y = e.pageY - elm.offset().top; 
+        console.log(x, y);
+        MediaPlayer.JumpTo(x);
+    }); 
 });

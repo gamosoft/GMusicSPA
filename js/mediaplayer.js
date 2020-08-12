@@ -40,7 +40,7 @@ MediaPlayer = (function () {
         _mediaPlayer.currentTime = 0;
         clearInterval(_updateTimer);
         _updateTimer = null;
-        _updateSongProgress(true);
+        $('#songProgress').css('width', '0%');
     }
 
     function _updateSongProgress(forceUpdate) {
@@ -52,6 +52,21 @@ MediaPlayer = (function () {
         let percentage = Math.floor((currentTime / totalTime) * 100);
 
         $('#songProgress').css('width', `${percentage}%`);
+
+        if (currentTime >= totalTime)
+            _stop(); // TODO: Only if nothing more on queue
+    }
+
+    function _jumpTo(pixel) {
+        if (!_updateTimer)
+            return;
+
+        let width = parseInt($('#progressBar').css('width'));
+        let percentage = (pixel / width) * 100;
+        let totalTime = _mediaPlayer.duration;
+        let currentTime = (percentage / 100) * totalTime;
+        _mediaPlayer.currentTime = currentTime;
+        _updateSongProgress();
     }
 
     function _playAlbum(albumId) {
@@ -83,6 +98,7 @@ MediaPlayer = (function () {
         Next: _next,
         Shuffle: _shuffle,
         Repeat: _repeat,
-        UpdateSongProgress: _updateSongProgress
+        UpdateSongProgress: _updateSongProgress,
+        JumpTo: _jumpTo
     };
 })();

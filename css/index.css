@@ -19,6 +19,10 @@ body {
     height: 150px;
 }
 
+.progress:hover {
+    cursor: pointer;
+}
+
 .album-detail-cover:hover {
     cursor: zoom-in;
 }
