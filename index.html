@@ -51,7 +51,7 @@
     </nav>
 
     <main role="main" class="container-fluid">
-        <div id="artistsList" class="card-deck" data-bind="foreach: Artists">
+        <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: Artists">
             <div class="card mb-4 bg-transparent border-0">
                 <a data-bind="attr: { href: '#/artists/'+artistid() }"><img class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist" data-bind="attr: { src: image, title: name }"></a>
                 <div class="card-footer">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div id="albumDetail" class="row mb-2" data-bind="foreach: Albums">
+        <div id="albumDetail" class="row mb-2 toggle-section" data-bind="foreach: Albums">
             <div class="col">
                 <div data-bind="attr: { id: albumid }">
                     <div style="display: inline-block">
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div id="albumsList" class="card-deck" data-bind="foreach: Albums">
+        <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: Albums">
             <!-- data-bind="foreach: Albums, visible: Albums().length > 0" -->
             <!-- TODO: AlbumsFiltered -->
             <div class="card mb-4 shadow-album">
@@ -116,7 +116,7 @@
                 </div> -->
             </div>
         </div>
-        <div id="songsList" class="table-responsive" data-bind="visible: Songs().length > 0">
+        <div id="songsList" class="table-responsive toggle-section" data-bind="visible: Songs().length > 0">
             <table class="table table-sm table-hover table-dark"> <!-- table-responsive -->
                 <thead>
                     <tr>

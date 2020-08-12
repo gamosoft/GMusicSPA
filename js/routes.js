@@ -1,50 +1,41 @@
+function setActiveLink(item) {
+    $('.nav-item').removeClass('active');
+    $(item).addClass('active');
+}
+
 let app = $.sammy(function () {
     this.get('#/albums', function () {
-        $('#artistsList').hide();
+        $('.toggle-section').hide();
         $('#albumsList').show();
-        $('#albumDetail').hide();
-        $('#songsList').hide();
-        $('.nav-item').removeClass('active');
-        $('#albumsLink').addClass('active');
+        setActiveLink('#albumsLink');
         API.LoadAlbums();
     });
     this.get('#/albums/:albumId', function(context) {
         const albumId = this.params['albumId'];
-        $('#artistsList').hide();
-        $('#albumsList').hide();
+        $('.toggle-section').hide();
         $('#albumDetail').show();
         $('#songsList').show();
-        $('.nav-item').removeClass('active');
-        $('#albumsLink').addClass('active');
+        setActiveLink('#albumsLink');
         API.LoadAlbum(albumId);
         API.LoadSongs(albumId);
       });
     this.get('#/artists', function () {
+        $('.toggle-section').hide();
         $('#artistsList').show();
-        $('#albumsList').hide();
-        $('#albumDetail').hide();
-        $('#songsList').hide();
-        $('.nav-item').removeClass('active');
-        $('#artistsLink').addClass('active');
+        setActiveLink('#artistsLink');
         API.LoadArtists();
     });
     this.get('#/artists/:artistId', function () {
         const artistId = this.params['artistId'];
-        $('#artistsList').hide();
+        $('.toggle-section').hide();
         $('#albumsList').show();
-        $('#albumDetail').hide();
-        $('#songsList').hide();
-        $('.nav-item').removeClass('active');
-        $('#artistsLink').addClass('active');
-        API.LoadAlbums(artistId, null);
+        setActiveLink('#artistsLink');
+        API.LoadAlbums(artistId);
     });
     this.get('#/songs', function () {
-        $('#artistsList').hide();
-        $('#albumsList').hide();
-        $('#albumDetail').hide();
+        $('.toggle-section').hide();
         $('#songsList').show();
-        $('.nav-item').removeClass('active');
-        $('#songsLink').addClass('active');
+        setActiveLink('#songsLink');
         API.LoadSongs();
     });
     this.notFound = function () {
