@@ -58,7 +58,7 @@ MediaPlayer = (function () {
     }
 
     function _jumpTo(pixel) {
-        if (!_updateTimer)
+        if (!$(_mediaPlayer).attr('src'))
             return;
 
         let width = parseInt($('#progressBar').css('width'));
@@ -66,7 +66,7 @@ MediaPlayer = (function () {
         let totalTime = _mediaPlayer.duration;
         let currentTime = (percentage / 100) * totalTime;
         _mediaPlayer.currentTime = currentTime;
-        _updateSongProgress();
+        $('#songProgress').css('width', `${percentage}%`);
     }
 
     function _playAlbum(albumId) {
