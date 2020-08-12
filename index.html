@@ -53,10 +53,13 @@
     <main role="main" class="container-fluid">
         <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: Artists">
             <div class="card mb-4 bg-transparent border-0">
-                <a data-bind="attr: { href: '#/artists/'+artistid() }"><img class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist" data-bind="attr: { src: image, title: name }"></a>
+                <a data-bind="attr: { href: '#/artists/'+artistid() }"><img
+                        class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
+                        data-bind="attr: { src: image, title: name }"></a>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a data-bind="attr: { href: '#/artists/'+artistid() }"><strong class="text-muted" data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
+                        <a data-bind="attr: { href: '#/artists/'+artistid() }"><strong class="text-muted"
+                                data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
                     </div>
                 </div>
             </div>
@@ -65,16 +68,21 @@
             <div class="col">
                 <div data-bind="attr: { id: albumid }">
                     <div style="display: inline-block">
-                        <!-- TODO: Implement zoom of the image on click -->
-                        <img class="card-img-top z-depth-0 media-album album-detail-cover" data-bind="attr: { src: image, title: title }">
+                        <a href="#" data-toggle="modal" data-target="#albumCoverModal" data-bind="attr: { src: image }">
+                            <img class="card-img-top z-depth-0 media-album album-detail-cover"
+                                data-bind="attr: { src: image, title: title }">
+                        </a>
                     </div>
                     <div style="display: inline-block" class="align-middle">
                         <div>
-                            <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Alien Love Secrets</strong>
-                            <a href="#" class="text-primary" onclick="MediaPlayer.Play()"><i class="play-button fa fa-play-circle fa-2x"></i></a>
+                            <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Alien
+                                Love Secrets</strong>
+                            <a href="#" class="text-primary" onclick="MediaPlayer.Play()"><i
+                                    class="play-button fa fa-play-circle fa-2x"></i></a>
                         </div>
                         <div>
-                            <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                            <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted"
+                                    data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
                         </div>
                         <div class="mb-2">
                             <small class="text-muted" data-bind="text: year">xxxx</small>
@@ -86,7 +94,8 @@
                             <small class="text-muted" data-bind="text: genre">xxxx</small>
                         </div>
                         <div>
-                            <button class="btn btn-sm btn-primary"><i class="fa fa-compact-disc"></i>&nbsp;INSTANT MIX</button>
+                            <button class="btn btn-sm btn-primary"><i class="fa fa-compact-disc"></i>&nbsp;INSTANT
+                                MIX</button>
                             <button class="btn btn-sm btn-primary"><i class="fa fa-random"></i>&nbsp;SHUFFLE</button>
                             <button class="btn btn-sm btn-primary"><i class="fa fa-ellipsis-v"></i></button>
                         </div>
@@ -99,16 +108,21 @@
             <!-- TODO: AlbumsFiltered -->
             <div class="card mb-4 shadow-album">
                 <div>
-                    <a data-bind="attr: { href: '#/albums/'+albumid() }"><img class="card-img-top z-depth-0 media-album" data-bind="attr: { src: image, title: title }"></a>
-                    <a href="#" class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(1)"><i class="fa fa-play-circle fa-2x"></i></a>
+                    <a data-bind="attr: { href: '#/albums/'+albumid() }"><img class="card-img-top z-depth-0 media-album"
+                            data-bind="attr: { src: image, title: title }"></a>
+                    <a href="#" class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(1)"><i
+                            class="fa fa-play-circle fa-2x"></i></a>
                 </div>
                 <div class="card-body" data-bind="attr: { id: albumid }">
                     <div>
-                        <a data-bind="attr: { href: '#/albums/'+albumid() }"><strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
+                        <a data-bind="attr: { href: '#/albums/'+albumid() }"><strong class="text-muted"
+                                data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
                     </div>
                     <div>
-                        <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted" data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
-                        <div class="ellipsis-album-button"><a href="#" class="text-secondary"><i class="fa fa-ellipsis-v float-right"></i></a></div>
+                        <a data-bind="attr: { href: '#/artists/'+artistid() }"><small class="text-muted"
+                                data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                        <div class="ellipsis-album-button"><a href="#" class="text-secondary"><i
+                                    class="fa fa-ellipsis-v float-right"></i></a></div>
                     </div>
                 </div>
                 <!-- <div class="card-footer">
@@ -117,7 +131,8 @@
             </div>
         </div>
         <div id="songsList" class="table-responsive toggle-section" data-bind="visible: Songs().length > 0">
-            <table class="table table-sm table-hover table-dark"> <!-- table-responsive -->
+            <table class="table table-sm table-hover table-dark">
+                <!-- table-responsive -->
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -131,11 +146,13 @@
                         <!-- TODO: allow selecting more than one row to queue up the songs -->
                         <th scope="row" class="tracknumber">
                             <span class="song-number" data-bind="attr: { id: songid, src: url }, text: trackno">X</span>
-                            <div class="play-song-button"><a href="#" class="song text-secondary" data-bind="attr: { id: songid, url: url }"><i class="fa fa-play"></i></a></div>
+                            <div class="play-song-button"><a href="#" class="song text-secondary"
+                                    data-bind="attr: { id: songid, url: url }"><i class="fa fa-play"></i></a></div>
                         </th>
                         <td>
                             <span data-bind="text: trim(title(), 30), attr: { title: title }">Title</span>
-                            <span class="ellipsis-song-button"><a href="#" class="text-secondary"><i class="fa fa-ellipsis-v float-right"></i></a></span>
+                            <span class="ellipsis-song-button"><a href="#" class="text-secondary"><i
+                                        class="fa fa-ellipsis-v float-right"></i></a></span>
                         </td>
                         <td data-bind="text: duration">00:00</td>
                         <td data-bind="text: playcount">&nbsp;</td>
@@ -147,29 +164,35 @@
 
     <div class="fixed-bottom bg-dark">
         <div id="progressBar" class="progress mb-3">
-            <div id="songProgress" class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 0%"></div>
+            <div id="songProgress" class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
+                role="progressbar" style="width: 0%"></div>
         </div>
         <div>
             <div class="text-center">
                 <ul class="">
                     <li class="fa-stack fa-1x">
-                        <a class="text-secondary" href="#" onclick="MediaPlayer.Repeat()"><i class="fa fa-redo fa-stack-1x"></i></a>
+                        <a class="text-secondary" href="#" onclick="MediaPlayer.Repeat()"><i
+                                class="fa fa-redo fa-stack-1x"></i></a>
                     </li>
                     <li class="fa-stack fa-1x">
-                        <a class="text-secondary" href="#" onclick="MediaPlayer.Previous()"><i class="fa fa-step-backward fa-stack-1x"></i></a>
+                        <a class="text-secondary" href="#" onclick="MediaPlayer.Previous()"><i
+                                class="fa fa-step-backward fa-stack-1x"></i></a>
                     </li>
                     <li class="fa-stack fa-1x">
                         <!-- TODO: when queue is empty, make this button disabled -->
-                        <a class="text-secondary" href="#" onclick="MediaPlayer.Play()"><i class="play-button fa fa-play-circle fa-stack-2x"></i></a>
+                        <a class="text-secondary" href="#" onclick="MediaPlayer.Play()"><i
+                                class="play-button fa fa-play-circle fa-stack-2x"></i></a>
                     </li>
                     <!-- <li class="fa-stack fa-1x">
                         <a class="text-secondary" href="#" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
                     </li> -->
                     <li class="fa-stack fa-1x">
-                        <a class="text-secondary" href="#" onclick="MediaPlayer.Next()"><i class="fa fa-step-forward fa-stack-1x"></i></a>
+                        <a class="text-secondary" href="#" onclick="MediaPlayer.Next()"><i
+                                class="fa fa-step-forward fa-stack-1x"></i></a>
                     </li>
                     <li class="fa-stack fa-1x">
-                        <a class="text-secondary" href="#" onclick="MediaPlayer.Shuffle()"><i class="fa fa-random fa-stack-1x"></i></a>
+                        <a class="text-secondary" href="#" onclick="MediaPlayer.Shuffle()"><i
+                                class="fa fa-random fa-stack-1x"></i></a>
                     </li>
                     <!-- <li class="fa-stack fa-1x">
                         <a class="text-secondary" href="#"><i id="nowPlaying" class="fa fa-spinner fa-spin fa-stack-1x"></i></a>
@@ -185,9 +208,17 @@
                     Your browser does not support the HTML5 Audio element.
                 </audio>
             </div>
-            <!-- <div class="float-right">
-                
-            </div> -->
+        </div>
+    </div>
+
+    <div class="modal fade" id="albumCoverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img id="modalAlbumImage" style="max-width: 500px; max-height: 500px;">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -207,7 +238,8 @@
         integrity="sha256-Tjl7WVgF1hgGMgUKZZfzmxOrtoSf8qltZ9wMujjGNQk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/knockout.mapping@2.4.3/knockout.mapping.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.6/sammy.min.js"
-        integrity="sha512-P0qL6322HXDfrw8EsI8yQVGGc1+SSAZm5AWOYjPTrlZDQLX229heMa1XTOloWwynwxwWh2ElN3/GNoG1wT5r8Q==" crossorigin="anonymous"></script>
+        integrity="sha512-P0qL6322HXDfrw8EsI8yQVGGc1+SSAZm5AWOYjPTrlZDQLX229heMa1XTOloWwynwxwWh2ElN3/GNoG1wT5r8Q=="
+        crossorigin="anonymous"></script>
 
     <script src="./js/albums.js"></script>
     <script src="./js/artists.js"></script>

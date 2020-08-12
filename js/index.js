@@ -37,13 +37,14 @@ $(() => {
     $('#progressBar').click(function(e) { 
         // element that has been clicked. 
         var elm = $(this); 
-
-        // getting the respective 
+        // getting the respective coordinates of location. 
         x = e.pageX - elm.offset().left; 
-
-        // coordinates of location. 
         y = e.pageY - elm.offset().top; 
-        console.log(x, y);
         MediaPlayer.JumpTo(x);
-    }); 
+    });
+
+    $('#albumCoverModal').on('show.bs.modal', function (evt) {
+        const cover = $(evt.relatedTarget).attr('src');
+        $('#modalAlbumImage').attr('src', cover);
+    });
 });
