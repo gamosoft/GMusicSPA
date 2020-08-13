@@ -59,7 +59,15 @@ MediaPlayer = (function () {
     }
 
     function _playAlbum(albumId) {
-        alert('not implemented');
+        _stop();
+        _clearPlayList();
+
+        _addSong('./mp3/sample1.mp3');
+        _addSong('./mp3/sample2.mp3');
+        _addSong('./mp3/sample3.mp3');
+        _addSong('./mp3/sample4.mp3');
+
+        _play();
     }
 
     function _stop() {
@@ -137,11 +145,6 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
-    _addSong('./mp3/sample1.mp3');
-    _addSong('./mp3/sample2.mp3');
-    _addSong('./mp3/sample3.mp3');
-    _addSong('./mp3/sample4.mp3');
-
     // When the music stops, attempt to play the next song from the playlist
     $(_mediaPlayer).on('ended', (e) => {
         _next();
@@ -149,10 +152,10 @@ MediaPlayer = (function () {
 
     return {
         PlaySong: _playSong, // Adds and plays
+        PlayAlbum: _playAlbum, // Adds and plays
         ClearPlayList: _clearPlayList,
         AddSong: _addSong,
         AddSongs: _addSongs,
-        PlayAlbum: _playAlbum,
         Play: _play,
         Stop: _stop,
         Previous: _previous,
