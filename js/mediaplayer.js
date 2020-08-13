@@ -5,6 +5,8 @@ MediaPlayer = (function () {
     let _mediaPlayer = $('#musicPlayer')[0];
     let _updateTimer = null;
     let _shuffleEnabled = false;
+    let _repeatOne = false;
+    let _repeatAll = false;
 
     let _playList = []; // TODO: This will have all the song info, for now it's just a url
     let _currentSong = 0;
@@ -87,7 +89,7 @@ MediaPlayer = (function () {
             if (_currentSong < _playList.length - 1)
                 _next();
             else
-                _currentSong = 0; // If at the end, start over?
+                _currentSong = 0; // If at the end, start over
         }
     }
 
