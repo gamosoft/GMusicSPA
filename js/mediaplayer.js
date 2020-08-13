@@ -121,7 +121,7 @@ MediaPlayer = (function () {
 
     function _shuffle() {
         _shuffleEnabled = !_shuffleEnabled;
-        // TODO: randomize the playlist
+        _playList.shuffle(); // This modifies the original array!
         // TODO: reindex the current song
     }
 
