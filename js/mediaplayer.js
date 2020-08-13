@@ -8,7 +8,7 @@ MediaPlayer = (function () {
     let _repeatOne = false;
     let _repeatAll = false;
 
-    let _playList = []; // TODO: This will have all the song info, for now it's just a url
+    let _playList = [];
     let _currentSong = 0;
 
     // Playlist management
@@ -28,7 +28,10 @@ MediaPlayer = (function () {
     function _playSong(control) {
         // const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
         // const song = $(evt.currentTarget).attr('url');
-        const song = $(control).attr('url');
+
+        // const song = $(control).attr('url');
+        const song = ko.dataFor(control);
+
         _stop();        
         _clearPlayList();
         _addSong(song);
@@ -42,8 +45,8 @@ MediaPlayer = (function () {
         let _playButtons = $(_playButtonClass); // All play buttons in the page, need to do it here since it must be reevaluated due to possible new elements
         if (_mediaPlayer.paused) {
             let song = _playList[_currentSong];
-            if ($(_mediaPlayer).attr('src') != song) // To allow for pause, otherwise resuming starts over
-                $(_mediaPlayer).attr('src', song);
+            if ($(_mediaPlayer).attr('src') != song.url()) // To allow for pause, otherwise resuming starts over
+                $(_mediaPlayer).attr('src', song.url());
 
             $('#nowPlaying').show();
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
@@ -62,10 +65,10 @@ MediaPlayer = (function () {
         _stop();
         _clearPlayList();
 
-        _addSong('./mp3/sample1.mp3');
-        _addSong('./mp3/sample2.mp3');
-        _addSong('./mp3/sample3.mp3');
-        _addSong('./mp3/sample4.mp3');
+        // _addSong('./mp3/sample1.mp3');
+        // _addSong('./mp3/sample2.mp3');
+        // _addSong('./mp3/sample3.mp3');
+        // _addSong('./mp3/sample4.mp3');
 
         _play();
     }
