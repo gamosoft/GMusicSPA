@@ -13,7 +13,7 @@ API = (function () {
         // Fetch album information
         const response = await fetch(`${albumsUrl}?albumid=${albumId}`);
         const data = await response.json();
-        AlbumsViewModel.LoadAlbums(data);
+        return data;
     }
     
     async function _loadAlbums(artistId) {
@@ -24,14 +24,14 @@ API = (function () {
     
         const response = await fetch(url);
         const data = await response.json();
-        AlbumsViewModel.LoadAlbums(data);
+        return data;
     }
     
     async function _loadArtists() {
         // Fetch artist information
         const response = await fetch(`${artistsUrl}`);
         const data = await response.json();
-        ArtistsViewModel.LoadArtists(data);
+        return data;
     }
     
     async function _loadSongs(albumId) {
@@ -42,7 +42,7 @@ API = (function () {
     
         const response = await fetch(url);
         const data = await response.json();
-        SongsViewModel.LoadSongs(data);
+        return data;
     }
 
     return {

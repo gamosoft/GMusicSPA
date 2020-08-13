@@ -4,39 +4,45 @@ function setActiveLink(item) {
 }
 
 let app = $.sammy(function () {
-    this.get('#/albums', function () {
+    this.get('#/albums', async function () {
         $('.toggle-section').hide();
         $('#albumsList').show();
         setActiveLink('#albumsLink');
-        API.LoadAlbums();
+        const albumsData = await API.LoadAlbums();
+        AlbumsViewModel.LoadAlbums(albumsData);
     });
-    this.get('#/albums/:albumId', function(context) {
+    this.get('#/albums/:albumId', async function(context) {
         const albumId = this.params['albumId'];
         $('.toggle-section').hide();
         $('#albumDetail').show();
         $('#songsList').show();
         setActiveLink('#albumsLink');
-        API.LoadAlbum(albumId);
-        API.LoadSongs(albumId);
+        const albumData = await API.LoadAlbum(albumId);
+        AlbumsViewModel.LoadAlbums(albumData);
+        const songsData = await API.LoadSongs(albumId);
+        SongsViewModel.LoadSongs(songsData);
       });
-    this.get('#/artists', function () {
+    this.get('#/artists', async function () {
         $('.toggle-section').hide();
         $('#artistsList').show();
         setActiveLink('#artistsLink');
-        API.LoadArtists();
+        const artistsData = await API.LoadArtists();
+        ArtistsViewModel.LoadArtists(artistsData);
     });
-    this.get('#/artists/:artistId', function () {
+    this.get('#/artists/:artistId', async function () {
         const artistId = this.params['artistId'];
         $('.toggle-section').hide();
         $('#albumsList').show();
         setActiveLink('#artistsLink');
-        API.LoadAlbums(artistId);
+        const albumsData = await API.LoadAlbums(artistId);
+        AlbumsViewModel.LoadAlbums(albumsData);
     });
-    this.get('#/songs', function () {
+    this.get('#/songs', async function () {
         $('.toggle-section').hide();
         $('#songsList').show();
         setActiveLink('#songsLink');
-        API.LoadSongs();
+        const songsData = await API.LoadSongs();
+        SongsViewModel.LoadSongs(songsData);
     });
     this.notFound = function () {
         // TODO: Handle this with a default page
