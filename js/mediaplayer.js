@@ -81,8 +81,13 @@ MediaPlayer = (function () {
 
         $('#songProgress').css('width', `${percentage}%`);
 
-        if (currentTime >= totalTime)
-            _stop(); // TODO: Only if nothing more on playlist
+        if (currentTime >= totalTime) { // Song finished
+            _stop();
+
+            if (_currentSong < _playList.length)
+                _next();
+            // TODO: If at the end, start over?
+        }
     }
 
     function _jumpTo(pixel) {
@@ -129,10 +134,10 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
-    // _addSong('./mp3/sample1.mp3');
-    // _addSong('./mp3/sample2.mp3');
-    // _addSong('./mp3/sample3.mp3');
-    // _addSong('./mp3/sample4.mp3');
+    _addSong('./mp3/sample1.mp3');
+    _addSong('./mp3/sample2.mp3');
+    _addSong('./mp3/sample3.mp3');
+    _addSong('./mp3/sample4.mp3');
 
     // When the music stops, attempt to play the next song from the playlist
     $(_mediaPlayer).on('ended', (e) => {
