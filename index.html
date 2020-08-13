@@ -142,7 +142,7 @@
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: Songs">
-                    <tr class="play-song-tr">
+                    <tr class="play-song-tr" onclick="$(this).toggleClass('bg-secondary')">
                         <!-- TODO: allow selecting more than one row to queue up the songs -->
                         <th scope="row" class="tracknumber">
                             <span class="song-number" data-bind="text: trackno">X</span>

@@ -43,9 +43,6 @@ let app = $.sammy(function () {
         setActiveLink('#songsLink');
         const songsData = await API.LoadSongs();
         SongsViewModel.LoadSongs(songsData);
-
-        // TODO: This should be reevaluated after rebinding
-        $('.play-song-tr').click(e => $(e.currentTarget).toggleClass('bg-secondary'));
     });
     this.notFound = function () {
         // TODO: Handle this with a default page
