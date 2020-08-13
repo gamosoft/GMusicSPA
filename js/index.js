@@ -36,7 +36,7 @@ Array.prototype.shuffle = function() {
 
 $(() => {
     app.run('#/albums');
-    $('#nowPlaying').hide();
+
     ko.applyBindings(AlbumsViewModel, document.getElementById('albumsList'));
     ko.applyBindings(AlbumsViewModel, document.getElementById('albumDetail'));
     ko.applyBindings(ArtistsViewModel, document.getElementById('artistsList'));

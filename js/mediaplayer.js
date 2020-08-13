@@ -51,12 +51,10 @@ MediaPlayer = (function () {
                 $('#currentSong').text(song.title()); // TODO: Figure this out maybe with bindings
             }
 
-            $('#nowPlaying').show();
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
             _updateTimer = setInterval(_updateSongProgress, _playerRefreshRate);
         } else {    
-            $('#nowPlaying').hide();
             $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
             _mediaPlayer.pause();
             clearInterval(_updateTimer);
@@ -78,7 +76,6 @@ MediaPlayer = (function () {
 
     function _stop() {
         let _playButtons = $(_playButtonClass); // All play buttons in the page
-        $('#nowPlaying').hide();
         $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
         _mediaPlayer.pause();
         _mediaPlayer.currentTime = 0;
