@@ -40,7 +40,7 @@ MediaPlayer = (function () {
         let _playButtons = $(_playButtonClass); // All play buttons in the page, need to do it here since it must be reevaluated due to possible new elements
         if (_mediaPlayer.paused) {
             let song = _playList[_currentSong];
-            if ($(_mediaPlayer).attr('src') != song) // To allow for pause
+            if ($(_mediaPlayer).attr('src') != song) // To allow for pause, otherwise resuming starts over
                 $(_mediaPlayer).attr('src', song);
 
             $('#nowPlaying').show();
@@ -98,31 +98,31 @@ MediaPlayer = (function () {
     }
 
     function _previous() {
-        _stop();
-        // const next = _playList.pop();
-        const previous = _shuffleEnabled ? 1 : _currentSong--;
-        if (previous <= 0) {
+        _currentSong--;
+        if (_currentSong < 0) {
             _currentSong = 0;
             return;
         }
 
-        _play(_playList[previous]);
+        _stop();
+        _play();
     }
 
     function _next() {
-        _stop();
-        // const next = _playList.pop();
-        const next = _shuffleEnabled ? 1 : _currentSong++;
-        if (next >= _playList.length) {
+        _currentSong++;
+        if (_currentSong >= _playList.length) {
             _currentSong = _playList.length - 1;
             return;
         }
 
-        _play(_playList[next]);
+        _stop();
+        _play();
     }
 
     function _shuffle() {
         _shuffleEnabled = !_shuffleEnabled;
+        // TODO: randomize the playlist
+        // TODO: reindex the current song
     }
 
     function _repeat() {
