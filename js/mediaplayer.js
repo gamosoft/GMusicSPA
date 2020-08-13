@@ -30,7 +30,7 @@ MediaPlayer = (function () {
         // const song = $(evt.currentTarget).attr('url');
         // const song = $(control).attr('url');
 
-        const song = ko.dataFor(control);
+        const song = ko.mapping.toJS(ko.dataFor(control));
 
         _stop();        
         _clearPlayList();
@@ -45,10 +45,10 @@ MediaPlayer = (function () {
         let _playButtons = $(_playButtonClass); // All play buttons in the page, need to do it here since it must be reevaluated due to possible new elements
         if (_mediaPlayer.paused) {
             let song = _playList[_currentSong];
-            if ($(_mediaPlayer).attr('src') != song.url()) {// To allow for pause, otherwise resuming starts over
-                $(_mediaPlayer).attr('src', song.url());
+            if ($(_mediaPlayer).attr('src') != song.url) {// To allow for pause, otherwise resuming starts over
+                $(_mediaPlayer).attr('src', song.url);
 
-                $('#currentSong').text(song.title()); // TODO: Figure this out maybe with bindings
+                $('#currentSong').text(song.title); // TODO: Figure this out maybe with bindings
             }
 
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
@@ -68,11 +68,6 @@ MediaPlayer = (function () {
 
         const songsData = await API.LoadSongs(albumId);
         _addSongs(songsData);
-
-        // _addSong('./mp3/sample1.mp3');
-        // _addSong('./mp3/sample2.mp3');
-        // _addSong('./mp3/sample3.mp3');
-        // _addSong('./mp3/sample4.mp3');
 
         _play();
     }
