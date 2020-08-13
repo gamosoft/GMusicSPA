@@ -62,7 +62,7 @@ MediaPlayer = (function () {
         }
     }
 
-    function _playAlbum(albumId) {
+    async function _playAlbum(albumId) {
         _stop();
         _clearPlayList();
 
