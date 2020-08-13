@@ -66,6 +66,9 @@ MediaPlayer = (function () {
         _stop();
         _clearPlayList();
 
+        const songsData = await API.LoadSongs(albumId);
+        _addSongs(songsData);
+
         // _addSong('./mp3/sample1.mp3');
         // _addSong('./mp3/sample2.mp3');
         // _addSong('./mp3/sample3.mp3');
