@@ -129,6 +129,11 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
+    // _addSong('./mp3/sample1.mp3');
+    // _addSong('./mp3/sample2.mp3');
+    // _addSong('./mp3/sample3.mp3');
+    // _addSong('./mp3/sample4.mp3');
+
     // When the music stops, attempt to play the next song from the playlist
     $(_mediaPlayer).on('ended', (e) => {
         _next();
