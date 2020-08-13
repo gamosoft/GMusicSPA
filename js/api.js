@@ -43,7 +43,6 @@ API = (function () {
         const response = await fetch(url);
         const data = await response.json();
         SongsViewModel.LoadSongs(data);
-        $('.song').click(MediaPlayer.PlaySong);
     }
 
     return {

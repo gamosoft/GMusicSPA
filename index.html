@@ -77,7 +77,7 @@
                         <div>
                             <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Alien
                                 Love Secrets</strong>
-                            <a href="#" class="text-primary" onclick="MediaPlayer.Play()"><i
+                            <a href="#" class="text-primary" onclick="MediaPlayer.PlayAlbum()"><i
                                     class="play-button fa fa-play-circle fa-2x"></i></a>
                         </div>
                         <div>
@@ -147,6 +147,7 @@
                         <th scope="row" class="tracknumber">
                             <span class="song-number" data-bind="attr: { id: songid, src: url }, text: trackno">X</span>
                             <div class="play-song-button"><a href="#" class="song text-secondary"
+                                    onclick="MediaPlayer.PlaySong(this)"
                                     data-bind="attr: { id: songid, url: url }"><i class="fa fa-play"></i></a></div>
                         </th>
                         <td>

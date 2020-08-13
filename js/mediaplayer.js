@@ -12,6 +12,7 @@ MediaPlayer = (function () {
     // Playlist management
     function _clearPlayList() {
         _playList = [];
+        _currentSong = 0;
     }
 
     function _addSong(song) {
@@ -22,36 +23,41 @@ MediaPlayer = (function () {
         _playList = _playList.concat(songs);
     }
 
-    function _playSong(evt) {
-        const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
-        const song = $(evt.currentTarget).attr('url');
-        _play(song);
+    function _playSong(control) {
+        // const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
+        // const song = $(evt.currentTarget).attr('url');
+        const song = $(control).attr('url');
+        _stop();        
+        _clearPlayList();
+        _addSong(song);
+        _play();
     }
 
-    function _playAlbum(albumId) {
-        alert('not implemented');
-    }
-
-    function _play(song) {
-        if (song)
-            $(_mediaPlayer).attr('src', song);
+    function _play() {
+        if (_playList.length == 0)
+            return; // TODO: Check to pause after removing from playlist al songs???
         
-        if (!$(_mediaPlayer).attr('src'))
-            return;
-
         let _playButtons = $(_playButtonClass); // All play buttons in the page, need to do it here since it must be reevaluated due to possible new elements
         if (_mediaPlayer.paused) {
+            let song = _playList[_currentSong];
+            if ($(_mediaPlayer).attr('src') != song) // To allow for pause
+                $(_mediaPlayer).attr('src', song);
+
             $('#nowPlaying').show();
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
             _updateTimer = setInterval(_updateSongProgress, _playerRefreshRate);
-        } else {
+        } else {    
             $('#nowPlaying').hide();
             $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
             _mediaPlayer.pause();
             clearInterval(_updateTimer);
             _updateTimer = null;
         }
+    }
+
+    function _playAlbum(albumId) {
+        alert('not implemented');
     }
 
     function _stop() {
@@ -122,11 +128,6 @@ MediaPlayer = (function () {
     function _repeat() {
         alert('not implemented');
     }
-
-    _addSong('./mp3/sample1.mp3');
-    _addSong('./mp3/sample2.mp3');
-    _addSong('./mp3/sample3.mp3');
-    _addSong('./mp3/sample4.mp3');
 
     // When the music stops, attempt to play the next song from the playlist
     $(_mediaPlayer).on('ended', (e) => {
