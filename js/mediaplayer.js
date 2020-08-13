@@ -6,22 +6,35 @@ MediaPlayer = (function () {
     let _updateTimer = null;
     let _shuffleEnabled = false;
 
-    let _songQueue = [];
+    let _playList = []; // TODO: This will have all the song info, for now it's just a url
     let _currentSong = 0;
 
+    // Playlist management
+    function _clearPlayList() {
+        _playList = [];
+    }
+
     function _addSong(song) {
-        _songQueue.push(song);
+        _playList.push(song);
+    }
+
+    function _addSongs(songs) {
+        _playList = _playList.concat(songs);
     }
 
     function _playSong(evt) {
         const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
-        const url = $(evt.currentTarget).attr('url');
-        _play(url);
+        const song = $(evt.currentTarget).attr('url');
+        _play(song);
     }
 
-    function _play(url) {
-        if (url)
-            $(_mediaPlayer).attr('src', url);
+    function _playAlbum(albumId) {
+        alert('not implemented');
+    }
+
+    function _play(song) {
+        if (song)
+            $(_mediaPlayer).attr('src', song);
         
         if (!$(_mediaPlayer).attr('src'))
             return;
@@ -63,7 +76,7 @@ MediaPlayer = (function () {
         $('#songProgress').css('width', `${percentage}%`);
 
         if (currentTime >= totalTime)
-            _stop(); // TODO: Only if nothing more on queue
+            _stop(); // TODO: Only if nothing more on playlist
     }
 
     function _jumpTo(pixel) {
@@ -78,32 +91,28 @@ MediaPlayer = (function () {
         $('#songProgress').css('width', `${percentage}%`);
     }
 
-    function _playAlbum(albumId) {
-        alert('not implemented');
-    }
-
     function _previous() {
         _stop();
-        // const next = _songQueue.pop();
+        // const next = _playList.pop();
         const previous = _shuffleEnabled ? 1 : _currentSong--;
         if (previous <= 0) {
             _currentSong = 0;
             return;
         }
 
-        _play(_songQueue[previous]);
+        _play(_playList[previous]);
     }
 
     function _next() {
         _stop();
-        // const next = _songQueue.pop();
+        // const next = _playList.pop();
         const next = _shuffleEnabled ? 1 : _currentSong++;
-        if (next >= _songQueue.length) {
-            _currentSong = _songQueue.length - 1;
+        if (next >= _playList.length) {
+            _currentSong = _playList.length - 1;
             return;
         }
 
-        _play(_songQueue[next]);
+        _play(_playList[next]);
     }
 
     function _shuffle() {
@@ -119,14 +128,16 @@ MediaPlayer = (function () {
     _addSong('./mp3/sample3.mp3');
     _addSong('./mp3/sample4.mp3');
 
-    // When the music stops, attempt to play the next song from the queue
+    // When the music stops, attempt to play the next song from the playlist
     $(_mediaPlayer).on('ended', (e) => {
         _next();
     });
 
     return {
+        PlaySong: _playSong, // Adds and plays
+        ClearPlayList: _clearPlayList,
         AddSong: _addSong,
-        PlaySong: _playSong,
+        AddSongs: _addSongs,
         PlayAlbum: _playAlbum,
         Play: _play,
         Stop: _stop,
