@@ -55,4 +55,5 @@ $(() => {
         const cover = $(evt.relatedTarget).attr('src');
         $('#modalAlbumImage').attr('src', cover);
     });
+
 });

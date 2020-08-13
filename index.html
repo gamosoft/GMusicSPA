@@ -145,10 +145,10 @@
                     <tr class="play-song-tr">
                         <!-- TODO: allow selecting more than one row to queue up the songs -->
                         <th scope="row" class="tracknumber">
-                            <span class="song-number" data-bind="attr: { id: songid, src: url }, text: trackno">X</span>
-                            <div class="play-song-button"><a href="#" class="song text-secondary"
+                            <span class="song-number" data-bind="text: trackno">X</span>
+                            <div class="play-song-button"><a class="song text-secondary"
                                     onclick="MediaPlayer.PlaySong(this)"
-                                    data-bind="attr: { id: songid, url: url }"><i class="fa fa-play"></i></a></div>
+                                    data-bind="attr: { id: songid }"><i class="fa fa-play"></i></a></div>
                         </th>
                         <td>
                             <span data-bind="text: trim(title(), 30), attr: { title: title }">Title</span>
