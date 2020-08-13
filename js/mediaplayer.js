@@ -84,9 +84,10 @@ MediaPlayer = (function () {
         if (currentTime >= totalTime) { // Song finished
             _stop();
 
-            if (_currentSong < _playList.length)
+            if (_currentSong < _playList.length - 1)
                 _next();
-            // TODO: If at the end, start over?
+            else
+                _currentSong = 0; // If at the end, start over?
         }
     }
 
