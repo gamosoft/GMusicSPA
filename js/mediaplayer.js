@@ -28,8 +28,8 @@ MediaPlayer = (function () {
     function _playSong(control) {
         // const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
         // const song = $(evt.currentTarget).attr('url');
-
         // const song = $(control).attr('url');
+
         const song = ko.dataFor(control);
 
         _stop();        
@@ -45,8 +45,11 @@ MediaPlayer = (function () {
         let _playButtons = $(_playButtonClass); // All play buttons in the page, need to do it here since it must be reevaluated due to possible new elements
         if (_mediaPlayer.paused) {
             let song = _playList[_currentSong];
-            if ($(_mediaPlayer).attr('src') != song.url()) // To allow for pause, otherwise resuming starts over
+            if ($(_mediaPlayer).attr('src') != song.url()) {// To allow for pause, otherwise resuming starts over
                 $(_mediaPlayer).attr('src', song.url());
+
+                $('#currentSong').text(song.title()); // TODO: Figure this out maybe with bindings
+            }
 
             $('#nowPlaying').show();
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
