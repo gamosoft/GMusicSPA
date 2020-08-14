@@ -43,15 +43,18 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <!-- data-bind="value: AlbumFilterText, valueUpdate: 'keyup'" -->
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="text" data-bind="value: FilterText, valueUpdate: 'keyup'" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
 
+    <div class="mb-2" data-bind="visible: ArtistsFiltered().length == 0 && AlbumsFiltered().length == 0 && SongsFiltered().length == 0">
+        <div class="text-warning text-center">No data found for this search filter</div>
+    </div>
+
     <main role="main" class="container-fluid">
-        <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: Artists">
+        <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: ArtistsFiltered">
             <div class="card mb-4 bg-transparent border-0">
                 <a data-bind="attr: { href: '#/artists/'+artistid() }"><img
                         class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
@@ -103,9 +106,8 @@
                 </div>
             </div>
         </div>
-        <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: Albums">
+        <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: AlbumsFiltered">
             <!-- data-bind="foreach: Albums, visible: Albums().length > 0" -->
-            <!-- TODO: AlbumsFiltered -->
             <div class="card mb-4 shadow-album">
                 <div>
                     <a data-bind="attr: { href: '#/albums/'+albumid() }"><img class="card-img-top z-depth-0 media-album"
@@ -141,9 +143,10 @@
                         <th scope="col"><i class="fas fa-music"></i></th>
                     </tr>
                 </thead>
-                <tbody data-bind="foreach: Songs">
+                <tbody data-bind="foreach: SongsFiltered">
                     <tr class="play-song-tr" onclick="$(this).toggleClass('bg-secondary')">
                         <!-- TODO: allow selecting more than one row to queue up the songs -->
+                        <!-- TODO: show ani_equalizer_black.gif -->
                         <th scope="row" class="tracknumber">
                             <span class="song-number" data-bind="text: trackno">X</span>
                             <div class="play-song-button"><a class="song text-secondary"

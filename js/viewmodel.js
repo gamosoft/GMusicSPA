@@ -1,9 +1,7 @@
 ViewModel = (function () {
-    let _artistFilterText = ko.observable();
+    let _filterText = ko.observable();
     let _artists = ko.observableArray([]);
-    let _albumFilterText = ko.observable();
     let _albums = ko.observableArray([]);
-    let _songFilterText = ko.observable();
     let _songs = ko.observableArray([]);
     
     // #region "Private methods"
@@ -17,11 +15,11 @@ ViewModel = (function () {
     }
 
     let _artistsFiltered = ko.computed(function () {
-        if (_artistFilterText() == undefined)
+        if (_filterText() == undefined)
             return _artists();
         else
             return ko.utils.arrayFilter(_artists(), function (artist) {
-                return artist.name().toLowerCase().indexOf(_artistFilterText().toLowerCase()) > -1;
+                return artist.name().toLowerCase().indexOf(_filterText().toLowerCase()) > -1;
             });
     });
 
@@ -34,11 +32,11 @@ ViewModel = (function () {
     }
 
     let _albumsFiltered = ko.computed(function () {
-        if (_albumFilterText() == undefined)
+        if (_filterText() == undefined)
             return _albums();
         else
             return ko.utils.arrayFilter(_albums(), function (album) {
-                return album.title().toLowerCase().indexOf(_albumFilterText().toLowerCase()) > -1;
+                return album.title().toLowerCase().indexOf(_filterText().toLowerCase()) > -1;
             });
     });
 
@@ -51,26 +49,24 @@ ViewModel = (function () {
     }
 
     let _songsFiltered = ko.computed(function () {
-        if (_songFilterText() == undefined)
+        if (_filterText() == undefined)
             return _songs();
         else
             return ko.utils.arrayFilter(_songs(), function (song) {
-                return song.title().toLowerCase().indexOf(_songFilterText().toLowerCase()) > -1;
+                return song.title().toLowerCase().indexOf(_filterText().toLowerCase()) > -1;
             });
     });
 
     // #endregion
 
     return {
-        AlbumFilterText: _albumFilterText,
-        AlbumsFiltered: _albumsFiltered,
-        Albums: _albums,
-        LoadAlbums: _loadAlbums,
-        ArtistFilterText: _artistFilterText,
+        FilterText: _filterText,
         ArtistsFiltered: _artistsFiltered,
         Artists: _artists,
         LoadArtists: _loadArtists,
-        SongFilterText: _songFilterText,
+        AlbumsFiltered: _albumsFiltered,
+        Albums: _albums,
+        LoadAlbums: _loadAlbums,
         SongsFiltered: _songsFiltered,
         Songs: _songs,
         LoadSongs: _loadSongs
