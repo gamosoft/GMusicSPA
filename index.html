@@ -166,9 +166,13 @@
                 role="progressbar" style="width: 0%"></div>
         </div>
         <div data-bind="if: CurrentSong()">
-            <small id="currentSong" data-bind="text: CurrentSong().title" class="text-secondary">&nbsp;</small>
-            <small id="currentArtist" data-bind="text: CurrentSong().artist" class="text-secondary">&nbsp;</small>
-            <small id="currentAlbum" data-bind="text: CurrentSong().album" class="text-secondary">&nbsp;</small>
+            <span data-bind="text: CurrentSong().title" class="text-secondary">&nbsp;</span>
+            <a data-bind="attr: { href: '#/artists/'+CurrentSong().artistId }">
+                <small data-bind="text: CurrentSong().artist" class="text-secondary">&nbsp;</small>
+            </a>
+            <a data-bind="attr: { href: '#/albums/'+CurrentSong().albumId }">
+                <small data-bind="text: CurrentSong().album" class="text-secondary">&nbsp;</small>
+            </a>
             <small id="currentSongDuration" class="text-secondary float-right">00:00 / 00:00</small>
         </div>
         <div>

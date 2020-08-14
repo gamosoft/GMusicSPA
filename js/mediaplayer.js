@@ -52,9 +52,6 @@ MediaPlayer = (function () {
             }
 
             ViewModel.CurrentSong(song);
-            // $('#currentSong').text(song.title); // TODO: Figure this out maybe with bindings
-            // $('#currentArtist').text(song.artistId); // TODO: Figure this out maybe with bindings
-            // $('#currentAlbum').text(song.artistId); // TODO: Figure this out maybe with bindings
 
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
@@ -96,9 +93,6 @@ MediaPlayer = (function () {
         $('#songProgress').css('width', '0%');
 
         ViewModel.CurrentSong({});
-        // $('#currentSong').html('&nbsp'); // To keep the spacing
-        // $('#currentArtist').html('&nbsp'); // TODO: Remove this after bindings in place
-        // $('#currentAlbum').html('&nbsp'); // To keep the spacing
 
         $('#currentSongDuration').text(`${'0'.toMMSS()} / ${'0'.toMMSS()}`);
     }
