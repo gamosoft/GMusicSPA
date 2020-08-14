@@ -81,6 +81,7 @@ MediaPlayer = (function () {
         clearInterval(_updateTimer);
         _updateTimer = null;
         $('#songProgress').css('width', '0%');
+        $('#currentSongDuration').text(`${'0'.toMMSS()} / ${'0'.toMMSS()}`);
     }
 
     function _updateSongProgress(forceUpdate) {
@@ -92,6 +93,8 @@ MediaPlayer = (function () {
         let percentage = Math.floor((currentTime / totalTime) * 100);
 
         $('#songProgress').css('width', `${percentage}%`);
+
+        $('#currentSongDuration').text(`${currentTime.toString().toMMSS()} / ${totalTime.toString().toMMSS()}`);
 
         if (currentTime >= totalTime) { // Song finished
             _stop();
