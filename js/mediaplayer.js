@@ -64,7 +64,7 @@ MediaPlayer = (function () {
         }
     }
 
-    async function _playAlbum(control) {
+    async function _playAlbum(control, shuffle) {
         const album = ko.mapping.toJS(ko.dataFor(control));
         const albumId = album.albumid; // Watch our for lowercase, etc
 
@@ -74,7 +74,14 @@ MediaPlayer = (function () {
         const songsData = await API.LoadSongs(albumId);
         _addSongs(songsData);
 
+        if (shuffle)
+            _shuffle();
+
         _play();
+    }
+
+    async function _shuffleAlbum(control) {
+        await _playAlbum(control, true);
     }
 
     function _stop() {
@@ -155,20 +162,6 @@ MediaPlayer = (function () {
     function _repeat() {
         alert('not implemented');
     }
-
-    async function _shuffleAlbum(control) {
-        const album = ko.mapping.toJS(ko.dataFor(control));
-        const albumId = album.albumid; // Watch our for lowercase, etc
-        
-        _stop();
-        _clearPlayList();
-
-        const songsData = await API.LoadSongs(albumId);
-        _addSongs(songsData);
-        _shuffle();
-
-        _play();
-    }    
 
     // When the music stops, attempt to play the next song from the playlist
     $(_mediaPlayer).on('ended', (e) => {
