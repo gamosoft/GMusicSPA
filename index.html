@@ -49,10 +49,6 @@
         </div>
     </nav>
 
-    <div class="mb-2" data-bind="visible: ArtistsFiltered().length == 0 && AlbumsFiltered().length == 0 && SongsFiltered().length == 0">
-        <div class="text-warning text-center">No data found for this search filter</div>
-    </div>
-
     <main role="main" class="container-fluid">
         <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: ArtistsFiltered">
             <div class="card mb-4 bg-transparent border-0">
@@ -166,15 +162,27 @@
         </div>
     </main><!-- /.container -->
 
+    <div class="mb-2" data-bind="visible: ArtistsFiltered().length == 0 && AlbumsFiltered().length == 0 && SongsFiltered().length == 0">
+        <div class="text-warning text-center">No data found for this search filter</div>
+    </div>
+
     <div class="fixed-bottom bg-dark">
-        <div id="progressBar" class="progress mb-3">
+        <div id="progressBar" class="progress">
             <div id="songProgress" class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
                 role="progressbar" style="width: 0%"></div>
         </div>
         <div>
-            <div><span id="currentSong" class="text-secondary"></span></div>
+            <small id="currentSong" class="text-secondary">&nbsp;</small>
+            <small class="text-secondary float-right">00:00 / 00:00</small>
+        </div>
+        <div>
             <div class="text-center">
                 <ul class="">
+                    <!-- <li class="float-left">
+                        <span id="currentSong" class="text-secondary"></span>
+                         <br>
+                        <span id="currentSong2" class="text-secondary">dasda</span>
+                    </li> -->
                     <li class="fa-stack fa-1x">
                         <a class="text-secondary" onclick="MediaPlayer.Repeat()"><i
                                 class="fa fa-redo fa-stack-1x"></i></a>

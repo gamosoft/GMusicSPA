@@ -31,6 +31,7 @@ MediaPlayer = (function () {
         // const song = $(control).attr('url');
 
         const song = ko.mapping.toJS(ko.dataFor(control));
+        // const song = ko.unwrap(ko.dataFor(control));
 
         _stop();        
         _clearPlayList();
