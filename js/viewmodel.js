@@ -4,6 +4,8 @@ ViewModel = (function () {
     let _albums = ko.observableArray([]);
     let _songs = ko.observableArray([]);
     let _currentSong = ko.observable();
+    let _currentAlbum = ko.observable();
+    let _currentArtist = ko.observable();
     
     // #region "Private methods"
 
@@ -71,6 +73,8 @@ ViewModel = (function () {
         SongsFiltered: _songsFiltered,
         Songs: _songs,
         LoadSongs: _loadSongs,
-        CurrentSong: _currentSong
+        CurrentSong: _currentSong,
+        CurrentAlbum: _currentAlbum,
+        CurrentArtist: _currentArtist
     };
 })();

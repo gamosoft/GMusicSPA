@@ -135,7 +135,9 @@
         {
             "songid": 1,
             "albumid": 1,
+            "album": "Alien Love Secrets",
             "artistid": 1,
+            "artist": "Steve Vai",
             "title": "Bad Horsie",
             "duration": "7:25",
             "playcount": "3",
@@ -145,7 +147,9 @@
         {
             "songid": 2,
             "albumid": 1,
+            "album": "Alien Love Secrets",
             "artistid": 1,
+            "artist": "Steve Vai",
             "title": "Juice",
             "duration": "7:25",
             "playcount": "3",
@@ -155,7 +159,9 @@
         {
             "songid": 4,
             "albumid": 1,
+            "album": "Alien Love Secrets",
             "artistid": 1,
+            "artist": "Steve Vai",
             "title": "The Boy from Seattle",
             "duration": "7:25",
             "playcount": "3",
@@ -165,7 +171,9 @@
         {
             "songid": 7,
             "albumid": 1,
+            "album": "Alien Love Secrets",
             "artistid": 1,
+            "artist": "Steve Vai",
             "title": "Tender Surrender",
             "duration": "7:25",
             "playcount": "3",
@@ -175,7 +183,9 @@
         {
             "songid": 8,
             "albumid": 2,
+            "album": "Engines of Creation",
             "artistid": 2,
+            "artist": "Joe Satriani",
             "title": "Devil's Slide",
             "duration": "5:32",
             "playcount": "2",
@@ -185,7 +195,9 @@
         {
             "songid": 9,
             "albumid": 2,
+            "album": "Engines of Creation",
             "artistid": 2,
+            "artist": "Joe Satriani",
             "title": "Flavor Crystal 7",
             "duration": "5:32",
             "playcount": "2",
@@ -195,7 +207,9 @@
         {
             "songid": 10,
             "albumid": 2,
+            "album": "Engines of Creation",
             "artistid": 2,
+            "artist": "Joe Satriani",
             "title": "Until We Say Goodbye",
             "duration": "5:32",
             "playcount": "2",
@@ -205,7 +219,9 @@
         {
             "songid": 11,
             "albumid": 2,
+            "album": "Engines of Creation",
             "artistid": 2,
+            "artist": "Joe Satriani",
             "title": "Attack",
             "duration": "5:32",
             "playcount": "2",
@@ -215,7 +231,9 @@
         {
             "songid": 12,
             "albumid": 2,
+            "album": "Engines of Creation",
             "artistid": 2,
+            "artist": "Joe Satriani",
             "title": "Champagne?",
             "duration": "5:32",
             "playcount": "2",
@@ -225,7 +243,9 @@
         {
             "songid": 14,
             "albumid": 5,
+            "album": "The Division Bell",
             "artistid": 3,
+            "artist": "Pink Floyd",
             "title": "What Do You Want From Me",
             "duration": "6:42",
             "playcount": "4",
@@ -235,7 +255,9 @@
         {
             "songid": 15,
             "albumid": 5,
+            "album": "The Division Bell",
             "artistid": 3,
+            "artist": "Pink Floyd",
             "title": "Poles Apart",
             "duration": "6:42",
             "playcount": "4",
@@ -245,7 +267,9 @@
         {
             "songid": 16,
             "albumid": 5,
+            "album": "The Division Bell",
             "artistid": 3,
+            "artist": "Pink Floyd",
             "title": "Marooned",
             "duration": "6:42",
             "playcount": "4",
@@ -255,7 +279,9 @@
         {
             "songid": 17,
             "albumid": 5,
+            "album": "The Division Bell",
             "artistid": 3,
+            "artist": "Pink Floyd",
             "title": "A Great Day for Freedom",
             "duration": "6:42",
             "playcount": "4",
@@ -265,7 +291,9 @@
         {
             "songid": 19,
             "albumid": 5,
+            "album": "The Division Bell",
             "artistid": 3,
+            "artist": "Pink Floyd",
             "title": "Take it Back",
             "duration": "6:42",
             "playcount": "4",
@@ -275,7 +303,9 @@
         {
             "songid": 20,
             "albumid": 5,
+            "album": "The Division Bell",
             "artistid": 3,
+            "artist": "Pink Floyd",
             "title": "Coming Back to Life",
             "duration": "6:42",
             "playcount": "4",

@@ -165,10 +165,10 @@
             <div id="songProgress" class="progress-bar progress-bar-striped bg-secondary progress-bar-animated"
                 role="progressbar" style="width: 0%"></div>
         </div>
-        <div>
-            <small id="currentSong" class="text-secondary">&nbsp;</small>
-            <small id="currentArtist" class="text-secondary">&nbsp;</small>
-            <small id="currentAlbum" class="text-secondary">&nbsp;</small>
+        <div data-bind="if: CurrentSong()">
+            <small id="currentSong" data-bind="text: CurrentSong().title" class="text-secondary">&nbsp;</small>
+            <small id="currentArtist" data-bind="text: CurrentSong().artist" class="text-secondary">&nbsp;</small>
+            <small id="currentAlbum" data-bind="text: CurrentSong().album" class="text-secondary">&nbsp;</small>
             <small id="currentSongDuration" class="text-secondary float-right">00:00 / 00:00</small>
         </div>
         <div>
