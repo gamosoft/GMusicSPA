@@ -209,7 +209,7 @@
                                 class="fa fa-random fa-stack-1x"></i></a>
                     </li>
                     <li class="fa-stack fa-1x float-right">
-                        <a class="text-secondary"><i class="fa fa-stream"></i></a>
+                        <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
                     </li>
                     <li class="fa-stack fa-1x float-right">
                         <a class="text-secondary"><i class="fa fa-volume-up"></i></a>
@@ -227,6 +227,45 @@
             <div class="modal-content">
                 <div class="modal-body text-center">
                     <img id="modalAlbumImage" style="max-width: 500px; max-height: 500px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="playListModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    Playlist here
+                    <table class="table table-sm table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
             </div>
         </div>
