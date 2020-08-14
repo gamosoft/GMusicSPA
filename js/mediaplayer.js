@@ -156,6 +156,7 @@ MediaPlayer = (function () {
     function _shuffle() {
         _shuffleEnabled = !_shuffleEnabled;
         _playList.shuffle(); // This modifies the original array!
+        ViewModel.ShuffleEnabled(_shuffleEnabled); // Update viewmodel
         // TODO: reindex the current song
     }
 

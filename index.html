@@ -204,7 +204,8 @@
                         <a class="text-secondary" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
                     </li>
                     <li class="fa-stack fa-1x">
-                        <a class="text-secondary" onclick="MediaPlayer.Shuffle()"><i
+                        <!-- Conditional binding of CSS class depending on property -->
+                        <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }" onclick="MediaPlayer.Shuffle()"><i
                                 class="fa fa-random fa-stack-1x"></i></a>
                     </li>
                     <li class="fa-stack fa-1x float-right">
