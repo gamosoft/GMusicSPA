@@ -35,12 +35,9 @@ Array.prototype.shuffle = function() {
 };
 
 $(() => {
-    app.run('#/albums');
+    ko.applyBindings(ViewModel, document.getElementById('body'));
 
-    ko.applyBindings(AlbumsViewModel, document.getElementById('albumsList'));
-    ko.applyBindings(AlbumsViewModel, document.getElementById('albumDetail'));
-    ko.applyBindings(ArtistsViewModel, document.getElementById('artistsList'));
-    ko.applyBindings(SongsViewModel, document.getElementById('songsList'));
+    app.run('#/albums');
 
     $('#progressBar').click(function(e) { 
         // element that has been clicked. 

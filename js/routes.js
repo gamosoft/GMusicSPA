@@ -9,7 +9,7 @@ let app = $.sammy(function () {
         $('#albumsList').show();
         setActiveLink('#albumsLink');
         const albumsData = await API.LoadAlbums();
-        AlbumsViewModel.LoadAlbums(albumsData);
+        ViewModel.LoadAlbums(albumsData);
     });
     this.get('#/albums/:albumId', async function(context) {
         const albumId = this.params['albumId'];
@@ -18,16 +18,16 @@ let app = $.sammy(function () {
         $('#songsList').show();
         setActiveLink('#albumsLink');
         const albumData = await API.LoadAlbum(albumId);
-        AlbumsViewModel.LoadAlbums(albumData);
         const songsData = await API.LoadSongs(albumId);
-        SongsViewModel.LoadSongs(songsData);
+        ViewModel.LoadAlbums(albumData);
+        ViewModel.LoadSongs(songsData);
       });
     this.get('#/artists', async function () {
         $('.toggle-section').hide();
         $('#artistsList').show();
         setActiveLink('#artistsLink');
         const artistsData = await API.LoadArtists();
-        ArtistsViewModel.LoadArtists(artistsData);
+        ViewModel.LoadArtists(artistsData);
     });
     this.get('#/artists/:artistId', async function () {
         const artistId = this.params['artistId'];
@@ -35,14 +35,14 @@ let app = $.sammy(function () {
         $('#albumsList').show();
         setActiveLink('#artistsLink');
         const albumsData = await API.LoadAlbums(artistId);
-        AlbumsViewModel.LoadAlbums(albumsData);
+        ViewModel.LoadAlbums(albumsData);
     });
     this.get('#/songs', async function () {
         $('.toggle-section').hide();
         $('#songsList').show();
         setActiveLink('#songsLink');
         const songsData = await API.LoadSongs();
-        SongsViewModel.LoadSongs(songsData);
+        ViewModel.LoadSongs(songsData);
     });
     this.notFound = function () {
         // TODO: Handle this with a default page
