@@ -159,6 +159,10 @@ MediaPlayer = (function () {
         // TODO: reindex the current song
     }
 
+    function _isShuffleEnabled() {
+        return _shuffleEnabled;
+    }
+
     function _repeat() {
         alert('not implemented');
     }
@@ -180,6 +184,7 @@ MediaPlayer = (function () {
         Previous: _previous,
         Next: _next,
         Shuffle: _shuffle,
+        IsShuffleEnabled: _isShuffleEnabled,
         Repeat: _repeat,
         UpdateSongProgress: _updateSongProgress,
         JumpTo: _jumpTo
