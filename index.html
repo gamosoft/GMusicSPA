@@ -75,7 +75,7 @@
                     <div style="display: inline-block" class="align-middle">
                         <div>
                             <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Album Title</strong>
-                            <a class="text-primary" onclick="MediaPlayer.PlayAlbum(1)"><i
+                            <a class="text-primary" onclick="MediaPlayer.PlayAlbum(this)"><i
                                     class="play-button fa fa-play-circle fa-2x"></i></a>
                         </div>
                         <div>
@@ -94,7 +94,7 @@
                         <div>
                             <button class="btn btn-sm btn-primary"><i class="fa fa-compact-disc"></i>&nbsp;INSTANT
                                 MIX</button>
-                            <button class="btn btn-sm btn-primary" onclick="MediaPlayer.ShuffleAlbum(1)"><i class="fa fa-random"></i>&nbsp;SHUFFLE</button>
+                            <button class="btn btn-sm btn-primary" onclick="MediaPlayer.ShuffleAlbum(this)"><i class="fa fa-random"></i>&nbsp;SHUFFLE</button>
                             <button class="btn btn-sm btn-primary"><i class="fa fa-ellipsis-v"></i></button>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                 <div>
                     <a data-bind="attr: { href: '#/albums/'+albumid() }"><img class="card-img-top z-depth-0 media-album"
                             data-bind="attr: { src: image, title: title }"></a>
-                    <a class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(1)"><i
+                    <a class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(this)"><i
                             class="fa fa-play-circle fa-2x"></i></a>
                 </div>
                 <div class="card-body" data-bind="attr: { id: albumid }">

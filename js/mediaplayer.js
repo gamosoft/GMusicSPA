@@ -64,7 +64,10 @@ MediaPlayer = (function () {
         }
     }
 
-    async function _playAlbum(albumId) {
+    async function _playAlbum(control) {
+        const album = ko.mapping.toJS(ko.dataFor(control));
+        const albumId = album.albumid; // Watch our for lowercase, etc
+
         _stop();
         _clearPlayList();
 
@@ -153,7 +156,10 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
-    async function _shuffleAlbum(albumId) {
+    async function _shuffleAlbum(control) {
+        const album = ko.mapping.toJS(ko.dataFor(control));
+        const albumId = album.albumid; // Watch our for lowercase, etc
+        
         _stop();
         _clearPlayList();
 
