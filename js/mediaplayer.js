@@ -153,6 +153,17 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
+    async function _shuffleAlbum(albumId) {
+        _stop();
+        _clearPlayList();
+
+        const songsData = await API.LoadSongs(albumId);
+        _addSongs(songsData);
+        _shuffle();
+
+        _play();
+    }    
+
     // When the music stops, attempt to play the next song from the playlist
     $(_mediaPlayer).on('ended', (e) => {
         _next();
@@ -161,6 +172,7 @@ MediaPlayer = (function () {
     return {
         PlaySong: _playSong, // Adds and plays
         PlayAlbum: _playAlbum, // Adds and plays
+        ShuffleAlbum: _shuffleAlbum, // Adds, shuffles and plays
         ClearPlayList: _clearPlayList,
         AddSong: _addSong,
         AddSongs: _addSongs,
