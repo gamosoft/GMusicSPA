@@ -26,7 +26,7 @@ MediaPlayer = (function () {
     }
 
     function _playSong(control) {
-        // const songid = parseInt($(evt.currentTarget).attr('songid')); // target gives the clicked element, currentTarget gives the element the event is attached to
+        // const songId = parseInt($(evt.currentTarget).attr('songId')); // target gives the clicked element, currentTarget gives the element the event is attached to
         // const song = $(evt.currentTarget).attr('url');
         // const song = $(control).attr('url');
 
@@ -53,8 +53,8 @@ MediaPlayer = (function () {
 
             ViewModel.CurrentSong(song);
             // $('#currentSong').text(song.title); // TODO: Figure this out maybe with bindings
-            // $('#currentArtist').text(song.artistid); // TODO: Figure this out maybe with bindings
-            // $('#currentAlbum').text(song.artistid); // TODO: Figure this out maybe with bindings
+            // $('#currentArtist').text(song.artistId); // TODO: Figure this out maybe with bindings
+            // $('#currentAlbum').text(song.artistId); // TODO: Figure this out maybe with bindings
 
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
@@ -69,12 +69,11 @@ MediaPlayer = (function () {
 
     async function _playAlbum(control, shuffle) {
         const album = ko.mapping.toJS(ko.dataFor(control));
-        const albumId = album.albumid; // Watch our for lowercase, etc
 
         _stop();
         _clearPlayList();
 
-        const songsData = await API.LoadSongs(albumId);
+        const songsData = await API.LoadSongs(album.albumId);
         _addSongs(songsData);
 
         if (shuffle)

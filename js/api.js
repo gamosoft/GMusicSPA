@@ -11,7 +11,7 @@ API = (function () {
     
     async function _loadAlbum(albumId) {
         // Fetch album information
-        const response = await fetch(`${albumsUrl}?albumid=${albumId}`);
+        const response = await fetch(`${albumsUrl}?albumId=${albumId}`);
         const data = await response.json();
         return data;
     }
@@ -19,7 +19,7 @@ API = (function () {
     async function _loadAlbums(artistId) {
         // Fetch album information
         let url = artistId
-                ? `${albumsUrl}?artistid=${artistId}`
+                ? `${albumsUrl}?artistId=${artistId}`
                 : albumsUrl;
     
         const response = await fetch(url);
@@ -37,7 +37,7 @@ API = (function () {
     async function _loadSongs(albumId) {
         // Fetch song information
         let url = albumId
-                ? `${songsUrl}?albumid=${albumId}`
+                ? `${songsUrl}?albumId=${albumId}`
                 : songsUrl;
     
         const response = await fetch(url);
