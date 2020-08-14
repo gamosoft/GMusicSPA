@@ -81,6 +81,8 @@ MediaPlayer = (function () {
         clearInterval(_updateTimer);
         _updateTimer = null;
         $('#songProgress').css('width', '0%');
+
+        $('#currentSong').html('&nbsp'); // To keep the spacing
         $('#currentSongDuration').text(`${'0'.toMMSS()} / ${'0'.toMMSS()}`);
     }
 
