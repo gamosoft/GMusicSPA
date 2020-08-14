@@ -49,8 +49,9 @@ MediaPlayer = (function () {
             if ($(_mediaPlayer).attr('src') != song.url) {// To allow for pause, otherwise resuming starts over
                 $(_mediaPlayer).attr('src', song.url);
 
-                $('#currentSong').text(song.title); // TODO: Figure this out maybe with bindings
             }
+
+            $('#currentSong').text(song.title); // TODO: Figure this out maybe with bindings
 
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
