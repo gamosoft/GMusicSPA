@@ -168,9 +168,12 @@
             <div id="songProgress" class="progress-bar progress-bar-striped bg-secondary progress-bar-animated"
                 role="progressbar" style="width: 0%"></div>
         </div>
-        <div data-bind="if: CurrentSong()" style="position: absolute;">
-            <img data-bind="attr: { src: CurrentSong().image, title: CurrentSong().album }" class="mini-album-cover float-left mr-2">
-            <div>
+        <small id="currentSongDuration" class="text-secondary float-right">00:00 / 00:00</small>
+
+        <div data-bind="if: CurrentSong()">
+            <img data-bind="attr: { src: CurrentSong().image, title: CurrentSong().album }, visible: CurrentSong().image"
+                class="mini-album-cover float-left mr-2">
+            <div style="padding-top: 10px;">
                 <span data-bind="text: CurrentSong().title" class="text-secondary">&nbsp;</span>
             </div>
             <div>
@@ -180,10 +183,9 @@
                 <a data-bind="attr: { href: '#/albums/'+CurrentSong().albumId }">
                     <small data-bind="text: CurrentSong().album" class="text-secondary">&nbsp;</small>
                 </a>
-                <small id="currentSongDuration" class="text-secondary float-right">00:00 / 00:00</small>
             </div>
         </div>
-        <div>
+        <div style="margin-top: -40px;">
             <div class="text-center">
                 <ul class="">
                     <!-- <li class="float-left">
@@ -229,7 +231,6 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="albumCoverModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
