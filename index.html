@@ -41,12 +41,35 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" data-bind="value: FilterText, valueUpdate: 'keyup'" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
 
-    <main role="main" class="container-fluid">
+    <div class="container-fluid">
+        <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: AlbumsFiltered">
+            <div class="card mb-4 shadow-album">
+                <div>
+                    <a data-bind="attr: { href: '#/albums/'+albumId() }"><img class="card-img-top z-depth-0 media-album"
+                            data-bind="attr: { src: image, title: title }"></a>
+                    <a class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(this)"><i
+                            class="fa fa-play-circle fa-2x"></i></a>
+                </div>
+                <div class="card-body" data-bind="attr: { id: albumId }">
+                    <div>
+                        <a data-bind="attr: { href: '#/albums/'+albumId() }"><strong class="text-muted"
+                                data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
+                    </div>
+                    <div>
+                        <a data-bind="attr: { href: '#/artists/'+artistId() }"><small class="text-muted"
+                                data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                        <div class="ellipsis-album-button"><a class="text-secondary"><i
+                                    class="fa fa-ellipsis-v float-right"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
         <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: ArtistsFiltered">
             <div class="card mb-4 bg-transparent border-0">
                 <a data-bind="attr: { href: '#/artists/'+artistId() }"><img
@@ -60,6 +83,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid">
         <div id="albumDetail" class="row mb-2 toggle-section" data-bind="foreach: Albums">
             <div class="col">
                 <div data-bind="attr: { id: albumId }">
@@ -97,28 +122,8 @@
                 </div>
             </div>
         </div>
-        <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: AlbumsFiltered">
-            <div class="card mb-4 shadow-album">
-                <div>
-                    <a data-bind="attr: { href: '#/albums/'+albumId() }"><img class="card-img-top z-depth-0 media-album"
-                            data-bind="attr: { src: image, title: title }"></a>
-                    <a class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(this)"><i
-                            class="fa fa-play-circle fa-2x"></i></a>
-                </div>
-                <div class="card-body" data-bind="attr: { id: albumId }">
-                    <div>
-                        <a data-bind="attr: { href: '#/albums/'+albumId() }"><strong class="text-muted"
-                                data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
-                    </div>
-                    <div>
-                        <a data-bind="attr: { href: '#/artists/'+artistId() }"><small class="text-muted"
-                                data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
-                        <div class="ellipsis-album-button"><a class="text-secondary"><i
-                                    class="fa fa-ellipsis-v float-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="container-fluid">
         <div id="songsList" class="table-responsive toggle-section" data-bind="visible: Songs().length > 0">
             <table class="table table-sm table-hover table-dark">
                 <!-- table-responsive -->
@@ -152,7 +157,7 @@
                 </tbody>
             </table>
         </div>
-    </main>
+    </div>
 
     <div class="mb-2" data-bind="visible: ArtistsFiltered().length == 0 && AlbumsFiltered().length == 0 && SongsFiltered().length == 0">
         <div class="text-warning text-center">No data found for this search filter</div>
