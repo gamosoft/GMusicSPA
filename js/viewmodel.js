@@ -4,6 +4,7 @@ ViewModel = (function () {
     let _albums = ko.observableArray([]);
     let _songs = ko.observableArray([]);
     let _currentSong = ko.observable();
+    let _playList = ko.observableArray([]);
 
     let _shuffleEnabled = ko.observable(false);
     
@@ -74,6 +75,7 @@ ViewModel = (function () {
         Songs: _songs,
         LoadSongs: _loadSongs,
         CurrentSong: _currentSong,
-        ShuffleEnabled: _shuffleEnabled
+        ShuffleEnabled: _shuffleEnabled,
+        PlayList: _playList
     };
 })();

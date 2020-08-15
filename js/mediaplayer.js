@@ -19,10 +19,12 @@ MediaPlayer = (function () {
 
     function _addSong(song) {
         _playList.push(song);
+        ViewModel.PlayList(_playList);
     }
 
     function _addSongs(songs) {
         _playList = _playList.concat(songs);
+        ViewModel.PlayList(_playList);
     }
 
     function _playSong(control) {
@@ -160,6 +162,7 @@ MediaPlayer = (function () {
             _shuffleEnabled = shuffle;
         _playList.shuffle(); // This modifies the original array!
         ViewModel.ShuffleEnabled(_shuffleEnabled); // Update viewmodel
+        ViewModel.PlayList(_playList);
         // TODO: reindex the current song
     }
 
