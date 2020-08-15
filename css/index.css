@@ -16,6 +16,19 @@ body {
     height: 175px;
 }
 
+/* Larger screen sizes */
+@media screen and (min-width: 35em) {
+}
+/* Smaller screen sizes */
+@media screen and (max-width: 38em) {
+    .card-deck {
+        column-count: 2;
+    }
+    .card {
+        height: 289px;
+    }
+}
+
 .progress:hover {
     cursor: pointer;
 }
