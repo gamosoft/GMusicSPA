@@ -164,78 +164,71 @@
     </div>
 
     <div class="fixed-bottom bg-dark">
-        <div id="progressBar" class="progress ml-1 mr-1">
+        <div id="progressBar" class="progress">
             <div id="songProgress" class="progress-bar progress-bar-striped bg-secondary progress-bar-animated"
                 role="progressbar" style="width: 0%"></div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-4">asdas</div>
-                <div class="col-4">&nbsp</div>
-                <div class="col-4">asdas</div>
-            </div>
-            
-        </div>
 
-        <div data-bind="if: CurrentSong()">
-            <small id="currentSongDuration" class="text-secondary float-right">00:00 / 00:00</small>
-            <img data-bind="attr: { src: CurrentSong().image, title: CurrentSong().album }, visible: CurrentSong().image"
-                class="mini-album-cover float-left mr-2">
-            <div style="padding-top: 10px;">
-                <span data-bind="text: CurrentSong().title" class="text-secondary">&nbsp;</span>
-            </div>
-            <div>
-                <a data-bind="attr: { href: '#/artists/'+CurrentSong().artistId }">
-                    <small data-bind="text: CurrentSong().artist" class="text-secondary">&nbsp;</small>
-                </a>
-                <a data-bind="attr: { href: '#/albums/'+CurrentSong().albumId }">
-                    <small data-bind="text: CurrentSong().album" class="text-secondary">&nbsp;</small>
-                </a>
-            </div>
-        </div>
-        <div style="">
-            <div class="text-center">
-                <ul class="">
-                    <!-- <li class="float-left">
-                        <span id="currentSong" class="text-secondary"></span>
-                         <br>
-                        <span id="currentSong2" class="text-secondary">dasda</span>
-                    </li> -->
-                    <li class="fa-stack fa-1x">
-                        <a class="text-secondary" onclick="MediaPlayer.Repeat()"><i
-                                class="fa fa-redo fa-stack-1x"></i></a>
-                    </li>
-                    <li class="fa-stack fa-1x">
-                        <a class="text-secondary" onclick="MediaPlayer.Previous()"><i
-                                class="fa fa-step-backward fa-stack-1x"></i></a>
-                    </li>
-                    <li class="fa-stack fa-1x">
-                        <!-- TODO: when queue is empty, make these buttons disabled, except maybe the shuffle one -->
-                        <a class="text-secondary" onclick="MediaPlayer.Play()"><i
-                                class="play-button fa fa-play-circle fa-stack-2x"></i></a>
-                    </li>
-                    <li class="fa-stack fa-1x">
-                        <a class="text-secondary" onclick="MediaPlayer.Next()"><i
-                                class="fa fa-step-forward fa-stack-1x"></i></a>
-                    </li>
-                    <li class="fa-stack fa-1x">
-                        <a class="text-secondary" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
-                    </li>
-                    <li class="fa-stack fa-1x">
-                        <!-- Conditional binding of CSS class depending on property -->
-                        <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }" onclick="MediaPlayer.Shuffle()"><i
-                                class="fa fa-random fa-stack-1x"></i></a>
-                    </li>
-                    <li class="fa-stack fa-1x float-right">
-                        <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
-                    </li>
-                    <li class="fa-stack fa-1x float-right">
-                        <a class="text-secondary"><i class="fa fa-volume-up"></i></a>
-                    </li>
-                </ul>
-                <audio id="musicPlayer" controls="controls" style="display: none;">
-                    Your browser does not support the HTML5 Audio element.
-                </audio>
+        <div class="container-fluid text-secondary" data-bind="if: CurrentSong()">
+            <div class="row">
+                <div class="col-3">
+                    <img data-bind="attr: { src: CurrentSong().image, title: CurrentSong().album }, visible: CurrentSong().image"
+                        class="mini-album-cover float-left mr-2">
+                    <div style="padding-top: 10px;">
+                        <span data-bind="text: CurrentSong().title" class="text-secondary">&nbsp;</span>
+                    </div>
+                    <div>
+                        <a data-bind="attr: { href: '#/artists/'+CurrentSong().artistId }">
+                            <small data-bind="text: CurrentSong().artist" class="text-secondary">&nbsp;</small>
+                        </a>
+                        <a data-bind="attr: { href: '#/albums/'+CurrentSong().albumId }">
+                            <small data-bind="text: CurrentSong().album" class="text-secondary">&nbsp;</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="text-center" style="padding-top: 18px;">
+                        <ul class="">
+                            <li class="fa-stack fa-1x">
+                                <a class="text-secondary" onclick="MediaPlayer.Repeat()"><i
+                                        class="fa fa-redo fa-stack-1x"></i></a>
+                            </li>
+                            <li class="fa-stack fa-1x">
+                                <a class="text-secondary" onclick="MediaPlayer.Previous()"><i
+                                        class="fa fa-step-backward fa-stack-1x"></i></a>
+                            </li>
+                            <li class="fa-stack fa-1x">
+                                <!-- TODO: when queue is empty, make these buttons disabled, except maybe the shuffle one -->
+                                <a class="text-secondary" onclick="MediaPlayer.Play()"><i
+                                        class="play-button fa fa-play-circle fa-stack-2x"></i></a>
+                            </li>
+                            <li class="fa-stack fa-1x">
+                                <a class="text-secondary" onclick="MediaPlayer.Next()"><i
+                                        class="fa fa-step-forward fa-stack-1x"></i></a>
+                            </li>
+                            <li class="fa-stack fa-1x">
+                                <a class="text-secondary" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
+                            </li>
+                            <li class="fa-stack fa-1x">
+                                <!-- Conditional binding of CSS class depending on property -->
+                                <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }" onclick="MediaPlayer.Shuffle()"><i
+                                        class="fa fa-random fa-stack-1x"></i></a>
+                            </li>
+                            <!-- <li class="fa-stack fa-1x float-right">
+                                <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
+                            </li>
+                            <li class="fa-stack fa-1x float-right">
+                                <a class="text-secondary"><i class="fa fa-volume-up"></i></a>
+                            </li> -->
+                        </ul>
+                        <audio id="musicPlayer" controls="controls" style="display: none;">
+                            Your browser does not support the HTML5 Audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div class="col-3 text-right">
+                    <small id="currentSongDuration" class="text-secondary">00:00 / 00:00</small>
+                </div>
             </div>
         </div>
     </div>
