@@ -74,7 +74,7 @@ MediaPlayer = (function () {
         _addSongs(songsData);
 
         if (shuffle)
-            _shuffle();
+            _shuffle(true);
 
         _play();
     }
@@ -153,8 +153,11 @@ MediaPlayer = (function () {
         _play();
     }
 
-    function _shuffle() {
-        _shuffleEnabled = !_shuffleEnabled;
+    function _shuffle(shuffle) {
+        if (typeof shuffle === 'undefined') // Check whether it has value passed or not
+            _shuffleEnabled = !_shuffleEnabled;
+        else
+            _shuffleEnabled = shuffle;
         _playList.shuffle(); // This modifies the original array!
         ViewModel.ShuffleEnabled(_shuffleEnabled); // Update viewmodel
         // TODO: reindex the current song
