@@ -1,10 +1,6 @@
 body {
     padding-top: 5rem;
 }
-.starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
-}
 .card-deck .card {
     min-width: 175px;
     max-width: 175px;
