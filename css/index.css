@@ -96,10 +96,10 @@ body {
 }
 
 .play-song-tr * .ellipsis-song-button {
-    display: none;
+    visibility: hidden;
 }
 .play-song-tr:hover * .ellipsis-song-button {
-    display: inline; /* TODO: fix flickr on long titles */
+    visibility: visible; /* Use visibility to fix flickr on long titles */
 }
 
 .tableFixHead          { overflow-y: auto; height: 500px; }
