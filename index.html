@@ -49,7 +49,7 @@
         <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: AlbumsFiltered">
             <div class="card mb-4 shadow-album">
                 <div>
-                    <a data-bind="attr: { href: '#/albums/'+albumId() }"><img class="card-img-top z-depth-0 media-album"
+                    <a data-bind="attr: { href: '#/albums/'+albumId() }"><img class="card-img-top z-depth-0 media-album rounded"
                             data-bind="attr: { src: image, title: title }"></a>
                     <a class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(this)"><i
                             class="fa fa-play-circle fa-2x"></i></a>
@@ -90,7 +90,7 @@
                 <div data-bind="attr: { id: albumId }">
                     <div style="display: inline-block">
                         <a data-toggle="modal" data-target="#albumCoverModal" data-bind="attr: { src: image }">
-                            <img class="card-img-top z-depth-0 media-album album-detail-cover"
+                            <img class="card-img-top z-depth-0 media-album album-detail-cover rounded"
                                 data-bind="attr: { src: image, title: title }">
                         </a>
                     </div>
