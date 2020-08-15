@@ -254,7 +254,12 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body text-center">
-                    <div id="playList" class="table-responsive" data-bind="visible: PlayList().length > 0">
+                    <div data-bind="visible: PlayList().length == 0" class="bg-dark text-light">
+                        <div><i class="fa fa-music fa-3x"></i></div>
+                        Your queue is empty
+Start some music or click the <i class="fa fa-ellipsis-v"></i> icon on an album, song, or playlist to add it to your queue
+                    </div>
+                    <div id="playList" class="table-responsive tableFixHead" data-bind="visible: PlayList().length > 0">
                         <table class="table table-sm table-hover table-dark">
                             <thead>
                                 <tr>

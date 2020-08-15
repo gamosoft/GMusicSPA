@@ -101,3 +101,6 @@ body {
 .play-song-tr:hover * .ellipsis-song-button {
     display: inline; /* TODO: fix flickr on long titles */
 }
+
+.tableFixHead          { overflow-y: auto; height: 500px; }
+.tableFixHead thead th { position: sticky; top: 0; background-color: #000000; }
