@@ -168,9 +168,9 @@
             <div id="songProgress" class="progress-bar progress-bar-striped bg-secondary progress-bar-animated"
                 role="progressbar" style="width: 0%"></div>
         </div>
-        <small id="currentSongDuration" class="text-secondary float-right">00:00 / 00:00</small>
 
         <div data-bind="if: CurrentSong()">
+            <small id="currentSongDuration" class="text-secondary float-right">00:00 / 00:00</small>
             <img data-bind="attr: { src: CurrentSong().image, title: CurrentSong().album }, visible: CurrentSong().image"
                 class="mini-album-cover float-left mr-2">
             <div style="padding-top: 10px;">
