@@ -186,48 +186,55 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="text-center" style="padding-top: 18px;">
-                        <ul class="">
-                            <li class="fa-stack fa-1x">
-                                <a class="text-secondary" onclick="MediaPlayer.Repeat()"><i
-                                        class="fa fa-redo fa-stack-1x"></i></a>
-                            </li>
-                            <li class="fa-stack fa-1x">
-                                <a class="text-secondary" onclick="MediaPlayer.Previous()"><i
-                                        class="fa fa-step-backward fa-stack-1x"></i></a>
-                            </li>
-                            <li class="fa-stack fa-1x">
-                                <!-- TODO: when queue is empty, make these buttons disabled, except maybe the shuffle one -->
-                                <a class="text-secondary" onclick="MediaPlayer.Play()"><i
-                                        class="play-button fa fa-play-circle fa-stack-2x"></i></a>
-                            </li>
-                            <li class="fa-stack fa-1x">
-                                <a class="text-secondary" onclick="MediaPlayer.Next()"><i
-                                        class="fa fa-step-forward fa-stack-1x"></i></a>
-                            </li>
-                            <li class="fa-stack fa-1x">
-                                <a class="text-secondary" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
-                            </li>
-                            <li class="fa-stack fa-1x">
-                                <!-- Conditional binding of CSS class depending on property -->
-                                <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }" onclick="MediaPlayer.Shuffle()"><i
-                                        class="fa fa-random fa-stack-1x"></i></a>
-                            </li>
-                            <!-- <li class="fa-stack fa-1x float-right">
-                                <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
-                            </li>
-                            <li class="fa-stack fa-1x float-right">
-                                <a class="text-secondary"><i class="fa fa-volume-up"></i></a>
-                            </li> -->
-                        </ul>
-                        <audio id="musicPlayer" controls="controls" style="display: none;">
-                            Your browser does not support the HTML5 Audio element.
-                        </audio>
-                    </div>
+                <div class="col-6 text-center" style="padding-top: 18px;">
+                    <ul>
+                        <li class="fa-stack fa-1x">
+                            <a class="text-secondary" onclick="MediaPlayer.Repeat()"><i
+                                    class="fa fa-redo fa-stack-1x"></i></a>
+                        </li>
+                        <li class="fa-stack fa-1x">
+                            <a class="text-secondary" onclick="MediaPlayer.Previous()"><i
+                                    class="fa fa-step-backward fa-stack-1x"></i></a>
+                        </li>
+                        <li class="fa-stack fa-1x">
+                            <!-- TODO: when queue is empty, make these buttons disabled, except maybe the shuffle one -->
+                            <a class="text-secondary" onclick="MediaPlayer.Play()"><i
+                                    class="play-button fa fa-play-circle fa-stack-2x"></i></a>
+                        </li>
+                        <li class="fa-stack fa-1x">
+                            <a class="text-secondary" onclick="MediaPlayer.Next()"><i
+                                    class="fa fa-step-forward fa-stack-1x"></i></a>
+                        </li>
+                        <li class="fa-stack fa-1x">
+                            <a class="text-secondary" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
+                        </li>
+                        <li class="fa-stack fa-1x">
+                            <!-- Conditional binding of CSS class depending on property -->
+                            <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }" onclick="MediaPlayer.Shuffle()"><i
+                                    class="fa fa-random fa-stack-1x"></i></a>
+                        </li>
+                        <!-- <li class="fa-stack fa-1x float-right">
+                            <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
+                        </li>
+                        <li class="fa-stack fa-1x float-right">
+                            <a class="text-secondary"><i class="fa fa-volume-up"></i></a>
+                        </li> -->
+                    </ul>
+                    <audio id="musicPlayer" controls="controls" style="display: none;">
+                        Your browser does not support the HTML5 Audio element.
+                    </audio>
                 </div>
-                <div class="col-3 text-right">
-                    <small id="currentSongDuration" data-bind="visible: CurrentSong().artist" class="text-secondary">00:00 / 00:00</small>
+                <div class="col-3 text-right" style="padding-top: 18px;">
+                    <ul>
+                        <li class="fa-stack fa-1x">
+                            <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
+                        </li>
+                        <li class="fa-stack fa-1x">
+                            <a class="text-secondary"><i class="fa fa-volume-up"></i></a>
+                        </li>
+                    </ul>
+                    <small id="currentSongDuration" data-bind="visible: CurrentSong().artist"
+                        class="text-secondary">00:00 / 00:00</small>
                 </div>
             </div>
         </div>
