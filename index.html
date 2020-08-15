@@ -258,24 +258,30 @@
                         <table class="table table-sm table-hover table-dark">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">NAME</th>
+                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col" class="text-left">SONG</th>
                                     <th scope="col"><i class="far fa-clock"></i></th>
                                     <th scope="col"><i class="fas fa-music"></i></th>
                                 </tr>
                             </thead>
                             <tbody data-bind="foreach: PlayList">
-                                <tr class="play-song-tr" onclick="$(this).toggleClass('bg-secondary')">
-                                    <th scope="row" class="tracknumber">
-                                        <span class="song-number" data-bind="text: trackNo">X</span>
-                                        <div class="play-song-button"><a class="song text-secondary"
-                                                onclick="MediaPlayer.PlaySong(this)"
-                                                data-bind="attr: { id: songId }"><i class="fa fa-play"></i></a></div>
+                                <tr class="play-song-tr">
+                                    <!-- onclick="$(this).toggleClass('bg-secondary')"> -->
+                                    <th scope="row">
+                                        <img src="./images/ani_equalizer_black.gif">
                                     </th>
-                                    <td>
-                                        <span data-bind="text: trim(title, 30), attr: { title: title }">Title</span>
-                                        <span class="ellipsis-song-button"><a class="text-secondary"><i
-                                                    class="fa fa-ellipsis-v float-right"></i></a></span>
+                                    <td class="text-left">
+                                        <div data-bind="text: trim(title, 30), attr: { title: title }">Title</div>
+                                        <div>
+                                            <a data-bind="attr: { href: '#/artists/'+artistId }">
+                                                <small data-bind="text: artist" class="text-secondary">&nbsp;</small>
+                                            </a>
+                                            <a data-bind="attr: { href: '#/albums/'+albumId }">
+                                                <small data-bind="text: album" class="text-secondary">&nbsp;</small>
+                                            </a>
+                                        </div>                    
+                                        <!-- <span class="ellipsis-song-button"><a class="text-secondary"><i
+                                                    class="fa fa-ellipsis-v float-right"></i></a></span> -->
                                     </td>
                                     <td data-bind="text: duration">00:00</td>
                                     <td data-bind="text: playCount">&nbsp;</td>
