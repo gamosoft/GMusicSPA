@@ -75,7 +75,7 @@ MediaPlayerViewModel = (function () {
     function _clearPlayList() {
         _playList([]);
         _currentSong({});
-        _playListIndex(0);
+        _playListIndex = 0;
     }
 
     function _addSong(song) {
@@ -86,17 +86,17 @@ MediaPlayerViewModel = (function () {
         _playList(_playList().concat(songs));
     }
 
-    function _playSong(control) {
+    function _playSong(song) {
         // const songId = parseInt($(evt.currentTarget).attr('songId')); // target gives the clicked element, currentTarget gives the element the event is attached to
         // const song = $(evt.currentTarget).attr('url');
         // const song = $(control).attr('url');
 
-        const song = ko.mapping.toJS(ko.dataFor(control));
+        // const song = ko.mapping.toJS(ko.dataFor(control));
         // const song = ko.unwrap(ko.dataFor(control));
 
         _stop();        
         _clearPlayList();
-        _addSong(song);
+        _addSong(ko.mapping.toJS(song));
         _play();
     }
 
@@ -106,7 +106,7 @@ MediaPlayerViewModel = (function () {
         
         let _playButtons = $(_playButtonClass); // All play buttons in the page, need to do it here since it must be reevaluated due to possible new elements
         if (_mediaPlayer.paused) {
-            let song = _playList()[_currentSong];
+            let song = _playList()[_playListIndex];
             if ($(_mediaPlayer).attr('src') != song.url) {// To allow for pause, otherwise resuming starts over
                 $(_mediaPlayer).attr('src', song.url);
             }
@@ -124,23 +124,23 @@ MediaPlayerViewModel = (function () {
         }
     }
 
-    async function _playAlbum(control, shuffle) {
-        const album = ko.mapping.toJS(ko.dataFor(control));
+    async function _playAlbum(album) { // (control, shuffle) {
+        // const album = ko.mapping.toJS(ko.dataFor(control));
 
         _stop();
         _clearPlayList();
 
-        const songsData = await API.LoadSongs(album.albumId);
+        const songsData = await API.LoadSongs(album.albumId());
         _addSongs(songsData);
 
-        if (shuffle)
-            _shuffle(true);
+        // if (shuffle)
+        //     _shuffle(true);
 
         _play();
     }
 
-    async function _shuffleAlbum(control) {
-        await _playAlbum(control, true);
+    async function _shuffleAlbum(album) {
+        await _playAlbum(album, true);
     }
 
     function _stop() {
@@ -169,8 +169,8 @@ MediaPlayerViewModel = (function () {
 
         $('#currentSongDuration').text(`${currentTime.toString().toMMSS()} / ${totalTime.toString().toMMSS()}`);
 
-        // if (currentTime >= totalTime) { // Song finished
-        if (_mediaPlayer.ended) { // Song finished
+        if (currentTime >= totalTime) { // Song finished
+        // if (_mediaPlayer.ended) { // Song finished
             _stop();
 
             if (_playListIndex < _playList.length - 1)

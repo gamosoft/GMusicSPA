@@ -51,7 +51,7 @@
                 <div>
                     <a data-bind="attr: { href: '#/albums/'+albumId() }"><img class="card-img-top z-depth-0 media-album rounded"
                             data-bind="attr: { src: image, title: title }"></a>
-                    <a class="play-album-button text-secondary" onclick="MediaPlayer.PlayAlbum(this)"><i
+                    <a class="play-album-button text-secondary" data-bind="click: $parent.PlayAlbum"><i
                             class="fa fa-play-circle fa-2x"></i></a>
                 </div>
                 <div class="card-body" data-bind="attr: { id: albumId }">
@@ -97,7 +97,7 @@
                     <div style="display: inline-block" class="align-middle">
                         <div>
                             <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Album Title</strong>
-                            <a class="text-primary" onclick="MediaPlayer.PlayAlbum(this)" title="Play Album"><i
+                            <a class="text-primary" data-bind="click: $parent.PlayAlbum" title="Play Album"><i
                                     class="play-button fa fa-play-circle fa-2x"></i></a>
                         </div>
                         <div>
@@ -115,7 +115,7 @@
                         </div>
                         <div>
                             <button class="btn btn-sm btn-primary" title="Instant Mix"><i class="fa fa-compact-disc"></i>&nbsp;INSTANT MIX</button>
-                            <button class="btn btn-sm btn-primary" onclick="MediaPlayer.ShuffleAlbum(this)" title="Shuffle Album"><i class="fa fa-random"></i>&nbsp;SHUFFLE</button>
+                            <button class="btn btn-sm btn-primary" data-bind="click: $parent.ShuffleAlbum" title="Shuffle Album"><i class="fa fa-random"></i>&nbsp;SHUFFLE</button>
                             <button class="btn btn-sm btn-primary"><i class="fa fa-ellipsis-v"></i></button>
                         </div>
                     </div>
@@ -143,8 +143,7 @@
                         <th scope="row" class="tracknumber">
                             <span class="song-number" data-bind="text: trackNo">X</span>
                             <div class="play-song-button"><a class="song text-secondary"
-                                    onclick="MediaPlayer.PlaySong(this)"
-                                    data-bind="attr: { id: songId }"><i class="fa fa-play"></i></a></div>
+                                    data-bind="attr: { id: songId }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
                         </th>
                         <td>
                             <span data-bind="text: trim(title(), 30), attr: { title: title }">Title</span>
@@ -189,28 +188,28 @@
                 <div class="col-md-6 col-sm-9 text-center" style="padding-top: 18px;">
                     <ul>
                         <li class="fa-stack fa-1x">
-                            <a class="text-secondary" onclick="MediaPlayer.Repeat()"><i
+                            <a class="text-secondary" data-bind="click: $root.Repeat"><i
                                     class="fa fa-redo fa-stack-1x"></i></a>
                         </li>
                         <li class="fa-stack fa-1x">
-                            <a class="text-secondary" onclick="MediaPlayer.Previous()"><i
+                            <a class="text-secondary" data-bind="click: $root.Previous"><i
                                     class="fa fa-step-backward fa-stack-1x"></i></a>
                         </li>
                         <li class="fa-stack fa-1x">
                             <!-- TODO: when queue is empty, make these buttons disabled, except maybe the shuffle one -->
-                            <a class="text-secondary" onclick="MediaPlayer.Play()"><i
+                            <a class="text-secondary" data-bind="click: $root.Play"><i
                                     class="play-button fa fa-play-circle fa-stack-2x"></i></a>
                         </li>
                         <li class="fa-stack fa-1x">
-                            <a class="text-secondary" onclick="MediaPlayer.Next()"><i
+                            <a class="text-secondary" data-bind="click: $root.Next"><i
                                     class="fa fa-step-forward fa-stack-1x"></i></a>
                         </li>
                         <li class="fa-stack fa-1x">
-                            <a class="text-secondary" onclick="MediaPlayer.Stop()"><i class="fa fa-stop fa-stack-1x"></i></a>
+                            <a class="text-secondary" data-bind="click: $root.Stop"><i class="fa fa-stop fa-stack-1x"></i></a>
                         </li>
                         <li class="fa-stack fa-1x">
                             <!-- Conditional binding of CSS class depending on property -->
-                            <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }" onclick="MediaPlayer.Shuffle()"><i
+                            <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }" data-bind="click: $root.Shuffle"><i
                                     class="fa fa-random fa-stack-1x"></i></a>
                         </li>
                         <!-- <li class="fa-stack fa-1x float-right">
