@@ -1,4 +1,4 @@
-ViewModel = (function () {
+MediaPlayerViewModel = (function () {
     let _filterText = ko.observable();
     let _artists = ko.observableArray([]);
     let _albums = ko.observableArray([]);
@@ -8,7 +8,7 @@ ViewModel = (function () {
 
     let _shuffleEnabled = ko.observable(false);
     
-    // #region "Private methods"
+    // #region "Observable methods"
 
     function _loadArtists(artists) {
         _artists([]);
@@ -65,17 +65,17 @@ ViewModel = (function () {
 
     return {
         FilterText: _filterText,
+        ShuffleEnabled: _shuffleEnabled,
         ArtistsFiltered: _artistsFiltered,
         Artists: _artists,
-        LoadArtists: _loadArtists,
         AlbumsFiltered: _albumsFiltered,
         Albums: _albums,
-        LoadAlbums: _loadAlbums,
         SongsFiltered: _songsFiltered,
         Songs: _songs,
+        LoadArtists: _loadArtists,
+        LoadAlbums: _loadAlbums,
         LoadSongs: _loadSongs,
         CurrentSong: _currentSong,
-        ShuffleEnabled: _shuffleEnabled,
         PlayList: _playList
     };
 })();

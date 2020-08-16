@@ -19,12 +19,12 @@ MediaPlayer = (function () {
 
     function _addSong(song) {
         _playList.push(song);
-        ViewModel.PlayList(_playList);
+        MediaPlayerViewModel.PlayList(_playList);
     }
 
     function _addSongs(songs) {
         _playList = _playList.concat(songs);
-        ViewModel.PlayList(_playList);
+        MediaPlayerViewModel.PlayList(_playList);
     }
 
     function _playSong(control) {
@@ -53,7 +53,7 @@ MediaPlayer = (function () {
 
             }
 
-            ViewModel.CurrentSong(song);
+            MediaPlayerViewModel.CurrentSong(song);
 
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
@@ -94,7 +94,7 @@ MediaPlayer = (function () {
         _updateTimer = null;
         $('#songProgress').css('width', '0%');
 
-        ViewModel.CurrentSong({});
+        MediaPlayerViewModel.CurrentSong({});
 
         $('#currentSongDuration').text(`${'0'.toMMSS()} / ${'0'.toMMSS()}`);
     }
@@ -161,8 +161,8 @@ MediaPlayer = (function () {
         else
             _shuffleEnabled = shuffle;
         _playList.shuffle(); // This modifies the original array!
-        ViewModel.ShuffleEnabled(_shuffleEnabled); // Update viewmodel
-        ViewModel.PlayList(_playList);
+        MediaPlayerViewModel.ShuffleEnabled(_shuffleEnabled); // Update viewmodel
+        MediaPlayerViewModel.PlayList(_playList);
         // TODO: reindex the current song
     }
 
