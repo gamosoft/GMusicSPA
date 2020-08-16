@@ -87,5 +87,6 @@ TODO: video thumbnail, iOS lock screen
 .volume = 0.0 - 1.0
 .ontimeupdate = function
 .ended (property and event)
+.onpause
 
 */

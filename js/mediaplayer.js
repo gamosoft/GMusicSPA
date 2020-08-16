@@ -111,7 +111,8 @@ MediaPlayer = (function () {
 
         $('#currentSongDuration').text(`${currentTime.toString().toMMSS()} / ${totalTime.toString().toMMSS()}`);
 
-        if (currentTime >= totalTime) { // Song finished
+        // if (currentTime >= totalTime) { // Song finished
+        if (_mediaPlayer.ended) { // Song finished
             _stop();
 
             if (_currentSong < _playList.length - 1)
