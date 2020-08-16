@@ -82,7 +82,7 @@ ViewModel = (function () {
 
 /*
 
-TODO: video thumbnail
+TODO: video thumbnail, iOS lock screen
 
 .volume = 0.0 - 1.0
 .ontimeupdate = function
