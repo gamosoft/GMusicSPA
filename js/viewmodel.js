@@ -72,11 +72,11 @@ MediaPlayerViewModel = (function () {
         Albums: _albums,
         SongsFiltered: _songsFiltered,
         Songs: _songs,
+        CurrentSong: _currentSong,
+        PlayList: _playList,
         LoadArtists: _loadArtists,
         LoadAlbums: _loadAlbums,
         LoadSongs: _loadSongs,
-        CurrentSong: _currentSong,
-        PlayList: _playList
     };
 })();
 
