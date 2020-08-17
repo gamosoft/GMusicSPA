@@ -22,6 +22,16 @@ $(() => {
         MediaPlayer.JumpTo(x, width);
     });
 
+    // WIP volume slider
+    let slider = document.getElementById("myRange");
+    let output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    slider.oninput = function () {
+        output.innerHTML = this.value;
+        MediaPlayer.SetVolume(this.value);
+    }
+    // WIP volume slider
+
     $('#albumCoverModal').on('show.bs.modal', function (evt) {
         const cover = $(evt.relatedTarget).attr('src');
         $('#modalAlbumImage').attr('src', cover);
