@@ -315,4 +315,6 @@ Several viewmodels same element?
 .onpause
 .loop
 
+TODO: minify/uglify all CSS and JS files (use maps for variable names?)
+
 */
