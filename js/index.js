@@ -1,7 +1,7 @@
 $(() => {
-    ko.applyBindings(MediaPlayerViewModel, document.getElementById('body'));
+    ko.applyBindings(MediaPlayer, document.getElementById('body'));
 
-    MediaPlayerViewModel.CurrentSong({
+    MediaPlayer.CurrentSong({
         title: "Some song",
         artist: "Steve Vai",
         album: "This is the album",
@@ -16,7 +16,7 @@ $(() => {
         // getting the respective coordinates of location. 
         x = e.pageX - elm.offset().left; 
         y = e.pageY - elm.offset().top; 
-        MediaPlayerViewModel.JumpTo(x);
+        MediaPlayer.JumpTo(x);
     });
 
     $('#albumCoverModal').on('show.bs.modal', function (evt) {

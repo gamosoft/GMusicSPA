@@ -1,4 +1,4 @@
-MediaPlayerViewModel = (function () {
+MediaPlayer = (function () {
     let _filterText = ko.observable();
     let _artists = ko.observableArray([]);
     let _albums = ko.observableArray([]);
