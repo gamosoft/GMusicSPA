@@ -136,8 +136,9 @@ MediaPlayer = (function () {
         }
     }
 
-    async function _playAlbum(album) { // (control, shuffle) {
+    async function _playAlbum(album, event, shuffle) { // (control, shuffle) {
         // const album = ko.mapping.toJS(ko.dataFor(control));
+        // the event comes from KO
 
         _stop();
         _clearPlayList();
@@ -145,14 +146,14 @@ MediaPlayer = (function () {
         const songsData = await API.LoadSongs(album.albumId());
         _addSongs(songsData);
 
-        // if (shuffle) // TODO: Enable this back
-        //     _shuffle(true);
+        if (shuffle)
+             _shuffle(true);
 
         _play();
     }
 
-    async function _shuffleAlbum(album) {
-        await _playAlbum(album, true);
+    async function _shuffleAlbum(album, event) {
+        await _playAlbum(album, event, true);
     }
 
     function _stop() {
@@ -224,7 +225,7 @@ MediaPlayer = (function () {
     }
 
     function _shuffle(shuffle) {
-        if (typeof shuffle === 'undefined') // Check whether it has value passed or not
+        if (typeof shuffle !== 'boolean') // Check whether it has boolean value passed or not, if invoked from KO will contain the object
             _shuffleEnabled(!_shuffleEnabled());
         else
             _shuffleEnabled(shuffle);
