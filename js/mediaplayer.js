@@ -124,6 +124,10 @@ MediaPlayer = (function () {
             if ($(_mediaPlayer).attr('src') != song.url) {// To allow for pause, otherwise resuming starts over
                 $(_mediaPlayer).attr('src', song.url);
             }
+            // if (_mediaPlayerSource.src != song.url) {// To allow for pause, otherwise resuming starts over
+            //     _mediaPlayerSource.src = song.url;
+            //     _mediaPlayer.load();
+            // }
 
             _currentSong(song);
 
@@ -165,6 +169,8 @@ MediaPlayer = (function () {
         _mediaPlayer.currentTime = 0;
         clearInterval(_updateTimer);
         _updateTimer = null;
+        $(_mediaPlayer).attr('src', null);
+        // _mediaPlayerSource.src = '';
 
         _songProgress(0);
         _currentSong({});
@@ -196,6 +202,8 @@ MediaPlayer = (function () {
     function _jumpTo(pixel, elementWidth) {
         if (!$(_mediaPlayer).attr('src'))
             return;
+        // if (!_mediaPlayerSource.src)
+        //     return;
         
         let percentage = (pixel / elementWidth) * 100;
         let totalTime = _mediaPlayer.duration;
@@ -240,8 +248,11 @@ MediaPlayer = (function () {
     }
 
     function _setVolume() {
-        _mediaPlayer.volume = 0.5;
-        alert('not implemented');
+        _mediaPlayer.volume -= 0.1;
+    }
+
+    function _toggleMute() {
+        _mediaPlayer.muted = !_mediaPlayer.muted;
     }
 
     // #endregion
@@ -276,6 +287,7 @@ MediaPlayer = (function () {
         Previous: _previous,
         Next: _next,
         Shuffle: _shuffle,
+        ToggleMute: _toggleMute,
         Repeat: _repeat,
         SetVolume: _setVolume,
         UpdateSongProgress: _updateSongProgress,
