@@ -242,8 +242,7 @@
 
     <!-- WIP volume slider -->
     <div class="slidecontainer">
-        <input type="range" min="1" max="100" class="slider" id="myRange" data-bind="attr: { value: Volume() }">
-        <p>Value: <span id="demo"></span></p>
+        <input id="volumeSlider" type="range" min="1" max="100" class="slider" data-bind="attr: { value: Volume(), title: `${Volume()}%` }">
     </div>
     <!-- WIP volume slider -->
 
