@@ -16,7 +16,7 @@ $(() => {
         // getting the respective coordinates of location. 
         x = e.pageX - elm.offset().left; 
         y = e.pageY - elm.offset().top; 
-        MediaPlayerViewModel.JumpTo(x);
+        MediaPlayer.JumpTo(x);
     });
 
     $('#albumCoverModal').on('show.bs.modal', function (evt) {
