@@ -68,6 +68,7 @@ MediaPlayer = (function () {
     const _playerRefreshRate = 1000; // Refresh rate of media player in ms
     const _playButtonClass = '.play-button';
     let _mediaPlayer = null;
+    let _mediaPlayerSource = null;
     let _updateTimer = null;
     let _repeatOne = false;
     let _repeatAll = false;
@@ -75,6 +76,7 @@ MediaPlayer = (function () {
 
     function _init(mediaPlayerElement) {
         _mediaPlayer = $(mediaPlayerElement)[0];
+        _mediaPlayerSource = $(mediaPlayerElement + " > source")[0];
 
         // When the music stops, attempt to play the next song from the playlist
         $(_mediaPlayer).on('ended', (e) => {
