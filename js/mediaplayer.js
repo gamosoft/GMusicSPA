@@ -181,7 +181,7 @@ MediaPlayer = (function () {
         _currentSongPosition(`${currentTime.toString().toMMSS()} / ${totalTime.toString().toMMSS()}`);
 
         if (currentTime >= totalTime) { // Song finished
-        // if (_mediaPlayer.ended) { // Song finished
+        // if (_mediaPlayer.ended) { // Song finished (doesn't seem to work)
             _stop();
 
             if (_playListIndex < _playList.length - 1)
