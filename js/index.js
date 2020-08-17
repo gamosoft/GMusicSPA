@@ -1,7 +1,7 @@
 $(() => {
-    ko.applyBindings(MediaPlayerViewModel, document.getElementById('body'));
+    ko.applyBindings(MediaPlayer, document.getElementById('body'));
 
-    MediaPlayerViewModel.CurrentSong({
+    MediaPlayer.CurrentSong({
         title: "Some song",
         artist: "Steve Vai",
         album: "This is the album",

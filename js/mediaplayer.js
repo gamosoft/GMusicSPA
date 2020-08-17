@@ -1,4 +1,4 @@
-MediaPlayerViewModel = (function () {
+MediaPlayer = (function () {
     let _filterText = ko.observable();
     let _artists = ko.observableArray([]);
     let _albums = ko.observableArray([]);
@@ -6,6 +6,7 @@ MediaPlayerViewModel = (function () {
     let _currentSong = ko.observable();
     let _playList = ko.observableArray([]);
     let _shuffleEnabled = ko.observable(false);
+    let _songProgress = ko.observable(0);
     
     // #region "Observable methods"
 
@@ -150,7 +151,7 @@ MediaPlayerViewModel = (function () {
         _mediaPlayer.currentTime = 0;
         clearInterval(_updateTimer);
         _updateTimer = null;
-        $('#songProgress').css('width', '0%');
+        _songProgress(0);
 
         _currentSong({});
 
@@ -165,8 +166,7 @@ MediaPlayerViewModel = (function () {
         let currentTime = _mediaPlayer.currentTime;
         let percentage = Math.floor((currentTime / totalTime) * 100);
 
-        $('#songProgress').css('width', `${percentage}%`);
-
+        _songProgress(percentage);
         $('#currentSongDuration').text(`${currentTime.toString().toMMSS()} / ${totalTime.toString().toMMSS()}`);
 
         if (currentTime >= totalTime) { // Song finished
@@ -189,7 +189,7 @@ MediaPlayerViewModel = (function () {
         let totalTime = _mediaPlayer.duration;
         let currentTime = (percentage / 100) * totalTime;
         _mediaPlayer.currentTime = currentTime;
-        $('#songProgress').css('width', `${percentage}%`);
+        _songProgress(percentage);
     }
 
     function _previous() {
@@ -250,6 +250,7 @@ MediaPlayerViewModel = (function () {
         LoadAlbums: _loadAlbums,
         LoadSongs: _loadSongs,
         // Media player methods
+        SongProgress: _songProgress,
         PlaySong: _playSong, // Adds and plays
         PlayAlbum: _playAlbum, // Adds and plays
         ShuffleAlbum: _shuffleAlbum, // Adds, shuffles and plays
