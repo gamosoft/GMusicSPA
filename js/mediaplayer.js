@@ -306,6 +306,8 @@ MediaPlayer = (function () {
 
 TODO: video thumbnail, iOS lock screen
 
+https://stackoverflow.com/questions/54462253/can-html5-in-the-browser-play-continuous-audio-on-ios-lock-screen
+
 Several viewmodels same element?
 
 .ontimeupdate = function
