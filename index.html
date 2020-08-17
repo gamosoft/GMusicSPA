@@ -164,8 +164,8 @@
 
     <div class="fixed-bottom bg-dark">
         <div id="progressBar" class="progress">
-            <div id="songProgress" class="progress-bar progress-bar-striped bg-secondary progress-bar-animated"
-                role="progressbar" style="width: 0%"></div>
+            <div id="songProgress" class="progress-bar progress-bar-striped bg-secondary progress-bar-animated" role="progressbar"
+                data-bind="style: { width: SongProgress()+ '%' }"></div>
         </div>
 
         <div class="container-fluid text-secondary" data-bind="if: CurrentSong()">
