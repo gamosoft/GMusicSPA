@@ -4,9 +4,10 @@ MediaPlayer = (function () {
     let _albums = ko.observableArray([]);
     let _songs = ko.observableArray([]);
     let _currentSong = ko.observable();
+    let _currentSongPosition = ko.observable();
     let _playList = ko.observableArray([]);
     let _shuffleEnabled = ko.observable(false);
-    let _songProgress = ko.observable(0);
+    let _songProgress = ko.observable(0);    
     
     // #region "Observable methods"
 
@@ -74,6 +75,12 @@ MediaPlayer = (function () {
 
     function _init(mediaPlayerElement) {
         _mediaPlayer = $(mediaPlayerElement)[0];
+
+        // When the music stops, attempt to play the next song from the playlist
+        $(_mediaPlayer).on('ended', (e) => {
+            alert('wtf');
+            _next();
+        });
     }
 
     // Playlist management
@@ -138,7 +145,7 @@ MediaPlayer = (function () {
         const songsData = await API.LoadSongs(album.albumId());
         _addSongs(songsData);
 
-        // if (shuffle)
+        // if (shuffle) // TODO: Enable this back
         //     _shuffle(true);
 
         _play();
@@ -155,11 +162,10 @@ MediaPlayer = (function () {
         _mediaPlayer.currentTime = 0;
         clearInterval(_updateTimer);
         _updateTimer = null;
+
         _songProgress(0);
-
         _currentSong({});
-
-        $('#currentSongDuration').text(`${'0'.toMMSS()} / ${'0'.toMMSS()}`);
+        _currentSongPosition(`${'0'.toMMSS()} / ${'0'.toMMSS()}`);
     }
 
     function _updateSongProgress(forceUpdate) {
@@ -171,7 +177,7 @@ MediaPlayer = (function () {
         let percentage = Math.floor((currentTime / totalTime) * 100);
 
         _songProgress(percentage);
-        $('#currentSongDuration').text(`${currentTime.toString().toMMSS()} / ${totalTime.toString().toMMSS()}`);
+        _currentSongPosition(`${currentTime.toString().toMMSS()} / ${totalTime.toString().toMMSS()}`);
 
         if (currentTime >= totalTime) { // Song finished
         // if (_mediaPlayer.ended) { // Song finished
@@ -208,8 +214,8 @@ MediaPlayer = (function () {
 
     function _next() {
         _playListIndex++;
-        if (_playListIndex >= _playList.length) {
-            _playListIndex = _playList.length - 1;
+        if (_playListIndex >= _playList().length) {
+            _playListIndex = _playList().length - 1;
             return;
         }
 
@@ -230,11 +236,6 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
-    // When the music stops, attempt to play the next song from the playlist
-    $(_mediaPlayer).on('ended', (e) => {
-        _next();
-    });
-
     // #endregion
 
     return {
@@ -254,6 +255,7 @@ MediaPlayer = (function () {
         LoadSongs: _loadSongs,
         // Media player methods
         SongProgress: _songProgress,
+        CurrentSongPosition: _currentSongPosition,
         Init: _init,
         PlaySong: _playSong, // Adds and plays
         PlayAlbum: _playAlbum, // Adds and plays

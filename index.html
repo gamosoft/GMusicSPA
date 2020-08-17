@@ -232,8 +232,7 @@
                             <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
                         </li>
                     </ul>
-                    <small id="currentSongDuration" data-bind="visible: CurrentSong().artist"
-                        class="text-secondary">00:00 / 00:00</small>
+                    <small data-bind="visible: CurrentSong().artist, text: CurrentSongPosition()" class="text-secondary">00:00 / 00:00</small>
                 </div>
             </div>
         </div>
