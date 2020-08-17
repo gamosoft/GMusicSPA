@@ -237,6 +237,11 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
+    function _setVolume() {
+        _mediaPlayer.volume = 0.5;
+        alert('not implemented');
+    }
+
     // #endregion
 
     return {
@@ -270,6 +275,7 @@ MediaPlayer = (function () {
         Next: _next,
         Shuffle: _shuffle,
         Repeat: _repeat,
+        SetVolume: _setVolume,
         UpdateSongProgress: _updateSongProgress,
         JumpTo: _jumpTo
     };
@@ -285,5 +291,6 @@ Several viewmodels same element?
 .ontimeupdate = function
 .ended (property and event)
 .onpause
+.loop
 
 */
