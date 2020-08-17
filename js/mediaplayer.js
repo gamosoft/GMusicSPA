@@ -8,7 +8,8 @@ MediaPlayer = (function () {
     let _playList = ko.observableArray([]);
     let _shuffleEnabled = ko.observable(false);
     let _muteEnabled = ko.observable(false);
-    let _songProgress = ko.observable(0);    
+    let _songProgress = ko.observable(0);
+    let _volume = ko.observable();
     
     // #region "Observable methods"
 
@@ -78,6 +79,7 @@ MediaPlayer = (function () {
     function _init(mediaPlayerElement) {
         _mediaPlayer = $(mediaPlayerElement)[0];
         _mediaPlayerSource = $(mediaPlayerElement + " > source")[0];
+        _volume(_mediaPlayer.volume * 100);
 
         // When the music stops, attempt to play the next song from the playlist
         $(_mediaPlayer).on('ended', (e) => {
@@ -248,8 +250,9 @@ MediaPlayer = (function () {
         alert('not implemented');
     }
 
-    function _setVolume() {
-        _mediaPlayer.volume -= 0.1;
+    function _setVolume(value) {
+        _volume(value);
+        _mediaPlayer.volume = _volume() / 100;
     }
 
     function _toggleMute() {
@@ -278,6 +281,7 @@ MediaPlayer = (function () {
         // Media player methods
         SongProgress: _songProgress,
         CurrentSongPosition: _currentSongPosition,
+        Volume: _volume, // 0 .. 100
         Init: _init,
         PlaySong: _playSong, // Adds and plays
         PlayAlbum: _playAlbum, // Adds and plays
