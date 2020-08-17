@@ -212,12 +212,6 @@
                             <a class="text-secondary" data-bind="css: { 'text-warning': ShuffleEnabled() }, click: $root.Shuffle"><i
                                     class="fa fa-random fa-stack-1x"></i></a>
                         </li>
-                        <!-- <li class="fa-stack fa-1x float-right">
-                            <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>
-                        </li>
-                        <li class="fa-stack fa-1x float-right">
-                            <a class="text-secondary"><i class="fa fa-volume-up"></i></a>
-                        </li> -->
                     </ul>
                     <audio id="mediaPlayer" controls="controls" style="display: none;">
                         <source src=""></source>
@@ -225,6 +219,10 @@
                     </audio>
                 </div>
                 <div class="col-md-3 text-right d-none d-sm-block" style="padding-top: 18px;">
+                    <div class="slidecontainer" style="position: absolute;" class="float-right">
+                        <!-- TODO: Move this bar somewhere else -->
+                        <input id="volumeSlider" type="range" min="1" max="100" class="slider" data-bind="attr: { value: Volume(), title: `${Volume()}%` }">
+                    </div>
                     <ul>
                         <li class="fa-stack fa-1x">
                             <a class="text-secondary" data-bind="click: $root.ToggleMute">
@@ -239,12 +237,6 @@
             </div>
         </div>
     </div>
-
-    <!-- WIP volume slider -->
-    <div class="slidecontainer">
-        <input id="volumeSlider" type="range" min="1" max="100" class="slider" data-bind="attr: { value: Volume(), title: `${Volume()}%` }">
-    </div>
-    <!-- WIP volume slider -->
 
     <div class="modal fade" id="albumCoverModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
