@@ -227,7 +227,8 @@
                 <div class="col-md-3 text-right d-none d-sm-block" style="padding-top: 18px;">
                     <ul>
                         <li class="fa-stack fa-1x">
-                            <a class="text-secondary" data-bind="click: $root.SetVolume"><i class="fa fa-volume-up"></i></a>
+                            <a class="text-secondary" data-bind="click: $root.ToggleMute">
+                                <i data-bind="css: { 'fa-volume-mute': MuteEnabled(), 'fa-volume-up': !MuteEnabled() }" class="fa"></i></a>
                         </li>
                         <li class="fa-stack fa-1x">
                             <a class="text-secondary" data-toggle="modal" data-target="#playListModal"><i class="fa fa-stream"></i></a>

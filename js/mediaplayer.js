@@ -7,6 +7,7 @@ MediaPlayer = (function () {
     let _currentSongPosition = ko.observable();
     let _playList = ko.observableArray([]);
     let _shuffleEnabled = ko.observable(false);
+    let _muteEnabled = ko.observable(false);
     let _songProgress = ko.observable(0);    
     
     // #region "Observable methods"
@@ -252,7 +253,8 @@ MediaPlayer = (function () {
     }
 
     function _toggleMute() {
-        _mediaPlayer.muted = !_mediaPlayer.muted;
+        _muteEnabled(!_muteEnabled());
+        _mediaPlayer.muted = _muteEnabled();
     }
 
     // #endregion
@@ -261,6 +263,7 @@ MediaPlayer = (function () {
         // Data related methods
         FilterText: _filterText,
         ShuffleEnabled: _shuffleEnabled,
+        MuteEnabled: _muteEnabled,
         ArtistsFiltered: _artistsFiltered,
         Artists: _artists,
         AlbumsFiltered: _albumsFiltered,
