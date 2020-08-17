@@ -180,12 +180,11 @@ MediaPlayer = (function () {
         }
     }
 
-    function _jumpTo(pixel) {
+    function _jumpTo(pixel, elementWidth) {
         if (!$(_mediaPlayer).attr('src'))
             return;
-
-        let width = parseInt($('#progressBar').css('width'));
-        let percentage = (pixel / width) * 100;
+        
+        let percentage = (pixel / elementWidth) * 100;
         let totalTime = _mediaPlayer.duration;
         let currentTime = (percentage / 100) * totalTime;
         _mediaPlayer.currentTime = currentTime;

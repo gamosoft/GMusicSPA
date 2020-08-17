@@ -10,13 +10,14 @@ $(() => {
 
     app.run('#/albums');
 
-    $('#progressBar').click(function(e) { 
+    $('#progressBar').click(function(e) {
         // element that has been clicked. 
-        var elm = $(this); 
+        var elm = $(this);
+        let width = parseInt($(elm).css('width'));
         // getting the respective coordinates of location. 
         x = e.pageX - elm.offset().left; 
         y = e.pageY - elm.offset().top; 
-        MediaPlayer.JumpTo(x);
+        MediaPlayer.JumpTo(x, width);
     });
 
     $('#albumCoverModal').on('show.bs.modal', function (evt) {
