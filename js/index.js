@@ -1,4 +1,6 @@
 $(() => {
+    MediaPlayer.Init('#mediaPlayer');
+
     ko.applyBindings(MediaPlayer, document.getElementById('body'));
 
     MediaPlayer.CurrentSong({

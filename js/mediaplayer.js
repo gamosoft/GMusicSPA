@@ -66,11 +66,15 @@ MediaPlayer = (function () {
     // #region "Media player methods"
     const _playerRefreshRate = 1000; // Refresh rate of media player in ms
     const _playButtonClass = '.play-button';
-    let _mediaPlayer = $('#musicPlayer')[0];
+    let _mediaPlayer = null;
     let _updateTimer = null;
     let _repeatOne = false;
     let _repeatAll = false;
     let _playListIndex = 0;
+
+    function _init(mediaPlayerElement) {
+        _mediaPlayer = $(mediaPlayerElement)[0];
+    }
 
     // Playlist management
     function _clearPlayList() {
@@ -250,6 +254,7 @@ MediaPlayer = (function () {
         LoadSongs: _loadSongs,
         // Media player methods
         SongProgress: _songProgress,
+        Init: _init,
         PlaySong: _playSong, // Adds and plays
         PlayAlbum: _playAlbum, // Adds and plays
         ShuffleAlbum: _shuffleAlbum, // Adds, shuffles and plays
