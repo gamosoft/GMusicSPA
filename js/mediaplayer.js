@@ -310,6 +310,8 @@ https://stackoverflow.com/questions/54462253/can-html5-in-the-browser-play-conti
 
 Several viewmodels same element?
 
+Maybe use "id" instead of "albumId" for example, if using JSON server to use routes /albums/3 instead of albums?albumId=3
+
 .ontimeupdate = function
 .ended (property and event)
 .onpause
