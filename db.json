@@ -1,328 +1,304 @@
 {
-    "artists": [
-        {
-            "artistId": 1,
-            "name": "The Who"
-        },
-        {
-            "artistId": 2,
-            "name": "Tom Jones"
-        },
-        {
-            "artistId": 3,
-            "name": "U2"
-        }
-    ],
     "albums": [
         {
             "albumId": 1,
-            "title": "Greatest Hits",
-            "artist": "The Who",
+            "title": "Alien Love Secrets",
+            "artist": "Steve Vai",
             "artistId": 1,
-            "year": "2009",
+            "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/SteveVaiAlienLoveSecrets.jpg",
+            "year": "1995",
             "genre": "Rock"
         },
         {
             "albumId": 2,
-            "title": "Gold",
-            "artist": "Tom Jones",
+            "title": "Engines of Creation",
+            "artist": "Joe Satriani",
             "artistId": 2,
-            "year": "2005",
-            "genre": "Pop"
+            "image": "https://upload.wikimedia.org/wikipedia/en/d/d0/Engines_of_Creation_%28Joe_Satriani_album_-_cover_art%29.jpg",
+            "year": "1995",
+            "genre": "Rock"
         },
         {
             "albumId": 3,
-            "title": "Boy",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1980",
+            "title": "American Idiot",
+            "artist": "Green Day",
+            "artistId": 4,
+            "image": "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png",
+            "year": "1995",
             "genre": "Rock"
         },
         {
             "albumId": 4,
-            "title": "October",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1981",
+            "title": "Crystal Planet",
+            "artist": "Joe Satriani",
+            "artistId": 2,
+            "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Joe_Satriani_-_Crystal_Planet.jpeg",
+            "year": "1995",
             "genre": "Rock"
         },
         {
             "albumId": 5,
-            "title": "Under A Blood Red Sky",
-            "artist": "U2",
+            "title": "The Division Bell",
+            "artist": "Pink Floyd",
             "artistId": 3,
-            "year": "1983",
+            "image": "https://upload.wikimedia.org/wikipedia/en/6/6e/Pink_Floyd_-_Division_Bell.jpg",
+            "year": "1995",
             "genre": "Rock"
         },
         {
             "albumId": 6,
-            "title": "War",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1983",
+            "title": "Electro Glide in Blue",
+            "artist": "Apollo 440",
+            "artistId": 5,
+            "image": "https://upload.wikimedia.org/wikipedia/en/b/b0/Electroglideinblue.jpg",
+            "year": "1995",
             "genre": "Rock"
         },
         {
             "albumId": 7,
-            "title": "The Unforgettable Fire",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1984",
-            "genre": "Rock"
+            "title": "Ex-Maniac",
+            "artist": "Babybird",
+            "artistId": 6,
+            "image": "https://upload.wikimedia.org/wikipedia/en/9/90/Ex-maniac_%28Babybird_album_-_cover_art%29.jpg",
+            "year": "1995",
+            "genre": "Pop-Rock"
         },
         {
             "albumId": 8,
-            "title": "Wide Awake In America",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1985",
+            "title": "Eye in the Sky",
+            "artist": "Alan Parsons Project",
+            "artistId": 7,
+            "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/TheAlanParsonsProject-EyeintheSky.jpg",
+            "year": "1995",
             "genre": "Rock"
         },
         {
             "albumId": 9,
-            "title": "The Joshua Tree",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1987",
-            "genre": "Rock"
+            "title": "Extra Virgin",
+            "artist": "Olive",
+            "artistId": 8,
+            "image": "https://upload.wikimedia.org/wikipedia/en/a/a0/Olive-extravirgin.jpg",
+            "year": "1995",
+            "genre": "Pop-Rock"
         },
         {
             "albumId": 10,
-            "title": "Rattle And Hum",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1988",
-            "genre": "Rock"
+            "title": "Gran Turismo",
+            "artist": "The Cardigans",
+            "artistId": 9,
+            "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/CardigansGranTurismo.jpg",
+            "year": "1995",
+            "genre": "Pop-Rock"
         },
         {
             "albumId": 11,
-            "title": "Achtung Baby",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1991",
-            "genre": "Rock"
+            "title": "Joyride",
+            "artist": "Roxette",
+            "artistId": 10,
+            "image": "https://upload.wikimedia.org/wikipedia/en/d/dd/Roxette_-_Joyride.png",
+            "year": "1995",
+            "genre": "Pop-Rock"
         },
         {
             "albumId": 12,
-            "title": "Zooropa",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1993",
-            "genre": "Rock"
-        },
-        {
-            "albumId": 13,
-            "title": "Kiwi",
-            "artist": "U2",
-            "artistId": 3,
+            "title": "Pop Art",
+            "artist": "Transvision Vamp",
+            "artistId": 11,
+            "image": "https://upload.wikimedia.org/wikipedia/en/f/f8/TransvisionVamp-PopArt.jpg",
             "year": "1995",
             "genre": "Rock"
+        }
+    ],
+    "artists": [
+        {
+            "artistId": 1,
+            "name": "Steve Vai",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Steve_Vai_2011.jpg/330px-Steve_Vai_2011.jpg"
         },
         {
-            "albumId": 14,
-            "title": "Melon",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1995",
-            "genre": "Rock"
+            "artistId": 2,
+            "name": "Joe Satriani",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Satriani_2010_13_12_1112.jpg/220px-Satriani_2010_13_12_1112.jpg"
         },
         {
-            "albumId": 15,
-            "title": "Passengers - Original Soundtracks I",
-            "artist": "U2",
             "artistId": 3,
-            "year": "1995",
-            "genre": "Rock"
+            "name": "Pink Floyd",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Pink_Floyd_-_all_members.jpg/250px-Pink_Floyd_-_all_members.jpg"
         },
         {
-            "albumId": 16,
-            "title": "Discotheque Single",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1997",
-            "genre": "Rock"
-        },
-        {
-            "albumId": 17,
-            "title": "Pop",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1997",
-            "genre": "Rock"
-        },
-        {
-            "albumId": 18,
-            "title": "The Best Of 1980-1990 & The B-Sides",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "1998",
-            "genre": "Rock"
-        },
-        {
-            "albumId": 19,
-            "title": "All That You Can't Leave Behind",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "2000",
-            "genre": "Rock"
-        },
-        {
-            "albumId": 20,
-            "title": "Beautiful Day",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "2000",
-            "genre": "Rock"
-        },
-        {
-            "albumId": 21,
-            "title": "7 (Limited Edition)",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "2002",
-            "genre": "Rock"
-        },
-        {
-            "albumId": 22,
-            "title": "The Best Of 1990-2000 & The B-Sides",
-            "artist": "U2",
-            "artistId": 3,
-            "year": "2002",
-            "genre": "Rock"
+            "artistId": 4,
+            "name": "Green Day",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/RiP2013_GreenDay_Billie_Joe_Armstrong_0021.jpg/330px-RiP2013_GreenDay_Billie_Joe_Armstrong_0021.jpg"
         }
     ],
     "songs": [
         {
             "songId": 1,
             "albumId": 1,
-            "album": "Greatest Hits",
+            "album": "Alien Love Secrets",
             "artistId": 1,
-            "artist": "The Who",
-            "title": "I Can't Explain",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "01",
-            "url": "D:\\test\\The Who\\The Who - 2009 - Greatest Hits\\01 - I Can't Explain.mp3"
+            "artist": "Steve Vai",
+            "title": "Bad Horsie",
+            "duration": "7:25",
+            "playCount": "3",
+            "trackNo": "1",
+            "url": "./mp3/sample1.mp3"
         },
         {
             "songId": 2,
             "albumId": 1,
-            "album": "Greatest Hits",
+            "album": "Alien Love Secrets",
             "artistId": 1,
-            "artist": "The Who",
-            "title": "My Generation",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "02",
-            "url": "D:\\test\\The Who\\The Who - 2009 - Greatest Hits\\02 - My Generation.mp3"
+            "artist": "Steve Vai",
+            "title": "Juice",
+            "duration": "7:25",
+            "playCount": "3",
+            "trackNo": "2",
+            "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 3,
+            "songId": 4,
             "albumId": 1,
-            "album": "Greatest Hits",
+            "album": "Alien Love Secrets",
             "artistId": 1,
-            "artist": "The Who",
-            "title": "The Kids Are Alright",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "03",
-            "url": "D:\\test\\The Who\\The Who - 2009 - Greatest Hits\\03 - The Kids Are Alright.mp3"
+            "artist": "Steve Vai",
+            "title": "The Boy from Seattle",
+            "duration": "7:25",
+            "playCount": "3",
+            "trackNo": "4",
+            "url": "./mp3/sample3.mp3"
         },
         {
-            "songId": 25,
+            "songId": 7,
+            "albumId": 1,
+            "album": "Alien Love Secrets",
+            "artistId": 1,
+            "artist": "Steve Vai",
+            "title": "Tender Surrender",
+            "duration": "7:25",
+            "playCount": "3",
+            "trackNo": "7",
+            "url": "./mp3/sample4.mp3"
+        },
+        {
+            "songId": 8,
             "albumId": 2,
-            "album": "Gold",
+            "album": "Engines of Creation",
             "artistId": 2,
-            "artist": "Tom Jones",
-            "title": "Detroit City",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "06",
-            "url": "D:\\test\\Tom Jones\\Tom Jones - 2005 - Gold\\06 - Detroit City.mp3"
+            "artist": "Joe Satriani",
+            "title": "Devil's Slide",
+            "duration": "5:32",
+            "playCount": "2",
+            "trackNo": "1",
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 28,
+            "songId": 9,
             "albumId": 2,
-            "album": "Gold",
+            "album": "Engines of Creation",
             "artistId": 2,
-            "artist": "Tom Jones",
-            "title": "Delilah",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "09",
-            "url": "D:\\test\\Tom Jones\\Tom Jones - 2005 - Gold\\09 - Delilah.mp3"
+            "artist": "Joe Satriani",
+            "title": "Flavor Crystal 7",
+            "duration": "5:32",
+            "playCount": "2",
+            "trackNo": "2",
+            "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 43,
-            "albumId": 3,
-            "album": "Boy",
-            "artistId": 3,
-            "artist": "U2",
-            "title": "I Will Follow",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "01",
-            "url": "D:\\test\\U2\\U2 - 1980 - Boy\\01 - I Will Follow.mp3"
+            "songId": 10,
+            "albumId": 2,
+            "album": "Engines of Creation",
+            "artistId": 2,
+            "artist": "Joe Satriani",
+            "title": "Until We Say Goodbye",
+            "duration": "5:32",
+            "playCount": "2",
+            "trackNo": "4",
+            "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 58,
-            "albumId": 4,
-            "album": "October",
-            "artistId": 3,
-            "artist": "U2",
-            "title": "Tomorrow",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "06",
-            "url": "D:\\test\\U2\\U2 - 1981 - October\\06 - Tomorrow.mp3"
+            "songId": 12,
+            "albumId": 2,
+            "album": "Engines of Creation",
+            "artistId": 2,
+            "artist": "Joe Satriani",
+            "title": "Champagne?",
+            "duration": "5:32",
+            "playCount": "2",
+            "trackNo": "6",
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 59,
-            "albumId": 4,
-            "album": "October",
-            "artistId": 3,
-            "artist": "U2",
-            "title": "October",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "07",
-            "url": "D:\\test\\U2\\U2 - 1981 - October\\07 - October.mp3"
-        },
-        {
-            "songId": 66,
+            "songId": 14,
             "albumId": 5,
-            "album": "Under A Blood Red Sky",
+            "album": "The Division Bell",
             "artistId": 3,
-            "artist": "U2",
-            "title": "I Will Follow",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "03",
-            "url": "D:\\test\\U2\\U2 - 1983 - Under A Blood Red Sky\\03 - I Will Follow.mp3"
+            "artist": "Pink Floyd",
+            "title": "What Do You Want From Me",
+            "duration": "6:42",
+            "playCount": "4",
+            "trackNo": "2",
+            "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 69,
+            "songId": 15,
             "albumId": 5,
-            "album": "Under A Blood Red Sky",
+            "album": "The Division Bell",
             "artistId": 3,
-            "artist": "U2",
-            "title": "The Electric Co",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "06",
-            "url": "D:\\test\\U2\\U2 - 1983 - Under A Blood Red Sky\\06 - The Electric Co.mp3"
+            "artist": "Pink Floyd",
+            "title": "Poles Apart",
+            "duration": "6:42",
+            "playCount": "4",
+            "trackNo": "3",
+            "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 70,
+            "songId": 16,
             "albumId": 5,
-            "album": "Under A Blood Red Sky",
+            "album": "The Division Bell",
             "artistId": 3,
-            "artist": "U2",
-            "title": "New Year's Day",
-            "duration": "00:00",
-            "playCount": 0,
-            "trackNo": "07",
-            "url": "D:\\test\\U2\\U2 - 1983 - Under A Blood Red Sky\\07 - New Year's Day.mp3"
+            "artist": "Pink Floyd",
+            "title": "Marooned",
+            "duration": "6:42",
+            "playCount": "4",
+            "trackNo": "4",
+            "url": "./mp3/sample2.mp3"
+        },
+        {
+            "songId": 17,
+            "albumId": 5,
+            "album": "The Division Bell",
+            "artistId": 3,
+            "artist": "Pink Floyd",
+            "title": "A Great Day for Freedom",
+            "duration": "6:42",
+            "playCount": "4",
+            "trackNo": "5",
+            "url": "./mp3/bensound-adventure.mp3"
+        },
+        {
+            "songId": 19,
+            "albumId": 5,
+            "album": "The Division Bell",
+            "artistId": 3,
+            "artist": "Pink Floyd",
+            "title": "Take it Back",
+            "duration": "6:42",
+            "playCount": "4",
+            "trackNo": "7",
+            "url": "./mp3/bensound-adventure.mp3"
+        },
+        {
+            "songId": 20,
+            "albumId": 5,
+            "album": "The Division Bell",
+            "artistId": 3,
+            "artist": "Pink Floyd",
+            "title": "Coming Back to Life",
+            "duration": "6:42",
+            "playCount": "4",
+            "trackNo": "8",
+            "url": "./mp3/bensound-adventure.mp3"
         }
     ]
 }
