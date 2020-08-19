@@ -50,6 +50,10 @@ body {
     width: 65px;
     height: 65px;
 }
+.modalAlbumImage {
+    max-width: 450px;
+    max-height: 450px;
+}
 
 .shadow-album:hover {
     box-shadow: 4px 4px 4px rgb(98, 98, 98);
