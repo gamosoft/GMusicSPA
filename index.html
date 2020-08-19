@@ -143,12 +143,13 @@
                 <tbody data-bind="foreach: SongsFiltered">
                     <tr class="play-song-tr" onclick="$(this).toggleClass('bg-secondary')">
                         <!-- TODO: allow selecting more than one row to queue up the songs -->
-                        <!-- TODO: show ani_equalizer_black.gif -->
-                        <!-- visible: $parent.CurrentSong().songId != songId() -->
-                        <th scope="row" class="tracknumber">
-                            <span class="song-number" data-bind="text: trackNo">X</span>
-                            <div class="play-song-button"><a class="song text-secondary"
+                        <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId != songId()">
+                            <span class="song-number ml-2" data-bind="text: trackNo">X</span>
+                            <div class="play-song-button ml-2"><a class="song text-secondary"
                                     data-bind="attr: { id: songId }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
+                        </th>
+                        <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId == songId()">
+                            <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_black.gif" width="30px" height="20px"></a>
                         </th>
                         <td>
                             <span data-bind="text: trim(title(), 30), attr: { title: title }">Title</span>
