@@ -50,7 +50,7 @@
             <div class="card mb-4 shadow-album">
                 <div>
                     <a data-bind="attr: { href: '#/albums/'+albumId() }"><img class="card-img-top z-depth-0 media-album rounded"
-                            data-bind="attr: { src: checkEmptyCover(image), title: title }"></a>
+                            data-bind="attr: { src: checkEmptyCover(image, title), title: title }"></a>
                     <a class="play-album-button text-secondary" data-bind="click: $parent.PlayAlbum"><i
                             class="fa fa-play-circle fa-2x"></i></a>
                 </div>
@@ -74,7 +74,7 @@
             <div class="card mb-4 bg-transparent border-0">
                 <a data-bind="attr: { href: '#/artists/'+artistId() }"><img
                         class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
-                        data-bind="attr: { src: checkEmptyArtist(image), title: name }"></a>
+                        data-bind="attr: { src: checkEmptyArtist(image, name), title: name }"></a>
                 <div class="card-footer">
                     <div class="text-center">
                         <a data-bind="attr: { href: '#/artists/'+artistId() }"><strong class="text-muted"
@@ -91,7 +91,7 @@
                     <div style="display: inline-block">
                         <a data-toggle="modal" data-target="#albumCoverModal" data-bind="attr: { src: image }">
                             <img class="card-img-top z-depth-0 media-album album-detail-cover rounded"
-                                data-bind="attr: { src: checkEmptyCover(image), title: title }">
+                                data-bind="attr: { src: checkEmptyCover(image, title), title: title }">
                         </a>
                     </div>
                     <div style="display: inline-block" class="align-middle">

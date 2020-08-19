@@ -34,10 +34,10 @@ Array.prototype.shuffle = function() {
     return this;
 };
 
-function checkEmptyCover(image) {
-    return image() || 'https://api.adorable.io/avatars/180/cover.png';
+function checkEmptyCover(image, title) {
+    return image() || `https://api.adorable.io/avatars/180/${title()}.png`;
 }
 
-function checkEmptyArtist(image) {
-    return image() || 'https://api.adorable.io/avatars/180/player.png';
+function checkEmptyArtist(image, name) {
+    return image() || `https://api.adorable.io/avatars/180/${name()}.png`;
 }
