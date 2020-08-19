@@ -40,7 +40,10 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" data-bind="value: FilterText, valueUpdate: 'keyup'" placeholder="Search" aria-label="Search">
+                <div class="form-group">
+                    <input class="form-control mr-sm-2 searchBox" type="text" data-bind="value: FilterText, valueUpdate: 'keyup'" placeholder="Search" aria-label="Search">
+                    <i class="far fa-times-circle text-secondary"></i>
+                </div>
             </form>
         </div>
     </nav>
