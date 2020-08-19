@@ -89,17 +89,6 @@
             "genre": "Pop-Rock"
         },
         {
-            "albumId": 10,
-            "title": "Gran Turismo",
-            "artist": "The Cardigans",
-            "artistId": 9,
-            "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/CardigansGranTurismo.jpg",
-            "trackCount": 0,
-            "totalDuration": "00:00",
-            "year": "1995",
-            "genre": "Pop-Rock"
-        },
-        {
             "albumId": 12,
             "title": "Pop Art",
             "artist": "Transvision Vamp",
