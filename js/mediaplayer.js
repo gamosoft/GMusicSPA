@@ -320,6 +320,8 @@ Maybe use "id" instead of "albumId" for example, if using JSON server to use rou
 
 Changing views, if something in the search textbox it STILL filters
 
+Hyperlinks with NO href don't show hand icon on over
+
 SORT queries:
 http://localhost:8888/albums?_sort=title&_order=desc
 
