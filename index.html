@@ -132,12 +132,12 @@
                 <!-- table-responsive -->
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"><a class="text-light"># <i class="fas fa-arrow-up"></i></a></th>
                         <th scope="col"><a class="text-light">NAME <i class="fas fa-arrow-up"></i></a></th>
-                        <th scope="col"><i class="far fa-clock"></i></th>
+                        <th scope="col"><a class="text-light"><i class="far fa-clock"></i> <i class="fas fa-arrow-down"></i></a></th>
                         <th scope="col" data-bind="visible: IsSongsView"><a class="text-light">ARTIST <i class="fas fa-arrow-down"></i></a></th>
                         <th scope="col" data-bind="visible: IsSongsView"><a class="text-light">ALBUM</a></th>
-                        <th scope="col"><i class="fas fa-music"></i></th>
+                        <th scope="col"><a class="text-light"><i class="fas fa-music"></i> <i class="fas fa-arrow-down"></i></a></th>
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: SongsFiltered">
@@ -155,8 +155,8 @@
                                         class="fa fa-ellipsis-v float-right"></i></a></span>
                         </td>
                         <td data-bind="text: duration">00:00</td>
-                        <td data-bind="text: trim(artist(), 30), attr: { title: artist }, visible: $parent.IsSongsView">Artist</td>
-                        <td data-bind="text: trim(album(), 30), attr: { title: album }, visible: $parent.IsSongsView">Album</td>
+                        <td><a class="text-light" data-bind="text: trim(artist(), 30), attr: { title: artist, href: '#/artists/'+artistId() }, visible: $parent.IsSongsView">Artist</a></td>
+                        <td><a class="text-light" data-bind="text: trim(album(), 30), attr: { title: album, href: '#/albums/'+albumId() }, visible: $parent.IsSongsView">Album</a></td>
                         <td data-bind="text: playCount">&nbsp;</td>
                     </tr>
                 </tbody>
