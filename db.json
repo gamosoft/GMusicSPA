@@ -67,17 +67,6 @@
             "genre": "Rock"
         },
         {
-            "albumId": 7,
-            "title": "Ex-Maniac",
-            "artist": "Babybird",
-            "artistId": 6,
-            "image": "https://upload.wikimedia.org/wikipedia/en/9/90/Ex-maniac_%28Babybird_album_-_cover_art%29.jpg",
-            "trackCount": 0,
-            "totalDuration": "00:00",
-            "year": "1995",
-            "genre": "Pop-Rock"
-        },
-        {
             "albumId": 8,
             "title": "Eye in the Sky",
             "artist": "Alan Parsons Project",
@@ -107,15 +96,6 @@
             "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/CardigansGranTurismo.jpg",
             "trackCount": 0,
             "totalDuration": "00:00",
-            "year": "1995",
-            "genre": "Pop-Rock"
-        },
-        {
-            "albumId": 11,
-            "title": "Joyride",
-            "artist": "Roxette",
-            "artistId": 10,
-            "image": "https://upload.wikimedia.org/wikipedia/en/d/dd/Roxette_-_Joyride.png",
             "year": "1995",
             "genre": "Pop-Rock"
         },
