@@ -132,6 +132,8 @@
                         <th scope="col">#</th>
                         <th scope="col">NAME</th>
                         <th scope="col"><i class="far fa-clock"></i></th>
+                        <th scope="col" data-bind="visible: IsSongsView">ARTIST</th>
+                        <th scope="col" data-bind="visible: IsSongsView">ALBUM</th>
                         <th scope="col"><i class="fas fa-music"></i></th>
                     </tr>
                 </thead>
@@ -150,6 +152,8 @@
                                         class="fa fa-ellipsis-v float-right"></i></a></span>
                         </td>
                         <td data-bind="text: duration">00:00</td>
+                        <td data-bind="text: trim(artist(), 30), attr: { title: artist }, visible: $parent.IsSongsView">Artist</td>
+                        <td data-bind="text: trim(album(), 30), attr: { title: album }, visible: $parent.IsSongsView">Album</td>
                         <td data-bind="text: playCount">&nbsp;</td>
                     </tr>
                 </tbody>

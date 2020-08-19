@@ -64,6 +64,11 @@ MediaPlayer = (function () {
             });
     });
 
+    let _isSongsView = ko.computed(function () {
+        return window.location.href.indexOf('#/songs') != -1;
+        // TODO: This doesn't refresh automaticall, need to press F5
+    });
+
     // #endregion
 
     // #region "Media player methods"
@@ -275,6 +280,7 @@ MediaPlayer = (function () {
         Songs: _songs,
         CurrentSong: _currentSong,
         PlayList: _playList,
+        IsSongsView: _isSongsView,
         LoadArtists: _loadArtists,
         LoadAlbums: _loadAlbums,
         LoadSongs: _loadSongs,
