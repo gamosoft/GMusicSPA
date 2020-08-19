@@ -318,6 +318,8 @@ Several viewmodels same element?
 
 Maybe use "id" instead of "albumId" for example, if using JSON server to use routes /albums/3 instead of albums?albumId=3
 
+Changing views, if something in the search textbox it STILL filters
+
 SORT queries:
 http://localhost:8888/albums?_sort=title&_order=desc
 
