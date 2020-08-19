@@ -6,6 +6,8 @@
             "artist": "Steve Vai",
             "artistId": 1,
             "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/SteveVaiAlienLoveSecrets.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         },
@@ -15,6 +17,8 @@
             "artist": "Joe Satriani",
             "artistId": 2,
             "image": "https://upload.wikimedia.org/wikipedia/en/d/d0/Engines_of_Creation_%28Joe_Satriani_album_-_cover_art%29.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         },
@@ -24,6 +28,8 @@
             "artist": "Green Day",
             "artistId": 4,
             "image": "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         },
@@ -33,6 +39,8 @@
             "artist": "Joe Satriani",
             "artistId": 2,
             "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Joe_Satriani_-_Crystal_Planet.jpeg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         },
@@ -42,6 +50,8 @@
             "artist": "Pink Floyd",
             "artistId": 3,
             "image": "https://upload.wikimedia.org/wikipedia/en/6/6e/Pink_Floyd_-_Division_Bell.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         },
@@ -51,6 +61,8 @@
             "artist": "Apollo 440",
             "artistId": 5,
             "image": "https://upload.wikimedia.org/wikipedia/en/b/b0/Electroglideinblue.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         },
@@ -60,6 +72,8 @@
             "artist": "Babybird",
             "artistId": 6,
             "image": "https://upload.wikimedia.org/wikipedia/en/9/90/Ex-maniac_%28Babybird_album_-_cover_art%29.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Pop-Rock"
         },
@@ -69,6 +83,8 @@
             "artist": "Alan Parsons Project",
             "artistId": 7,
             "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/TheAlanParsonsProject-EyeintheSky.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         },
@@ -78,6 +94,8 @@
             "artist": "Olive",
             "artistId": 8,
             "image": "https://upload.wikimedia.org/wikipedia/en/a/a0/Olive-extravirgin.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Pop-Rock"
         },
@@ -87,6 +105,8 @@
             "artist": "The Cardigans",
             "artistId": 9,
             "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/CardigansGranTurismo.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Pop-Rock"
         },
@@ -105,6 +125,8 @@
             "artist": "Transvision Vamp",
             "artistId": 11,
             "image": "https://upload.wikimedia.org/wikipedia/en/f/f8/TransvisionVamp-PopArt.jpg",
+            "trackCount": 0,
+            "totalDuration": "00:00",
             "year": "1995",
             "genre": "Rock"
         }
