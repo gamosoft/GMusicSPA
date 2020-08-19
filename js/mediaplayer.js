@@ -8,6 +8,7 @@ MediaPlayer = (function () {
     let _playList = ko.observableArray([]);
     let _shuffleEnabled = ko.observable(false);
     let _muteEnabled = ko.observable(false);
+    let _isSongsView = ko.observable(false);
     let _songProgress = ko.observable(0);
     let _volume = ko.observable();
     
@@ -64,10 +65,9 @@ MediaPlayer = (function () {
             });
     });
 
-    let _isSongsView = ko.computed(function () {
-        return window.location.href.indexOf('#/songs') != -1;
-        // TODO: This doesn't refresh automaticall, need to press F5
-    });
+    // let _isSongsView = ko.pureComputed(function () {
+    //     return window.location.href.indexOf('#/songs') != -1;
+    // }).extend({ notify: 'always' });
 
     // #endregion
 

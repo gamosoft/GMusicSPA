@@ -10,6 +10,7 @@ let app = $.sammy(function () {
         setActiveLink('#albumsLink');
         const albumsData = await API.LoadAlbums();
         MediaPlayer.LoadAlbums(albumsData);
+        MediaPlayer.IsSongsView(false);
     });
     this.get('#/albums/:albumId', async function(context) {
         const albumId = this.params['albumId'];
@@ -21,6 +22,7 @@ let app = $.sammy(function () {
         const songsData = await API.LoadSongs(albumId);
         MediaPlayer.LoadAlbums(albumData);
         MediaPlayer.LoadSongs(songsData);
+        MediaPlayer.IsSongsView(false);
       });
     this.get('#/artists', async function () {
         $('.toggle-section').hide();
@@ -28,6 +30,7 @@ let app = $.sammy(function () {
         setActiveLink('#artistsLink');
         const artistsData = await API.LoadArtists();
         MediaPlayer.LoadArtists(artistsData);
+        MediaPlayer.IsSongsView(false);
     });
     this.get('#/artists/:artistId', async function () {
         const artistId = this.params['artistId'];
@@ -36,11 +39,13 @@ let app = $.sammy(function () {
         setActiveLink('#artistsLink');
         const albumsData = await API.LoadAlbums(artistId);
         MediaPlayer.LoadAlbums(albumsData);
+        MediaPlayer.IsSongsView(false);
     });
     this.get('#/songs', async function () {
         $('.toggle-section').hide();
         $('#songsList').show();
         setActiveLink('#songsLink');
+        MediaPlayer.IsSongsView(true);
         const songsData = await API.LoadSongs();
         MediaPlayer.LoadSongs(songsData);
     });
