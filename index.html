@@ -276,8 +276,13 @@ Start some music or click the <i class="fa fa-ellipsis-v"></i> icon on an album,
                             <tbody data-bind="foreach: PlayList">
                                 <tr class="play-song-tr">
                                     <!-- onclick="$(this).toggleClass('bg-secondary')"> -->
-                                    <th scope="row">
-                                        <img src="./images/ani_equalizer_black.gif">
+                                    <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId != songId">
+                                        <span class="song-number ml-2" data-bind="text: trackNo">X</span>
+                                        <div class="play-song-button ml-2"><a class="song text-secondary"
+                                                data-bind="attr: { id: songId }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
+                                    </th>            
+                                    <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId == songId">
+                                        <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_black.gif" width="30px" height="20px"></a>
                                     </th>
                                     <td class="text-left">
                                         <div data-bind="text: trim(title, 30), attr: { title: title }">Title</div>
