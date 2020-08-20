@@ -128,3 +128,11 @@ body {
   /* add padding  */
   .left-addon input  { padding-left:  30px; }
   .right-addon input { padding-right: 30px; }
+
+  /* For the sorting piece */
+  .sortable-link {
+      cursor: pointer;
+  }
+  .sortable-link:hover {
+    text-decoration: none;
+}

@@ -130,12 +130,12 @@
                 <!-- table-responsive -->
                 <thead>
                     <tr>
-                        <th scope="col"><a class="text-light" sortField="trackNo" data-bind="click: $root.ToggleOrder"># <i class="fas" data-bind="css: $root.SortOrderClass('trackNo')"></i></a></th>
-                        <th scope="col"><a class="text-light" sortField="title" data-bind="click: $root.ToggleOrder">NAME <i class="fas" data-bind="css: $root.SortOrderClass('title')"></i></a></th>
-                        <th scope="col"><a class="text-light" sortField="duration" data-bind="click: $root.ToggleOrder"><i class="far fa-clock"></i> <i class="fas" data-bind="css: $root.SortOrderClass('duration')"></i></a></th>
-                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light" sortField="artist" data-bind="click: $root.ToggleOrder">ARTIST <i class="fas" data-bind="css: $root.SortOrderClass('artist')"></i></a></th>
-                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light" sortField="album" data-bind="click: $root.ToggleOrder">ALBUM <i class="fas" data-bind="css: $root.SortOrderClass('album')"></i></a></th>
-                        <th scope="col"><a class="text-light" sortField="playCount" data-bind="click: $root.ToggleOrder"><i class="fas fa-music"></i> <i class="fas" data-bind="css: $root.SortOrderClass('playCount')"></i></a></th>
+                        <th scope="col"><a class="text-light sortable-link" sortField="trackNo" data-bind="click: $root.ToggleOrder"># <i class="fas" data-bind="css: $root.SortOrderClass('trackNo')"></i></a></th>
+                        <th scope="col"><a class="text-light sortable-link" sortField="title" data-bind="click: $root.ToggleOrder">NAME <i class="fas" data-bind="css: $root.SortOrderClass('title')"></i></a></th>
+                        <th scope="col"><a class="text-light sortable-link" sortField="duration" data-bind="click: $root.ToggleOrder"><i class="far fa-clock"></i> <i class="fas" data-bind="css: $root.SortOrderClass('duration')"></i></a></th>
+                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light sortable-link" sortField="artist" data-bind="click: $root.ToggleOrder">ARTIST <i class="fas" data-bind="css: $root.SortOrderClass('artist')"></i></a></th>
+                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light sortable-link" sortField="album" data-bind="click: $root.ToggleOrder">ALBUM <i class="fas" data-bind="css: $root.SortOrderClass('album')"></i></a></th>
+                        <th scope="col"><a class="text-light sortable-link" sortField="playCount" data-bind="click: $root.ToggleOrder"><i class="fas fa-music"></i> <i class="fas" data-bind="css: $root.SortOrderClass('playCount')"></i></a></th>
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: SongsFiltered">
@@ -148,7 +148,7 @@
                                     data-bind="attr: { id: songId }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
                         </th>
                         <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId == songId()">
-                            <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_black.gif" width="30px" height="20px"></a>
+                            <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_white.gif" width="30px" height="20px"></a>
                         </th>
                         <td>
                             <span data-bind="text: trim(title(), 30), attr: { title: title }">Title</span>
@@ -283,7 +283,7 @@ Start some music or click the <i class="fa fa-ellipsis-v"></i> icon on an album,
                                                 data-bind="attr: { id: songId }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
                                     </th>            
                                     <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId == songId">
-                                        <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_black.gif" width="30px" height="20px"></a>
+                                        <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_white.gif" width="30px" height="20px"></a>
                                     </th>
                                     <td class="text-left">
                                         <div data-bind="text: trim(title, 30), attr: { title: title }">Title</div>
