@@ -89,6 +89,13 @@ MediaPlayer = (function () {
         }        
     }
 
+    let _sortOrderClass = function (field) {
+        if (field != _sortField())
+            return '';
+            
+        return _sortOrder() ? "fa-arrow-up" : "fa-arrow-down";
+    };
+
     // #endregion
 
     // #region "Media player methods"
@@ -292,6 +299,7 @@ MediaPlayer = (function () {
         FilterText: _filterText,
         SortField: _sortField,
         SortOrder: _sortOrder,
+        SortOrderClass: _sortOrderClass,
         ToggleOrder: _toggleOrder,
         ShuffleEnabled: _shuffleEnabled,
         MuteEnabled: _muteEnabled,

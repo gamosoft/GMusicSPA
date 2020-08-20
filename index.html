@@ -130,12 +130,12 @@
                 <!-- table-responsive -->
                 <thead>
                     <tr>
-                        <th scope="col"><a class="text-light" sortField="trackNo" data-bind="click: $root.ToggleOrder"># <i class="fas fa-arrow-up"></i></a></th>
-                        <th scope="col"><a class="text-light" sortField="title" data-bind="click: $root.ToggleOrder">NAME <i class="fas fa-arrow-up"></i></a></th>
-                        <th scope="col"><a class="text-light" sortField="duration" data-bind="click: $root.ToggleOrder"><i class="far fa-clock"></i> <i class="fas fa-arrow-down"></i></a></th>
-                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light" sortField="artist" data-bind="click: $root.ToggleOrder">ARTIST <i class="fas fa-arrow-down"></i></a></th>
-                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light" sortField="album" data-bind="click: $root.ToggleOrder">ALBUM <i class="fas fa-arrow-down"></i></a></th>
-                        <th scope="col"><a class="text-light" sortField="playCount" data-bind="click: $root.ToggleOrder"><i class="fas fa-music"></i> <i class="fas fa-arrow-down"></i></a></th>
+                        <th scope="col"><a class="text-light" sortField="trackNo" data-bind="click: $root.ToggleOrder"># <i class="fas" data-bind="css: $root.SortOrderClass('trackNo')"></i></a></th>
+                        <th scope="col"><a class="text-light" sortField="title" data-bind="click: $root.ToggleOrder">NAME <i class="fas" data-bind="css: $root.SortOrderClass('title')"></i></a></th>
+                        <th scope="col"><a class="text-light" sortField="duration" data-bind="click: $root.ToggleOrder"><i class="far fa-clock"></i> <i class="fas" data-bind="css: $root.SortOrderClass('duration')"></i></a></th>
+                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light" sortField="artist" data-bind="click: $root.ToggleOrder">ARTIST <i class="fas" data-bind="css: $root.SortOrderClass('artist')"></i></a></th>
+                        <th scope="col" data-bind="visible: IsSongsView"><a class="text-light" sortField="album" data-bind="click: $root.ToggleOrder">ALBUM <i class="fas" data-bind="css: $root.SortOrderClass('album')"></i></a></th>
+                        <th scope="col"><a class="text-light" sortField="playCount" data-bind="click: $root.ToggleOrder"><i class="fas fa-music"></i> <i class="fas" data-bind="css: $root.SortOrderClass('playCount')"></i></a></th>
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: SongsFiltered">
