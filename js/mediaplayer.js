@@ -1,7 +1,7 @@
 MediaPlayer = (function () {
     let _filterText = ko.observable();
     let _sortField = ko.observable();
-    let _sortOrder = ko.observable();
+    let _sortOrder = ko.observable(true); // True == ascending
     let _artists = ko.observableArray([]);
     let _albums = ko.observableArray([]);
     let _songs = ko.observableArray([]);
@@ -59,17 +59,35 @@ MediaPlayer = (function () {
     }
 
     let _songsFiltered = ko.computed(function () {
+        // TODO: This event fires AS MANY TIMES as items in the list (wtf???)
+        let results;
         if (_filterText() == undefined)
-            return _songs();
+            results = _songs();
         else
-            return ko.utils.arrayFilter(_songs(), function (song) {
+            results = ko.utils.arrayFilter(_songs(), function (song) {
                 return song.title().toLowerCase().indexOf(_filterText().toLowerCase()) > -1;
             });
+        return _sortArray(results);
     });
 
-    // let _isSongsView = ko.pureComputed(function () {
-    //     return window.location.href.indexOf('#/songs') != -1;
-    // }).extend({ notify: 'always' });
+    function _sortArray(results) {
+        if (_sortField())
+            results = results.sort((a, b) => b[_sortField()]().toLowerCase() > a[_sortField()]().toLowerCase() ? -1 : 1);
+        return _sortOrder() ? results : results.reverse();
+    }
+
+    let _toggleOrder = function (vm, control) {
+        // vm is the entire viewmodel
+        // const songId = parseInt($(evt.currentTarget).attr('songId')); // target gives the clicked element, currentTarget gives the element the event is attached to
+        // const song = $(evt.currentTarget).attr('url');
+        let newOrder = $(control.currentTarget).attr('sortField');
+        if (newOrder == _sortField()) {
+            _sortOrder(!_sortOrder()); // Inverse order
+        } else {
+            _sortField(newOrder);
+            _sortOrder(true); // Start again with ascending
+        }        
+    }
 
     // #endregion
 
@@ -274,6 +292,7 @@ MediaPlayer = (function () {
         FilterText: _filterText,
         SortField: _sortField,
         SortOrder: _sortOrder,
+        ToggleOrder: _toggleOrder,
         ShuffleEnabled: _shuffleEnabled,
         MuteEnabled: _muteEnabled,
         ArtistsFiltered: _artistsFiltered,
