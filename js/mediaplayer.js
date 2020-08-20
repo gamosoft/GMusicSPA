@@ -1,5 +1,7 @@
 MediaPlayer = (function () {
     let _filterText = ko.observable();
+    let _sortField = ko.observable();
+    let _sortOrder = ko.observable();
     let _artists = ko.observableArray([]);
     let _albums = ko.observableArray([]);
     let _songs = ko.observableArray([]);
@@ -270,6 +272,8 @@ MediaPlayer = (function () {
     return {
         // Data related methods
         FilterText: _filterText,
+        SortField: _sortField,
+        SortOrder: _sortOrder,
         ShuffleEnabled: _shuffleEnabled,
         MuteEnabled: _muteEnabled,
         ArtistsFiltered: _artistsFiltered,
