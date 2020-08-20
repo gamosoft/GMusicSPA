@@ -26,6 +26,10 @@ $(() => {
         MediaPlayer.SetVolume(this.value);
     }
 
+    $('#clearSearch').click(function (e) {
+        MediaPlayer.FilterText();
+    });
+
     $('#albumCoverModal').on('show.bs.modal', function (evt) {
         const cover = $(evt.relatedTarget).attr('src');
         $('#modalAlbumImage').attr('src', cover);
