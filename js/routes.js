@@ -50,8 +50,6 @@ let app = $.sammy(function () {
         MediaPlayer.LoadSongs(songsData);
     });
     this.notFound = function () {
-        // TODO: Handle this with a default page
-        // app.redirect('#/albums');
-        // alert('not found!');
+        app.setLocation('#/albums');
     }
 });
