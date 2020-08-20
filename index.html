@@ -39,10 +39,10 @@
                     <a class="nav-link disabled" href="#/genres">Genres</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input id="searchBox" class="form-control mr-sm-2 searchBox" type="text" data-bind="value: FilterText, valueUpdate: 'keyup'" placeholder="Search" aria-label="Search">
-                <a id="clearSearch" class="text-secondary"><i class="far fa-times-circle"></i></a>
-            </form>
+            <div class="inner-addon right-addon">
+                <a id="clearSearch"><i class="far fa-times-circle"></i></a>
+                <input type="text" class="form-control" placeholder="Search" data-bind="value: FilterText, valueUpdate: 'keyup'" />
+            </div>
         </div>
     </nav>
 

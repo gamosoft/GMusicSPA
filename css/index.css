@@ -108,3 +108,23 @@ body {
 
 .tableFixHead          { overflow-y: auto; height: 500px; }
 .tableFixHead thead th { position: sticky; top: 0; background-color: #000000; }
+
+/* For the search box */
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+  }
+  
+  /* style icon */
+  .inner-addon .far {
+    position: absolute;
+    padding: 10px;
+  }
+  
+  /* align icon */
+  .left-addon .far  { left:  0px;}
+  .right-addon .far { right: 0px;}
+  
+  /* add padding  */
+  .left-addon input  { padding-left:  30px; }
+  .right-addon input { padding-right: 30px; }

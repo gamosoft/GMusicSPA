@@ -27,7 +27,7 @@ $(() => {
     }
 
     $('#clearSearch').click(function (e) {
-        MediaPlayer.FilterText();
+        MediaPlayer.FilterText('');
     });
 
     $('#albumCoverModal').on('show.bs.modal', function (evt) {
