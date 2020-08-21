@@ -41,3 +41,11 @@ function checkEmptyCover(image, title) {
 function checkEmptyArtist(image, name) {
     return image() || `https://api.adorable.io/avatars/180/${name()}.png`;
 }
+
+function showLoader() {
+    $('.loader').show();
+}
+
+function hideLoader() {
+    $('.loader').hide();
+}

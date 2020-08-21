@@ -10,6 +10,8 @@ API = (function () {
     // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
     // TODO: Cache of requests
 
+    // TODO: Add default sorting when changing views???
+
     async function _fetchData(url) {
         const response = await fetch(url);
         const data = await response.json();

@@ -113,26 +113,37 @@ body {
 /* enable absolute positioning */
 .inner-addon {
     position: relative;
-  }
+}
   
-  /* style icon */
-  .inner-addon .far {
+/* style icon */
+.inner-addon .far {
     position: absolute;
     padding: 10px;
-  }
-  
-  /* align icon */
-  .left-addon .far  { left:  0px;}
-  .right-addon .far { right: 0px;}
-  
-  /* add padding  */
-  .left-addon input  { padding-left:  30px; }
-  .right-addon input { padding-right: 30px; }
+}
 
-  /* For the sorting piece */
-  .sortable-link {
-      cursor: pointer;
-  }
-  .sortable-link:hover {
+/* align icon */
+.left-addon .far  { left:  0px;}
+.right-addon .far { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+/* For the sorting piece */
+.sortable-link {
+    cursor: pointer;
+}
+.sortable-link:hover {
     text-decoration: none;
+}
+
+/* Loading screen */
+.loader {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
 }
