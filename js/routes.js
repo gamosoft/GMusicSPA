@@ -26,14 +26,14 @@ let app = $.sammy(function () {
     });
     this.get('#/albums/:albumId', async function(context) {
         showLoader();
-        const albumId = this.params['albumId'];
         setActiveLink('#albumsLink');
+        const albumId = this.params['albumId'];
         const albumData = await API.LoadAlbum(albumId);
         const songsData = await API.LoadSongs(albumId);
         MediaPlayer.LoadAlbums(albumData);
+        MediaPlayer.LoadSongs(songsData);
         MediaPlayer.SortField('trackNo'); // Default sort in album view
         MediaPlayer.SortOrder(true); // Default sort ascending
-        MediaPlayer.LoadSongs(songsData);
         MediaPlayer.IsSongsView(false);
         $('.toggle-section').hide();
         $('#albumDetail').show();
@@ -52,8 +52,8 @@ let app = $.sammy(function () {
     });
     this.get('#/artists/:artistId', async function () {
         showLoader();
-        const artistId = this.params['artistId'];
         setActiveLink('#artistsLink');
+        const artistId = this.params['artistId'];
         const albumsData = await API.LoadAlbums(artistId);
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
@@ -64,20 +64,20 @@ let app = $.sammy(function () {
     this.get('#/songs', async function () {
         showLoader();
         setActiveLink('#songsLink');
-        MediaPlayer.IsSongsView(true);
         const songsData = await API.LoadSongs();
         MediaPlayer.LoadSongs(songsData);
+        MediaPlayer.IsSongsView(true);
         $('.toggle-section').hide();
         $('#songsList').show();
         hideLoader();
     });
     this.get('#/songs/:artistId', async function () {
         showLoader();
-        const artistId = this.params['artistId'];
         setActiveLink('#songsLink');
-        MediaPlayer.IsSongsView(true);
+        const artistId = this.params['artistId'];
         const songsData = await API.LoadArtistSongs(artistId);
         MediaPlayer.LoadSongs(songsData);
+        MediaPlayer.IsSongsView(true);
         $('.toggle-section').hide();
         $('#songsList').show();
         hideLoader();
