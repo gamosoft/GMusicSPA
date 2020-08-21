@@ -16,18 +16,17 @@ let app = $.sammy(function () {
 
     this.get('#/albums', async function () {
         showLoader();
-        $('.toggle-section').hide();
         setActiveLink('#albumsLink');
         const albumsData = await API.LoadAlbums();
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
+        $('.toggle-section').hide();
         $('#albumsList').show();
         hideLoader();
     });
     this.get('#/albums/:albumId', async function(context) {
         showLoader();
         const albumId = this.params['albumId'];
-        $('.toggle-section').hide();
         setActiveLink('#albumsLink');
         const albumData = await API.LoadAlbum(albumId);
         const songsData = await API.LoadSongs(albumId);
@@ -36,49 +35,50 @@ let app = $.sammy(function () {
         MediaPlayer.SortOrder(true); // Default sort ascending
         MediaPlayer.LoadSongs(songsData);
         MediaPlayer.IsSongsView(false);
+        $('.toggle-section').hide();
         $('#albumDetail').show();
         $('#songsList').show();
         hideLoader();
       });
     this.get('#/artists', async function () {
         showLoader();
-        $('.toggle-section').hide();
         setActiveLink('#artistsLink');
         const artistsData = await API.LoadArtists();
         MediaPlayer.LoadArtists(artistsData);
         MediaPlayer.IsSongsView(false);
+        $('.toggle-section').hide();
         $('#artistsList').show();
         hideLoader();
     });
     this.get('#/artists/:artistId', async function () {
         showLoader();
         const artistId = this.params['artistId'];
-        $('.toggle-section').hide();
         setActiveLink('#artistsLink');
         const albumsData = await API.LoadAlbums(artistId);
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
+        $('.toggle-section').hide();
         $('#albumsList').show();
         hideLoader();
     });
     this.get('#/songs', async function () {
         showLoader();
-        $('.toggle-section').hide();
         setActiveLink('#songsLink');
         MediaPlayer.IsSongsView(true);
         const songsData = await API.LoadSongs();
         MediaPlayer.LoadSongs(songsData);
+        $('.toggle-section').hide();
         $('#songsList').show();
         hideLoader();
     });
     this.get('#/songs/:artistId', async function () {
         showLoader();
         const artistId = this.params['artistId'];
-        $('.toggle-section').hide();
         setActiveLink('#songsLink');
         MediaPlayer.IsSongsView(true);
         const songsData = await API.LoadArtistSongs(artistId);
         MediaPlayer.LoadSongs(songsData);
+        $('.toggle-section').hide();
         $('#songsList').show();
         hideLoader();
     });

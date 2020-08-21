@@ -43,9 +43,16 @@ function checkEmptyArtist(image, name) {
 }
 
 function showLoader() {
+    var blurDiv = document.createElement("div");
+    blurDiv.id = "blurDiv";
+    blurDiv.style.cssText = "position:absolute; top:0; right:0; width:" + screen.width + "px; height:" + screen.height + "px; background-color: #000000; opacity:0.5; filter:alpha(opacity=50)";
+ 
+    document.getElementsByTagName("body")[0].appendChild(blurDiv);
     $('.loader').show();
 }
 
 function hideLoader() {
+    var blurDiv = document.getElementById("blurDiv");
+    blurDiv.parentNode.removeChild(blurDiv);
     $('.loader').hide();
 }
