@@ -4,7 +4,7 @@ API = (function () {
     // const baseUrl = 'http://localhost:8888'
     const albumsUrl = `${baseUrl}/albums?_sort=title&_order=asc`;
     const artistsUrl = `${baseUrl}/artists?_sort=name&_order=asc`;
-    const songsUrl = `${baseUrl}/songs?_sort=title&_order=aasc`;
+    const songsUrl = `${baseUrl}/songs?_sort=title&_order=asc`;
     
     // Filter like this
     // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
