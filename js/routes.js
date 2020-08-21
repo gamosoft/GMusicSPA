@@ -21,6 +21,7 @@ let app = $.sammy(function () {
         const albumData = await API.LoadAlbum(albumId);
         const songsData = await API.LoadSongs(albumId);
         MediaPlayer.LoadAlbums(albumData);
+        MediaPlayer.SortField('trackNo'); // Default sort in album view
         MediaPlayer.LoadSongs(songsData);
         MediaPlayer.IsSongsView(false);
       });
