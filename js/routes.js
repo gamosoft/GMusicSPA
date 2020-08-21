@@ -4,6 +4,16 @@ function setActiveLink(item) {
 }
 
 let app = $.sammy(function () {
+
+    // showLoader doesn't seem to work here
+    // this.before({except: {path: '#/route'}}, async function() {
+    //     $('.toggle-section').hide();
+    //     showLoader();
+    // });
+    // this.after(async function() {
+    //     hideLoader();
+    // });
+
     this.get('#/albums', async function () {
         showLoader();
         $('.toggle-section').hide();
