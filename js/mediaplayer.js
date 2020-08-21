@@ -356,6 +356,9 @@ Hyperlinks with NO href don't show hand icon on over
 SORT queries:
 http://localhost:8888/albums?_sort=title&_order=desc
 
+Sorting by numbers does alphabetically (1, 10, 11, 12, 3, 4, ...)
+Same for duration?
+
 .ontimeupdate = function
 .ended (property and event)
 .onpause
