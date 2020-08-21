@@ -55,7 +55,7 @@ let app = $.sammy(function () {
         $('.toggle-section').hide();
         setActiveLink('#songsLink');
         MediaPlayer.IsSongsView(true);
-        const songsData = await API.LoadSongs(artistId);
+        const songsData = await API.LoadArtistSongs(artistId);
         MediaPlayer.LoadSongs(songsData);
         $('#songsList').show();
     });
