@@ -9,47 +9,51 @@ API = (function () {
     // Filter like this
     // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
     // TODO: Cache of requests
+
+    async function _fetchData(url) {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
     
     async function _loadAlbum(albumId) {
         // Fetch album information
-        const response = await fetch(`${albumsUrl}&albumId=${albumId}`);
-        const data = await response.json();
-        return data;
+        const url = `${albumsUrl}&albumId=${albumId}`;
+        return await _fetchData(url);
     }
     
     async function _loadAlbums(artistId) {
         // Fetch album information
-        let url = artistId
+        const url = artistId
                 ? `${albumsUrl}&artistId=${artistId}`
                 : albumsUrl;
-    
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
+        return await _fetchData(url);
     }
     
     async function _loadArtists() {
         // Fetch artist information
-        const response = await fetch(`${artistsUrl}`);
-        const data = await response.json();
-        return data;
+        return await _fetchData(artistsUrl);
     }
     
     async function _loadSongs(albumId) {
         // Fetch song information
-        let url = albumId
+        const url = albumId
                 ? `${songsUrl}&albumId=${albumId}`
                 : songsUrl;
-    
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
+        return await _fetchData(url);
+    }
+
+    async function _loadArtistSongs(artistId) {
+        // Fetch song information
+        const url = `${songsUrl}&artistId=${artistId}`;
+        return await _fetchData(url);
     }
 
     return {
         LoadAlbum: _loadAlbum,
         LoadAlbums: _loadAlbums,
         LoadArtists: _loadArtists,
-        LoadSongs: _loadSongs
+        LoadSongs: _loadSongs,
+        LoadArtistSongs: _loadArtistSongs,
     };
 })();
