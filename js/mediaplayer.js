@@ -18,55 +18,68 @@ MediaPlayer = (function () {
 
     function _loadArtists(artists) {
         _artists([]);
+        let tempArray = [];
         $.each(artists, function (index, artist) {
             let entry = ko.mapping.fromJS(artist);
-            _artists.push(entry);
+            tempArray.push(entry);
         });
+        _artists(tempArray);
     }
 
     let _artistsFiltered = ko.computed(function () {
         if (_filterText() == undefined)
             return _artists();
-        else
+        else {
+            let lowerCaseFilter = _filterText().toLowerCase();
             return ko.utils.arrayFilter(_artists(), function (artist) {
-                return artist.name().toLowerCase().indexOf(_filterText().toLowerCase()) > -1;
+                return artist.name().toLowerCase().indexOf(lowerCaseFilter) > -1;
             });
+        }
     });
 
     function _loadAlbums(albums) {
         _albums([]);
+        let tempArray = [];
         $.each(albums, function (index, album) {
             let entry = ko.mapping.fromJS(album);
-            _albums.push(entry);
+            tempArray.push(entry);
         });
+        _albums(tempArray);
     }
 
     let _albumsFiltered = ko.computed(function () {
         if (_filterText() == undefined)
             return _albums();
-        else
+        else {
+            let lowerCaseFilter = _filterText().toLowerCase();
             return ko.utils.arrayFilter(_albums(), function (album) {
-                return album.title().toLowerCase().indexOf(_filterText().toLowerCase()) > -1;
+                return album.title().toLowerCase().indexOf(lowerCaseFilter) > -1;
             });
+        }
     });
 
     function _loadSongs(songs) {
         _songs([]);
+        let tempArray = [];
         $.each(songs, function (index, song) {
             let entry = ko.mapping.fromJS(song);
-            _songs.push(entry);
+            tempArray.push(entry); // Use a temporary array because if we add items to the observable directly, the computed below fires EVERY TIME
         });
+        _songs(tempArray);
     }
 
     let _songsFiltered = ko.computed(function () {
-        // TODO: This event fires AS MANY TIMES as items in the list (wtf???)
+        // This event fires AS MANY TIMES as items in the list if added individually
+        // As items are added to the array on load, this gets invoked, so best using a temporary array to add 
         let results;
         if (_filterText() == undefined)
             results = _songs();
-        else
+        else {
+            let lowerCaseFilter = _filterText().toLowerCase();
             results = ko.utils.arrayFilter(_songs(), function (song) {
-                return song.title().toLowerCase().indexOf(_filterText().toLowerCase()) > -1;
+                return song.title().toLowerCase().indexOf(lowerCaseFilter) > -1;
             });
+        }
         return _sortArray(results);
     });
 
