@@ -1,7 +1,7 @@
 {
     "albums": [
         {
-            "albumId": 1,
+            "id": 1,
             "title": "Alien Love Secrets",
             "artist": "Steve Vai",
             "artistId": 1,
@@ -12,7 +12,7 @@
             "genre": "Rock"
         },
         {
-            "albumId": 2,
+            "id": 2,
             "title": "Engines of Creation",
             "artist": "Joe Satriani",
             "artistId": 2,
@@ -23,7 +23,7 @@
             "genre": "Rock"
         },
         {
-            "albumId": 3,
+            "id": 3,
             "title": "American Idiot",
             "artist": "Green Day",
             "artistId": 4,
@@ -34,7 +34,7 @@
             "genre": "Rock"
         },
         {
-            "albumId": 4,
+            "id": 4,
             "title": "Crystal Planet",
             "artist": "Joe Satriani",
             "artistId": 2,
@@ -45,7 +45,7 @@
             "genre": "Rock"
         },
         {
-            "albumId": 5,
+            "id": 5,
             "title": "The Division Bell",
             "artist": "Pink Floyd",
             "artistId": 3,
@@ -56,7 +56,7 @@
             "genre": "Rock"
         },
         {
-            "albumId": 6,
+            "id": 6,
             "title": "Electro Glide in Blue",
             "artist": "Apollo 440",
             "artistId": 5,
@@ -67,7 +67,7 @@
             "genre": "Rock"
         },
         {
-            "albumId": 8,
+            "id": 8,
             "title": "Eye in the Sky",
             "artist": "Alan Parsons Project",
             "artistId": 7,
@@ -78,7 +78,7 @@
             "genre": "Rock"
         },
         {
-            "albumId": 9,
+            "id": 9,
             "title": "Extra Virgin",
             "artist": "Olive",
             "artistId": 8,
@@ -89,7 +89,7 @@
             "genre": "Pop-Rock"
         },
         {
-            "albumId": 12,
+            "id": 12,
             "title": "Pop Art",
             "artist": "Transvision Vamp",
             "artistId": 11,
@@ -102,29 +102,29 @@
     ],
     "artists": [
         {
-            "artistId": 1,
+            "id": 1,
             "name": "Steve Vai",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Steve_Vai_2011.jpg/330px-Steve_Vai_2011.jpg"
         },
         {
-            "artistId": 2,
+            "id": 2,
             "name": "Joe Satriani",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Satriani_2010_13_12_1112.jpg/220px-Satriani_2010_13_12_1112.jpg"
         },
         {
-            "artistId": 3,
+            "id": 3,
             "name": "Pink Floyd",
             "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Pink_Floyd_-_all_members.jpg/250px-Pink_Floyd_-_all_members.jpg"
         },
         {
-            "artistId": 4,
+            "id": 4,
             "name": "Green Day",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/RiP2013_GreenDay_Billie_Joe_Armstrong_0021.jpg/330px-RiP2013_GreenDay_Billie_Joe_Armstrong_0021.jpg"
         }
     ],
     "songs": [
         {
-            "songId": 1,
+            "id": 1,
             "albumId": 1,
             "album": "Alien Love Secrets",
             "artistId": 1,
@@ -136,7 +136,7 @@
             "url": "./mp3/sample1.mp3"
         },
         {
-            "songId": 2,
+            "id": 2,
             "albumId": 1,
             "album": "Alien Love Secrets",
             "artistId": 1,
@@ -148,7 +148,7 @@
             "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 4,
+            "id": 4,
             "albumId": 1,
             "album": "Alien Love Secrets",
             "artistId": 1,
@@ -160,7 +160,7 @@
             "url": "./mp3/sample3.mp3"
         },
         {
-            "songId": 7,
+            "id": 7,
             "albumId": 1,
             "album": "Alien Love Secrets",
             "artistId": 1,
@@ -172,7 +172,7 @@
             "url": "./mp3/sample4.mp3"
         },
         {
-            "songId": 8,
+            "id": 8,
             "albumId": 2,
             "album": "Engines of Creation",
             "artistId": 2,
@@ -184,7 +184,7 @@
             "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 9,
+            "id": 9,
             "albumId": 2,
             "album": "Engines of Creation",
             "artistId": 2,
@@ -196,7 +196,7 @@
             "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 10,
+            "id": 10,
             "albumId": 2,
             "album": "Engines of Creation",
             "artistId": 2,
@@ -208,7 +208,7 @@
             "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 12,
+            "id": 12,
             "albumId": 2,
             "album": "Engines of Creation",
             "artistId": 2,
@@ -220,7 +220,7 @@
             "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 14,
+            "id": 14,
             "albumId": 5,
             "album": "The Division Bell",
             "artistId": 3,
@@ -232,7 +232,7 @@
             "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 15,
+            "id": 15,
             "albumId": 5,
             "album": "The Division Bell",
             "artistId": 3,
@@ -244,7 +244,7 @@
             "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 16,
+            "id": 16,
             "albumId": 5,
             "album": "The Division Bell",
             "artistId": 3,
@@ -256,7 +256,7 @@
             "url": "./mp3/sample2.mp3"
         },
         {
-            "songId": 17,
+            "id": 17,
             "albumId": 5,
             "album": "The Division Bell",
             "artistId": 3,
@@ -268,7 +268,7 @@
             "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 19,
+            "id": 19,
             "albumId": 5,
             "album": "The Division Bell",
             "artistId": 3,
@@ -280,7 +280,7 @@
             "url": "./mp3/bensound-adventure.mp3"
         },
         {
-            "songId": 20,
+            "id": 20,
             "albumId": 5,
             "album": "The Division Bell",
             "artistId": 3,

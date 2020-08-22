@@ -54,7 +54,7 @@ let app = $.sammy(function () {
         showLoader();
         setActiveLink('#artistsLink');
         const artistId = this.params['artistId'];
-        const albumsData = await API.LoadAlbums(artistId);
+        const albumsData = await API.LoadAlbums(artistId); // TODO: In this case albums are sorted by year descending
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
         $('.toggle-section').hide();
