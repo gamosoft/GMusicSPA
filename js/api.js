@@ -1,7 +1,7 @@
 API = (function () {
 
-    const baseUrl = 'https://my-json-server.typicode.com/gamosoft/GMusicSPA'
-    // const baseUrl = 'http://localhost:8888'
+    // const baseUrl = 'https://my-json-server.typicode.com/gamosoft/GMusicSPA'
+    const baseUrl = 'http://localhost:8888'
     const albumsUrl = `${baseUrl}/albums?_sort=title&_order=asc`;
     const artistsUrl = `${baseUrl}/artists?_sort=name&_order=asc`;
     const songsUrl = `${baseUrl}/songs?_sort=title&_order=asc`;
@@ -19,7 +19,7 @@ API = (function () {
     }
     
     async function _loadAlbum(albumId) {
-        const url = `${albumsUrl}&albumId=${albumId}`;
+        const url = `${albumsUrl}&id=${albumId}`;  // TODO: Change this to /albums/:albumId
         return await _fetchData(url);
     }
     

@@ -50,14 +50,14 @@
         <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: AlbumsFiltered">
             <div class="card mb-4 shadow-album">
                 <div>
-                    <a data-bind="attr: { href: '#/albums/'+albumId() }"><img class="card-img-top z-depth-0 media-album rounded"
+                    <a data-bind="attr: { href: '#/albums/'+id() }"><img class="card-img-top z-depth-0 media-album rounded"
                             data-bind="attr: { src: checkEmptyCover(image, title), title: title }"></a>
                     <a class="play-album-button text-secondary" data-bind="click: $parent.PlayAlbum"><i
                             class="fa fa-play-circle fa-2x"></i></a>
                 </div>
-                <div class="card-body" data-bind="attr: { id: albumId }">
+                <div class="card-body" data-bind="attr: { id: id }">
                     <div>
-                        <a data-bind="attr: { href: '#/albums/'+albumId() }"><strong class="text-muted"
+                        <a data-bind="attr: { href: '#/albums/'+id() }"><strong class="text-muted"
                                 data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
                     </div>
                     <div>
@@ -73,12 +73,12 @@
     <div class="container-fluid">
         <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: ArtistsFiltered">
             <div class="card mb-4 bg-transparent border-0">
-                <a data-bind="attr: { href: '#/artists/'+artistId() }"><img
+                <a data-bind="attr: { href: '#/artists/'+id() }"><img
                         class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
                         data-bind="attr: { src: checkEmptyArtist(image, name), title: name }"></a>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a data-bind="attr: { href: '#/artists/'+artistId() }"><strong class="text-muted"
+                        <a data-bind="attr: { href: '#/artists/'+id() }"><strong class="text-muted"
                                 data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
     <div class="container-fluid">
         <div id="albumDetail" class="row mb-2 toggle-section" data-bind="foreach: Albums">
             <div class="col">
-                <div data-bind="attr: { id: albumId }">
+                <div data-bind="attr: { id: id }">
                     <div style="display: inline-block">
                         <a data-toggle="modal" data-target="#albumCoverModal" data-bind="attr: { src: image }">
                             <img class="card-img-top z-depth-0 media-album album-detail-cover rounded"
@@ -142,13 +142,13 @@
                     <tr class="play-song-tr">
                         <!-- TODO: allow selecting more than one row to queue up the songs -->
                         <!-- onclick="$(this).toggleClass('bg-secondary')" -->
-                        <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId != songId()">
+                        <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().id != id()">
                             <span class="song-number ml-2" data-bind="text: trackNo">X</span>
                             <div class="play-song-button ml-2"><a class="song text-secondary"
-                                    data-bind="attr: { id: songId }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
+                                    data-bind="attr: { id: id }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
                         </th>
-                        <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId == songId()">
-                            <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_white.gif" width="30px" height="20px"></a>
+                        <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().id == id()">
+                            <a data-bind="attr: { id: id }, click: $parent.PlaySong"><img src="./images/ani_equalizer_white.gif" width="30px" height="20px"></a>
                         </th>
                         <td>
                             <span data-bind="text: trim(title(), 30), attr: { title: title }">Title</span>
@@ -283,13 +283,13 @@ Start some music or click the <i class="fa fa-ellipsis-v"></i> icon on an album,
                             <tbody data-bind="foreach: PlayList">
                                 <tr class="play-song-tr">
                                     <!-- onclick="$(this).toggleClass('bg-secondary')"> -->
-                                    <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId != songId">
+                                    <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().id != id">
                                         <span class="song-number ml-2" data-bind="text: trackNo">X</span>
                                         <div class="play-song-button ml-2"><a class="song text-secondary"
-                                                data-bind="attr: { id: songId }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
+                                                data-bind="attr: { id: id }, click: $parent.PlaySong"><i class="fa fa-play"></i></a></div>
                                     </th>            
-                                    <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().songId == songId">
-                                        <a data-bind="attr: { id: songId }, click: $parent.PlaySong"><img src="./images/ani_equalizer_white.gif" width="30px" height="20px"></a>
+                                    <th scope="row" class="tracknumber" data-bind="visible: $parent.CurrentSong().id == id">
+                                        <a data-bind="attr: { id: id }, click: $parent.PlaySong"><img src="./images/ani_equalizer_white.gif" width="30px" height="20px"></a>
                                     </th>
                                     <td class="text-left">
                                         <div data-bind="text: trim(title, 30), attr: { title: title }">Title</div>

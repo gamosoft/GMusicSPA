@@ -91,7 +91,7 @@ MediaPlayer = (function () {
 
     let _toggleOrder = function (vm, control) {
         // vm is the entire viewmodel
-        // const songId = parseInt($(evt.currentTarget).attr('songId')); // target gives the clicked element, currentTarget gives the element the event is attached to
+        // const songId = parseInt($(evt.currentTarget).attr('id')); // target gives the clicked element, currentTarget gives the element the event is attached to
         // const song = $(evt.currentTarget).attr('url');
         let newOrder = $(control.currentTarget).attr('sortField');
         if (newOrder == _sortField()) {
@@ -149,7 +149,7 @@ MediaPlayer = (function () {
     }
 
     function _playSong(song) {
-        // const songId = parseInt($(evt.currentTarget).attr('songId')); // target gives the clicked element, currentTarget gives the element the event is attached to
+        // const songId = parseInt($(evt.currentTarget).attr('id')); // target gives the clicked element, currentTarget gives the element the event is attached to
         // const song = $(evt.currentTarget).attr('url');
         // const song = $(control).attr('url');
 
@@ -197,7 +197,7 @@ MediaPlayer = (function () {
         _stop();
         _clearPlayList();
 
-        const songsData = await API.LoadSongs(album.albumId());
+        const songsData = await API.LoadSongs(album.id());
         _addSongs(songsData);
 
         if (shuffle)
@@ -359,8 +359,6 @@ TODO: video thumbnail, iOS lock screen
 https://stackoverflow.com/questions/54462253/can-html5-in-the-browser-play-continuous-audio-on-ios-lock-screen
 
 Several viewmodels same element?
-
-Maybe use "id" instead of "albumId" for example, if using JSON server to use routes /albums/3 instead of albums?albumId=3
 
 Changing views, if something in the search textbox it STILL filters
 
