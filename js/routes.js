@@ -17,7 +17,7 @@ let app = $.sammy(function () {
     this.get('#/albums', async function () {
         showLoader();
         setActiveLink('#albumsLink');
-        const albumsData = await API.LoadAlbums();
+        const albumsData = await API.RetrieveAlbums();
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
         $('.toggle-section').hide();
@@ -28,9 +28,12 @@ let app = $.sammy(function () {
         showLoader();
         setActiveLink('#albumsLink');
         const albumId = this.params['albumId'];
-        const albumData = await API.LoadAlbum(albumId);
-        const songsData = await API.LoadSongs(albumId);
-        MediaPlayer.LoadAlbums(albumData);
+        const albumData = await API.RetrieveAlbum(albumId); // This returns a single element, not an array
+        const songsData = await API.RetrieveSongs(albumId);
+
+        let removeme = []; removeme.push(albumData);
+        MediaPlayer.LoadAlbums(removeme);
+        //MediaPlayer.LoadAlbums(albumData); // TODO: hack to make it work
         MediaPlayer.LoadSongs(songsData);
         MediaPlayer.SortField('trackNo'); // Default sort in album view
         MediaPlayer.SortOrder(true); // Default sort ascending
@@ -43,7 +46,7 @@ let app = $.sammy(function () {
     this.get('#/artists', async function () {
         showLoader();
         setActiveLink('#artistsLink');
-        const artistsData = await API.LoadArtists();
+        const artistsData = await API.RetrieveArtists();
         MediaPlayer.LoadArtists(artistsData);
         MediaPlayer.IsSongsView(false);
         $('.toggle-section').hide();
@@ -54,7 +57,8 @@ let app = $.sammy(function () {
         showLoader();
         setActiveLink('#artistsLink');
         const artistId = this.params['artistId'];
-        const albumsData = await API.LoadAlbums(artistId); // TODO: In this case albums are sorted by year descending
+        // const artistData = await API.RetrieveArtist(artistId);
+        const albumsData = await API.RetrieveAlbums(artistId); // TODO: In this case albums are sorted by year descending
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
         $('.toggle-section').hide();
@@ -64,7 +68,7 @@ let app = $.sammy(function () {
     this.get('#/songs', async function () {
         showLoader();
         setActiveLink('#songsLink');
-        const songsData = await API.LoadSongs();
+        const songsData = await API.RetrieveSongs();
         MediaPlayer.LoadSongs(songsData);
         MediaPlayer.IsSongsView(true);
         $('.toggle-section').hide();
@@ -75,7 +79,7 @@ let app = $.sammy(function () {
         showLoader();
         setActiveLink('#songsLink');
         const artistId = this.params['artistId'];
-        const songsData = await API.LoadArtistSongs(artistId);
+        const songsData = await API.RetrieveArtistSongs(artistId);
         MediaPlayer.LoadSongs(songsData);
         MediaPlayer.IsSongsView(true);
         $('.toggle-section').hide();

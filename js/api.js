@@ -2,9 +2,9 @@ API = (function () {
 
     // const baseUrl = 'https://my-json-server.typicode.com/gamosoft/GMusicSPA'
     const baseUrl = 'http://localhost:8888'
-    const albumsUrl = `${baseUrl}/albums?_sort=title&_order=asc`;
-    const artistsUrl = `${baseUrl}/artists?_sort=name&_order=asc`;
-    const songsUrl = `${baseUrl}/songs?_sort=title&_order=asc`;
+    const albumsUrl = `${baseUrl}/albums`; // ?_sort=title&_order=asc`;
+    const artistsUrl = `${baseUrl}/artists`; // ?_sort=name&_order=asc`;
+    const songsUrl = `${baseUrl}/songs`; // ?_sort=title&_order=asc`;
     
     // Filter like this
     // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
@@ -29,39 +29,53 @@ API = (function () {
         return data;
     }
     
-    async function _loadAlbum(albumId) {
-        const url = `${albumsUrl}&id=${albumId}`;  // TODO: Change this to /albums/:albumId
+    async function _retrieveAlbum(albumId) {
+        const url = `${albumsUrl}/${albumId}?_embed=songs`; // TODO: Process songs
         return await _fetchData(url);
     }
     
-    async function _loadAlbums(artistId) {
+    async function _retrieveAlbums(artistId) {
         const url = artistId
-                ? `${albumsUrl}&artistId=${artistId}`
+                ? `${albumsUrl}?artistId=${artistId}`
                 : albumsUrl;
         return await _fetchData(url);
     }
     
-    async function _loadArtists() {
+    async function _retrieveArtists() {
         return await _fetchData(artistsUrl);
     }
+
+    async function _retrieveArtist(artistId) {
+        const url = `${artistsUrl}/${artistId}`;
+        return await _fetchData(url)
+    }
     
-    async function _loadSongs(albumId) {
+    async function _retrieveSongs(albumId) {
         const url = albumId
-                ? `${songsUrl}&albumId=${albumId}`
+                ? `${songsUrl}?albumId=${albumId}`
                 : songsUrl;
         return await _fetchData(url);
     }
 
-    async function _loadArtistSongs(artistId) {
-        const url = `${songsUrl}&artistId=${artistId}`;
+    async function _retrieveArtistSongs(artistId) {
+        const url = `${songsUrl}?artistId=${artistId}`;
+        return await _fetchData(url);
+    }
+
+    async function _retrieveGenres() {
+        const url = albumId // TODO: Change this
+                ? `${songsUrl}?albumId=${albumId}`
+                : songsUrl;
         return await _fetchData(url);
     }
 
     return {
-        LoadAlbum: _loadAlbum,
-        LoadAlbums: _loadAlbums,
-        LoadArtists: _loadArtists,
-        LoadSongs: _loadSongs,
-        LoadArtistSongs: _loadArtistSongs,
+        RetrieveAlbum: _retrieveAlbum,
+        RetrieveAlbums: _retrieveAlbums,
+        RetrieveArtist: _retrieveArtist,
+        RetrieveArtists: _retrieveArtists,
+        RetrieveSongs: _retrieveSongs,
+        RetrieveArtistSongs: _retrieveArtistSongs,
+        // RetrieveGenres: _retrieveGenres
     };
 })();
