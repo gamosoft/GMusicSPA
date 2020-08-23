@@ -13,7 +13,32 @@ let app = $.sammy(function () {
     // this.after(async function() {
     //     hideLoader();
     // });
-
+    // ARTISTS
+    this.get('#/artists', async function () {
+        showLoader();
+        setActiveLink('#artistsLink');
+        const artistsData = await API.RetrieveArtists();
+        MediaPlayer.LoadArtists(artistsData);
+        MediaPlayer.IsSongsView(false);
+        $('.toggle-section').hide();
+        $('#artistsList').show();
+        hideLoader();
+    });
+    this.get('#/artists/:artistId', async function () {
+        showLoader();
+        setActiveLink('#artistsLink');
+        const artistId = this.params['artistId'];
+        const artistData = await API.RetrieveArtist(artistId);
+        const albumsData = await API.RetrieveAlbums(artistId); // TODO: In this case albums are sorted by year descending
+        MediaPlayer.CurrentArtist(artistData);
+        MediaPlayer.LoadAlbums(albumsData);
+        MediaPlayer.IsSongsView(false);
+        $('.toggle-section').hide();
+        $('#artistDetail').show();
+        $('#albumsList').show();
+        hideLoader();
+    });
+    // ALBUMS
     this.get('#/albums', async function () {
         showLoader();
         setActiveLink('#albumsLink');
@@ -39,31 +64,8 @@ let app = $.sammy(function () {
         $('#albumDetail').show();
         $('#songsList').show();
         hideLoader();
-      });
-    this.get('#/artists', async function () {
-        showLoader();
-        setActiveLink('#artistsLink');
-        const artistsData = await API.RetrieveArtists();
-        MediaPlayer.LoadArtists(artistsData);
-        MediaPlayer.IsSongsView(false);
-        $('.toggle-section').hide();
-        $('#artistsList').show();
-        hideLoader();
     });
-    this.get('#/artists/:artistId', async function () {
-        showLoader();
-        setActiveLink('#artistsLink');
-        const artistId = this.params['artistId'];
-        const artistData = await API.RetrieveArtist(artistId);
-        const albumsData = await API.RetrieveAlbums(artistId); // TODO: In this case albums are sorted by year descending
-        MediaPlayer.CurrentArtist(artistData);
-        MediaPlayer.LoadAlbums(albumsData);
-        MediaPlayer.IsSongsView(false);
-        $('.toggle-section').hide();
-        $('#artistDetail').show();
-        $('#albumsList').show();
-        hideLoader();
-    });
+    // SONGS
     this.get('#/songs', async function () {
         showLoader();
         setActiveLink('#songsLink');
@@ -83,6 +85,17 @@ let app = $.sammy(function () {
         MediaPlayer.IsSongsView(true);
         $('.toggle-section').hide();
         $('#songsList').show();
+        hideLoader();
+    });
+    // GENRES
+    this.get('#/genres', async function () {
+        showLoader();
+        setActiveLink('#genresLink');
+        const albumsData = await API.RetrieveGenres();
+        // MediaPlayer.LoadAlbums(albumsData);
+        MediaPlayer.IsSongsView(false);
+        $('.toggle-section').hide();
+        // $('#albumsList').show();
         hideLoader();
     });
     this.notFound = function () {

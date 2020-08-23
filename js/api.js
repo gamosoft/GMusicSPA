@@ -61,6 +61,7 @@ API = (function () {
 
     async function _retrieveGenres() {
         alert('not implemented');
+        return;
         const url = albumId // TODO: Change this
                 ? `${songsUrl}?albumId=${albumId}`
                 : songsUrl;
