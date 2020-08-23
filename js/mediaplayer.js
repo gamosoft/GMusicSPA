@@ -181,6 +181,7 @@ MediaPlayer = (function () {
             // }
 
             _currentSong(song);
+            // TODO: Maybe set current album here???
 
             $(_playButtons).removeClass('fa-play-circle').addClass('fa-pause-circle');
             _mediaPlayer.play();
@@ -201,7 +202,6 @@ MediaPlayer = (function () {
         _clearPlayList();
 
         const albumData = await API.RetrieveAlbum(ko.unwrap(album.id));
-        _currentAlbum(albumData); // TODO: Do we need this?
         _addSongs(albumData.songs);
 
         if (shuffle)
@@ -215,11 +215,20 @@ MediaPlayer = (function () {
     }
 
     async function _playArtist(artist, event, shuffle) {
-        alert('not implemented');
+        _stop();
+        _clearPlayList();
+
+        const artistData = await API.RetrieveArtist(ko.unwrap(artist.id));
+        _addSongs(artistData.songs);
+
+        if (shuffle)
+        _shuffle(true);
+
+        _play();
     }
 
     async function _shuffleArtist(artist, event, shuffle) {
-        alert('not implemented');
+        await _playArtist(artist, event, true);
     }
 
     function _stop() {

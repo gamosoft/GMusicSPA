@@ -35,7 +35,7 @@ API = (function () {
 
     async function _retrieveArtist(artistId) {
         const url = `${artistsUrl}/${artistId}?_embed=albums&_embed=songs`; // TODO: Maybe get just headers?
-        return await _fetchData(url)
+        return await _fetchData(url);
     }
 
     async function _retrieveAlbums(artistId) {
