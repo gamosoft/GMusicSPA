@@ -1,7 +1,7 @@
 API = (function () {
 
-    // const baseUrl = 'https://my-json-server.typicode.com/gamosoft/GMusicSPA'
-    const baseUrl = 'http://localhost:8888'
+    const baseUrl = 'https://my-json-server.typicode.com/gamosoft/GMusicSPA'
+    // const baseUrl = 'http://localhost:8888'
     const albumsUrl = `${baseUrl}/albums?_sort=title&_order=asc`;
     const artistsUrl = `${baseUrl}/artists?_sort=name&_order=asc`;
     const songsUrl = `${baseUrl}/songs?_sort=title&_order=asc`;
