@@ -45,7 +45,39 @@
             </div>
         </div>
     </nav>
-
+    <!-- ARTISTS -->
+    <div class="container-fluid">
+        <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: ArtistsFiltered">
+            <div class="card mb-4 bg-transparent border-0">
+                <a data-bind="attr: { href: '#/artists/'+id() }"><img
+                        class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
+                        data-bind="attr: { src: checkEmptyArtist(image, name), title: name }"></a>
+                <div class="card-footer">
+                    <div class="text-center">
+                        <a data-bind="attr: { href: '#/artists/'+id() }"><strong class="text-muted"
+                                data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div id="artistDetail" class="card-deck toggle-section" data-bind="with: $root.CurrentArtist">
+            <div class="card mb-4 bg-transparent border-0">
+                <a data-bind="attr: { href: '#/artists/' + id }">
+                    <img
+                        class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
+                        data-bind="attr: { src: checkEmptyArtist(image, name), title: name }"></a>
+                <div class="card-footer">
+                    <div class="text-center">
+                        <a data-bind="attr: { href: '#/artists/' + id }"><strong class="text-muted"
+                                data-bind="text: trim(name, 20), attr: { title: name }">Name</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ALBUMS -->
     <div class="container-fluid">
         <div id="albumsList" class="card-deck toggle-section" data-bind="foreach: AlbumsFiltered">
             <div class="card mb-4 shadow-album">
@@ -71,22 +103,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div id="artistsList" class="card-deck toggle-section" data-bind="foreach: ArtistsFiltered">
-            <div class="card mb-4 bg-transparent border-0">
-                <a data-bind="attr: { href: '#/artists/'+id() }"><img
-                        class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
-                        data-bind="attr: { src: checkEmptyArtist(image, name), title: name }"></a>
-                <div class="card-footer">
-                    <div class="text-center">
-                        <a data-bind="attr: { href: '#/artists/'+id() }"><strong class="text-muted"
-                                data-bind="text: trim(name(), 20), attr: { title: name }">Name</strong></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div id="albumDetail" class="row mb-2 toggle-section" data-bind="foreach: Albums">
+        <div id="albumDetail" class="row mb-2 toggle-section" data-bind="with: $root.CurrentAlbum">
             <div class="col">
                 <div data-bind="attr: { id: id }">
                     <div style="display: inline-block">
@@ -97,13 +114,13 @@
                     </div>
                     <div style="display: inline-block" class="align-middle">
                         <div>
-                            <strong class="text-muted" data-bind="text: trim(title(), 20), attr: { title: title }">Album Title</strong>
+                            <strong class="text-muted" data-bind="text: trim(title, 20), attr: { title: title }">Album Title</strong>
                             <a class="text-primary" data-bind="click: $parent.PlayAlbum" title="Play Album"><i
                                     class="play-button fa fa-play-circle fa-2x"></i></a>
                         </div>
                         <div>
-                            <a data-bind="attr: { href: '#/artists/'+artistId() }"><small class="text-muted"
-                                    data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                            <a data-bind="attr: { href: '#/artists/'+artistId }"><small class="text-muted"
+                                    data-bind="text: trim(artist, 20), attr: { title: artist }">Artist</small></a>
                         </div>
                         <div class="mb-2">
                             <small class="text-muted" data-bind="text: year">xxxx</small>
@@ -124,6 +141,7 @@
             </div>
         </div>
     </div>
+    <!-- SONGS -->
     <div class="container-fluid">
         <div id="songsList" class="table-responsive toggle-section" data-bind="visible: Songs().length > 0">
             <table class="table table-sm table-hover table-dark">

@@ -35,11 +35,15 @@ Array.prototype.shuffle = function() {
 };
 
 function checkEmptyCover(image, title) {
-    return image() || `https://api.adorable.io/avatars/180/${title()}.png`;
+    const imageLocal = ko.unwrap(image); // We don't know if it's observable or not
+    const titleLocal = ko.unwrap(title);
+    return imageLocal || `https://api.adorable.io/avatars/180/${titleLocal}.png`;
 }
 
 function checkEmptyArtist(image, name) {
-    return image() || `https://api.adorable.io/avatars/180/${name()}.png`;
+    const imageLocal = ko.unwrap(image); // We don't know if it's observable or not
+    const nameLocal = ko.unwrap(name);
+    return imageLocal || `https://api.adorable.io/avatars/180/${nameLocal}.png`;
 }
 
 function showLoader() {

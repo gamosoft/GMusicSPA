@@ -13,6 +13,8 @@ MediaPlayer = (function () {
     let _isSongsView = ko.observable(false);
     let _songProgress = ko.observable(0);
     let _volume = ko.observable();
+    let _currentArtist = ko.observable();
+    let _currentAlbum = ko.observable();
     
     // #region "Observable methods"
 
@@ -323,6 +325,8 @@ MediaPlayer = (function () {
         SongsFiltered: _songsFiltered,
         Songs: _songs,
         CurrentSong: _currentSong,
+        CurrentArtist: _currentArtist,
+        CurrentAlbum: _currentAlbum,
         PlayList: _playList,
         IsSongsView: _isSongsView,
         LoadArtists: _loadArtists,
