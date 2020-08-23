@@ -50,11 +50,8 @@ API = (function () {
         return await _fetchData(url)
     }
     
-    async function _retrieveSongs(albumId) {
-        const url = albumId
-                ? `${songsUrl}?albumId=${albumId}`
-                : songsUrl;
-        return await _fetchData(url);
+    async function _retrieveSongs() {
+        return await _fetchData(songsUrl);
     }
 
     async function _retrieveArtistSongs(artistId) {

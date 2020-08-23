@@ -28,8 +28,8 @@ let app = $.sammy(function () {
         showLoader();
         setActiveLink('#albumsLink');
         const albumId = this.params['albumId'];
-        const albumData = await API.RetrieveAlbum(albumId); // This returns a single element, not an array
-        const songsData = await API.RetrieveSongs(albumId);
+        const albumData = await API.RetrieveAlbum(albumId); // This returns a single element, not an array, and the songs INSIDE
+        const songsData = albumData.songs;
 
         let removeme = []; removeme.push(albumData);
         MediaPlayer.LoadAlbums(removeme);
