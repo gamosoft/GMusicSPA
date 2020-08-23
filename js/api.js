@@ -46,7 +46,7 @@ API = (function () {
     }
 
     async function _retrieveArtist(artistId) {
-        const url = `${artistsUrl}/${artistId}`;
+        const url = `${artistsUrl}/${artistId}?_embed=albums`;
         return await _fetchData(url)
     }
     

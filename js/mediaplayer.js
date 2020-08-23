@@ -212,6 +212,10 @@ MediaPlayer = (function () {
         await _playAlbum(album, event, true);
     }
 
+    async function _playArtist(artist, event, shuffle) {
+        alert('not implemented');
+    }
+
     function _stop() {
         let _playButtons = $(_playButtonClass); // All play buttons in the page
         $(_playButtons).removeClass('fa-pause-circle').addClass('fa-play-circle');
@@ -339,6 +343,7 @@ MediaPlayer = (function () {
         Init: _init,
         PlaySong: _playSong, // Adds and plays
         PlayAlbum: _playAlbum, // Adds and plays
+        PlayArtist: _playArtist, // Adds and plays
         ShuffleAlbum: _shuffleAlbum, // Adds, shuffles and plays
         ClearPlayList: _clearPlayList,
         AddSong: _addSong,

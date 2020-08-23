@@ -72,11 +72,11 @@
                     <div style="display: inline-block" class="align-middle">
                         <div>
                             <strong class="text-muted" data-bind="text: trim(name, 20), attr: { title: name }">Artist Name</strong>
-                            <a class="text-primary" data-bind="click: $parent.PlayAlbum" title="Play Artist"><i
+                            <a class="text-primary" data-bind="click: $parent.PlayArtist" title="Play Artist"><i
                                     class="play-button fa fa-play-circle fa-2x"></i></a>
                         </div>
                         <div class="mb-2">
-                            <small class="text-muted">N albums</small>
+                            <small class="text-muted"><span data-bind="text: albums.length">0</span> albums</small>
                         </div>
                         <div>
                             <button class="btn btn-sm btn-primary" title="Instant Mix"><i class="fa fa-compact-disc"></i>&nbsp;INSTANT MIX</button>
