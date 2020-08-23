@@ -34,7 +34,7 @@ API = (function () {
     }
 
     async function _retrieveArtist(artistId) {
-        const url = `${artistsUrl}/${artistId}?_embed=albums`; // TODO: Maybe get just headers?
+        const url = `${artistsUrl}/${artistId}?_embed=albums&_embed=songs`; // TODO: Maybe get just headers?
         return await _fetchData(url)
     }
 
@@ -54,11 +54,6 @@ API = (function () {
         return await _fetchData(songsUrl);
     }
 
-    async function _retrieveArtistSongs(artistId) {
-        const url = `${songsUrl}?artistId=${artistId}`;
-        return await _fetchData(url);
-    }
-
     async function _retrieveGenres() {
         alert('not implemented');
         return;
@@ -74,7 +69,6 @@ API = (function () {
         RetrieveAlbum: _retrieveAlbum,
         RetrieveAlbums: _retrieveAlbums,
         RetrieveSongs: _retrieveSongs,
-        RetrieveArtistSongs: _retrieveArtistSongs,
         RetrieveGenres: _retrieveGenres
     };
 })();

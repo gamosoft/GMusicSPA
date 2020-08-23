@@ -200,8 +200,9 @@ MediaPlayer = (function () {
         _stop();
         _clearPlayList();
 
-        const songsData = await API.LoadSongs(album.id());
-        _addSongs(songsData);
+        const albumData = await API.RetrieveAlbum(ko.unwrap(album.id));
+        _currentAlbum(albumData); // TODO: Do we need this?
+        _addSongs(albumData.songs);
 
         if (shuffle)
              _shuffle(true);
