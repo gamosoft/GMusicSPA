@@ -62,16 +62,27 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div id="artistDetail" class="card-deck toggle-section" data-bind="with: $root.CurrentArtist">
-            <div class="card mb-4 bg-transparent border-0">
-                <a data-bind="attr: { href: '#/artists/' + id }">
-                    <img
-                        class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
-                        data-bind="attr: { src: checkEmptyArtist(image, name), title: name }"></a>
-                <div class="card-footer">
-                    <div class="text-center">
-                        <a data-bind="attr: { href: '#/artists/' + id }"><strong class="text-muted"
-                                data-bind="text: trim(name, 20), attr: { title: name }">Name</strong></a>
+        <div id="artistDetail" class="row mb-2 toggle-section" data-bind="with: $root.CurrentArtist">
+            <div class="col">
+                <div data-bind="attr: { id: id }">
+                    <div style="display: inline-block">
+                        <img class="shadow-artist card-img-top rounded-circle z-depth-0 media-artist"
+                            data-bind="attr: { src: checkEmptyArtist(image, name), title: name }">
+                    </div>
+                    <div style="display: inline-block" class="align-middle">
+                        <div>
+                            <strong class="text-muted" data-bind="text: trim(name, 20), attr: { title: name }">Artist Name</strong>
+                            <a class="text-primary" data-bind="click: $parent.PlayAlbum" title="Play Artist"><i
+                                    class="play-button fa fa-play-circle fa-2x"></i></a>
+                        </div>
+                        <div class="mb-2">
+                            <small class="text-muted">N albums</small>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-primary" title="Instant Mix"><i class="fa fa-compact-disc"></i>&nbsp;INSTANT MIX</button>
+                            <button class="btn btn-sm btn-primary" data-bind="click: $parent.ShuffleAlbum" title="Shuffle Artist"><i class="fa fa-random"></i>&nbsp;SHUFFLE</button>
+                            <button class="btn btn-sm btn-primary"><i class="fa fa-ellipsis-v"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
