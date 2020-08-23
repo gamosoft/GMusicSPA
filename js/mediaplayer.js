@@ -11,6 +11,7 @@ MediaPlayer = (function () {
     let _shuffleEnabled = ko.observable(false);
     let _muteEnabled = ko.observable(false);
     let _isSongsView = ko.observable(false);
+    let _isAlbumsView = ko.observable(false);
     let _songProgress = ko.observable(0);
     let _volume = ko.observable();
     let _currentArtist = ko.observable();
@@ -337,6 +338,7 @@ MediaPlayer = (function () {
         CurrentAlbum: _currentAlbum,
         PlayList: _playList,
         IsSongsView: _isSongsView,
+        IsAlbumsView: _isAlbumsView,
         LoadArtists: _loadArtists,
         LoadAlbums: _loadAlbums,
         LoadSongs: _loadSongs,

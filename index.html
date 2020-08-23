@@ -101,11 +101,16 @@
                 <div class="card-body" data-bind="attr: { id: id }">
                     <div>
                         <a data-bind="attr: { href: '#/albums/'+id() }"><strong class="text-muted"
-                                data-bind="text: trim(title(), 20), attr: { title: title }">Title</strong></a>
+                                data-bind="text: trim(title, 20), attr: { title: title }">Title</strong></a>
                     </div>
                     <div>
-                        <a data-bind="attr: { href: '#/artists/'+artistId() }"><small class="text-muted"
-                                data-bind="text: trim(artist(), 20), attr: { title: artist }">Artist</small></a>
+                        <a data-bind="attr: { href: '#/artists/'+artistId() }, visible: $parent.IsAlbumsView()"><small class="text-muted"
+                                data-bind="text: trim(artist, 20), attr: { title: artist }">Artist</small></a>
+                        <span data-bind="visible: !$parent.IsAlbumsView()">
+                            <small class="text-muted" data-bind="text: trackCount">Artist</small>
+                            <small class="text-muted"> songs •</small>
+                            <small class="text-muted" data-bind="text: year">xxxx</small>
+                        </span>
                         <div class="ellipsis-album-button"><a class="text-secondary"><i
                                     class="fa fa-ellipsis-v float-right"></i></a></div>
                     </div>

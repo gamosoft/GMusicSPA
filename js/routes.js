@@ -20,6 +20,7 @@ let app = $.sammy(function () {
         const artistsData = await API.RetrieveArtists();
         MediaPlayer.LoadArtists(artistsData);
         MediaPlayer.IsSongsView(false);
+        MediaPlayer.IsAlbumsView(false);
         $('.toggle-section').hide();
         $('#artistsList').show();
         hideLoader();
@@ -33,6 +34,7 @@ let app = $.sammy(function () {
         MediaPlayer.CurrentArtist(artistData);
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
+        MediaPlayer.IsAlbumsView(false);
         $('.toggle-section').hide();
         $('#artistDetail').show();
         $('#albumsList').show();
@@ -45,6 +47,7 @@ let app = $.sammy(function () {
         const albumsData = await API.RetrieveAlbums();
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
+        MediaPlayer.IsAlbumsView(true);
         $('.toggle-section').hide();
         $('#albumsList').show();
         hideLoader();
@@ -60,6 +63,7 @@ let app = $.sammy(function () {
         MediaPlayer.SortField('trackNo'); // Default sort in album view
         MediaPlayer.SortOrder(true); // Default sort ascending
         MediaPlayer.IsSongsView(false);
+        MediaPlayer.IsAlbumsView(false);
         $('.toggle-section').hide();
         $('#albumDetail').show();
         $('#songsList').show();
@@ -72,6 +76,7 @@ let app = $.sammy(function () {
         const songsData = await API.RetrieveSongs();
         MediaPlayer.LoadSongs(songsData);
         MediaPlayer.IsSongsView(true);
+        MediaPlayer.IsAlbumsView(false);
         $('.toggle-section').hide();
         $('#songsList').show();
         hideLoader();
@@ -83,6 +88,7 @@ let app = $.sammy(function () {
         const songsData = await API.RetrieveArtistSongs(artistId);
         MediaPlayer.LoadSongs(songsData);
         MediaPlayer.IsSongsView(true);
+        MediaPlayer.IsAlbumsView(false);
         $('.toggle-section').hide();
         $('#songsList').show();
         hideLoader();
