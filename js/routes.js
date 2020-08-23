@@ -85,11 +85,12 @@ let app = $.sammy(function () {
     this.get('#/genres', async function () {
         showLoader();
         setActiveLink('#genresLink');
-        const albumsData = await API.RetrieveGenres();
-        // MediaPlayer.LoadAlbums(albumsData);
+        const genresData = await API.RetrieveGenres();
+        MediaPlayer.LoadGenres(genresData);
         MediaPlayer.IsSongsView(false);
+        MediaPlayer.IsAlbumsView(false);
         $('.toggle-section').hide();
-        // $('#albumsList').show();
+        $('#genresList').show();
         hideLoader();
     });
     this.notFound = function () {

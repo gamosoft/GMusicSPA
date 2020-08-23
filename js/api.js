@@ -5,6 +5,7 @@ API = (function () {
     const albumsUrl = `${baseUrl}/albums`; // ?_sort=title&_order=asc`;
     const artistsUrl = `${baseUrl}/artists`; // ?_sort=name&_order=asc`;
     const songsUrl = `${baseUrl}/songs`; // ?_sort=title&_order=asc`;
+    const genresUrl = `${baseUrl}/genres`; // ?_sort=title&_order=asc`;
     
     // Filter like this
     // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
@@ -55,12 +56,7 @@ API = (function () {
     }
 
     async function _retrieveGenres() {
-        alert('not implemented');
-        return;
-        const url = albumId // TODO: Change this
-                ? `${songsUrl}?albumId=${albumId}`
-                : songsUrl;
-        return await _fetchData(url);
+        return await _fetchData(genresUrl);
     }
 
     return {

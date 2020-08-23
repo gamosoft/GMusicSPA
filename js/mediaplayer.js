@@ -5,6 +5,7 @@ MediaPlayer = (function () {
     let _artists = ko.observableArray([]);
     let _albums = ko.observableArray([]);
     let _songs = ko.observableArray([]);
+    let _genres = ko.observableArray([]);
     let _currentSong = ko.observable();
     let _currentSongPosition = ko.observable();
     let _playList = ko.observableArray([]);
@@ -85,6 +86,16 @@ MediaPlayer = (function () {
         }
         return _sortArray(results);
     });
+
+    function _loadGenres(genres) {
+        _genres([]);
+        let tempArray = [];
+        $.each(genres, function (index, genre) {
+            let entry = ko.mapping.fromJS(genre);
+            tempArray.push(entry);
+        });
+        _genres(tempArray);
+    }
 
     function _sortArray(results) {
         if (_sortField())
@@ -343,6 +354,7 @@ MediaPlayer = (function () {
         Albums: _albums,
         SongsFiltered: _songsFiltered,
         Songs: _songs,
+        Genres: _genres,
         CurrentSong: _currentSong,
         CurrentArtist: _currentArtist,
         CurrentAlbum: _currentAlbum,
@@ -352,6 +364,7 @@ MediaPlayer = (function () {
         LoadArtists: _loadArtists,
         LoadAlbums: _loadAlbums,
         LoadSongs: _loadSongs,
+        LoadGenres: _loadGenres,
         // Media player methods
         SongProgress: _songProgress,
         CurrentSongPosition: _currentSongPosition,

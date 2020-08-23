@@ -198,6 +198,16 @@
             </table>
         </div>
     </div>
+    <!-- GENRES -->
+    <div class="container-fluid">
+        <div id="genresList" class="card-deck toggle-section" data-bind="foreach: Genres">
+            <div class="card mb-4 shadow-album">
+                <div class="card-body">
+                    <div data-bind="text: $data"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="mb-2" data-bind="visible: ArtistsFiltered().length == 0 && AlbumsFiltered().length == 0 && SongsFiltered().length == 0">
         <div class="text-warning text-center">No data found for this search filter</div>
