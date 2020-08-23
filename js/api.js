@@ -29,27 +29,27 @@ API = (function () {
         return data;
     }
     
-    async function _retrieveAlbum(albumId) {
-        const url = `${albumsUrl}/${albumId}?_embed=songs`; // TODO: Process songs
-        return await _fetchData(url);
+    async function _retrieveArtists() {
+        return await _fetchData(artistsUrl);
     }
-    
+
+    async function _retrieveArtist(artistId) {
+        const url = `${artistsUrl}/${artistId}?_embed=albums`; // TODO: Maybe get just headers?
+        return await _fetchData(url)
+    }
+
     async function _retrieveAlbums(artistId) {
         const url = artistId
                 ? `${albumsUrl}?artistId=${artistId}`
                 : albumsUrl;
         return await _fetchData(url);
     }
-    
-    async function _retrieveArtists() {
-        return await _fetchData(artistsUrl);
+
+    async function _retrieveAlbum(albumId) {
+        const url = `${albumsUrl}/${albumId}?_embed=songs`;
+        return await _fetchData(url);
     }
 
-    async function _retrieveArtist(artistId) {
-        const url = `${artistsUrl}/${artistId}?_embed=albums`;
-        return await _fetchData(url)
-    }
-    
     async function _retrieveSongs() {
         return await _fetchData(songsUrl);
     }
@@ -60,6 +60,7 @@ API = (function () {
     }
 
     async function _retrieveGenres() {
+        alert('not implemented');
         const url = albumId // TODO: Change this
                 ? `${songsUrl}?albumId=${albumId}`
                 : songsUrl;
@@ -67,12 +68,12 @@ API = (function () {
     }
 
     return {
-        RetrieveAlbum: _retrieveAlbum,
-        RetrieveAlbums: _retrieveAlbums,
         RetrieveArtist: _retrieveArtist,
         RetrieveArtists: _retrieveArtists,
+        RetrieveAlbum: _retrieveAlbum,
+        RetrieveAlbums: _retrieveAlbums,
         RetrieveSongs: _retrieveSongs,
         RetrieveArtistSongs: _retrieveArtistSongs,
-        // RetrieveGenres: _retrieveGenres
+        RetrieveGenres: _retrieveGenres
     };
 })();
