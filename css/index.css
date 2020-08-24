@@ -101,6 +101,13 @@ body {
     display: block;
 }
 
+.one-line-title {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 130px;
+    display: block;
+}
+
 .play-song-tr * .ellipsis-song-button {
     visibility: hidden;
 }
