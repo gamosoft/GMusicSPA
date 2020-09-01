@@ -403,8 +403,11 @@ Changing views, if something in the search textbox it STILL filters
 
 Hyperlinks with NO href don't show hand icon on over
 
-SORT queries:
-http://localhost:8888/albums?_sort=title&_order=desc
+PAGINATE queries:
+Use _page and optionally _limit to paginate returned data.
+In the Link header you'll get first, prev, next and last links.
+GET /posts?_page=7
+GET /posts?_page=7&_limit=20
 
 Sorting by numbers does alphabetically (1, 10, 11, 12, 3, 4, ...)
 Same for duration?

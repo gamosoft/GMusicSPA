@@ -48,6 +48,7 @@ API = (function () {
     }
 
     async function _retrieveAlbum(albumId) {
+        // TODO: ?_expand=artist => to get artist information so we don't need to denormalize the DB
         const url = `${albumsUrl}/${albumId}?_embed=songs`;
         return await _fetchData(url);
     }
