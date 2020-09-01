@@ -233,7 +233,7 @@ MediaPlayer = (function () {
         _addSongs(artistData.songs);
 
         if (shuffle)
-        _shuffle(true);
+            _shuffle(true);
 
         _play();
     }

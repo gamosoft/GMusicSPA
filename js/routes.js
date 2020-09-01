@@ -81,6 +81,19 @@ let app = $.sammy(function () {
         $('#songsList').show();
         hideLoader();
     });
+    this.get('#/songs/:artistId', async function () {
+        showLoader();
+        setActiveLink('#songsLink');
+        const artistId = this.params['artistId'];
+        const artistData = await API.RetrieveArtist(artistId);
+        MediaPlayer.CurrentArtist(artistData);
+        MediaPlayer.LoadSongs(artistData.songs);
+        MediaPlayer.IsSongsView(true);
+        MediaPlayer.IsAlbumsView(false);
+        $('.toggle-section').hide();
+        $('#songsList').show();
+        hideLoader();
+    });
     // GENRES
     this.get('#/genres', async function () {
         showLoader();
