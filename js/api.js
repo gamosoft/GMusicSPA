@@ -2,10 +2,10 @@ API = (function () {
 
     const baseUrl = 'https://my-json-server.typicode.com/gamosoft/GMusicSPA'
     // const baseUrl = 'http://localhost:8888'
-    const albumsUrl = `${baseUrl}/albums`; // ?_sort=title&_order=asc`;
-    const artistsUrl = `${baseUrl}/artists`; // ?_sort=name&_order=asc`;
-    const songsUrl = `${baseUrl}/songs`; // ?_sort=title&_order=asc`;
-    const genresUrl = `${baseUrl}/genres`; // ?_sort=title&_order=asc`;
+    const albumsUrl = `${baseUrl}/albums`;
+    const artistsUrl = `${baseUrl}/artists`;
+    const songsUrl = `${baseUrl}/songs`;
+    const genresUrl = `${baseUrl}/genres`;
     
     // Filter like this
     // https://my-json-server.typicode.com/gamosoft/GMusicSPA/songs?title=Juice
@@ -31,7 +31,8 @@ API = (function () {
     }
     
     async function _retrieveArtists() {
-        return await _fetchData(artistsUrl);
+        const url = `${artistsUrl}?_sort=name&_order=asc`;
+        return await _fetchData(url);
     }
 
     async function _retrieveArtist(artistId) {
@@ -41,8 +42,8 @@ API = (function () {
 
     async function _retrieveAlbums(artistId) {
         const url = artistId
-                ? `${albumsUrl}?artistId=${artistId}`
-                : albumsUrl;
+                ? `${albumsUrl}?artistId=${artistId}&_sort=year&_order=desc`
+                : `${albumsUrl}?_sort=title&_order=asc`;
         return await _fetchData(url);
     }
 
@@ -52,11 +53,13 @@ API = (function () {
     }
 
     async function _retrieveSongs() {
-        return await _fetchData(songsUrl);
+        const url = `${songsUrl}?_sort=title&_order=asc`;
+        return await _fetchData(url);
     }
 
     async function _retrieveGenres() {
-        return await _fetchData(genresUrl);
+        const url = `${genresUrl}?_sort=title&_order=asc`; // TODO: Doesn't sort yet. Move to an ID etc
+        return await _fetchData(url);
     }
 
     return {

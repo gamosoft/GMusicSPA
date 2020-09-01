@@ -30,7 +30,7 @@ let app = $.sammy(function () {
         setActiveLink('#artistsLink');
         const artistId = this.params['artistId'];
         const artistData = await API.RetrieveArtist(artistId);
-        const albumsData = await API.RetrieveAlbums(artistId); // TODO: In this case albums are sorted by year descending
+        const albumsData = await API.RetrieveAlbums(artistId);
         MediaPlayer.CurrentArtist(artistData);
         MediaPlayer.LoadAlbums(albumsData);
         MediaPlayer.IsSongsView(false);
